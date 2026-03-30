@@ -70,7 +70,7 @@ export default function Home() {
         </h1>
 
         <p className="mb-8 max-w-lg font-mono text-[15px] leading-snug text-fff-yellow sm:mb-9 sm:text-base">
-          Google Maps for your food & your homies 🗺️
+          Google Maps for your food & your homies
         </p>
 
         <section
