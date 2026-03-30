@@ -126,7 +126,7 @@ export default function Home() {
         <div className="tagline">Google Maps for your food & your homies 🗺️</div>
         <p className="hero-sub">One link per building. Expires automatically. Gate codes that vanish. Your driver stops guessing and starts arriving.</p>
         <div className="hero-btns">
-          <a href="https://findfoundfast.vercel.app" className="btn-p">Try It Free →</a>
+          <a href="https://findfoundfast-final.vercel.app" className="btn-p">Try It Free →</a>
           <Link href="/how-it-works" className="btn-o">See How It Works</Link>
         </div>
       </section>
@@ -241,7 +241,7 @@ export default function Home() {
                 <div className="pf">Analytics dashboard</div>
                 <div className="pf">Priority support</div>
               </div>
-              <a href="https://findfoundfast.vercel.app" className="btn-p" style={{width:'100%',textAlign:'center',display:'block',fontSize:'12px'}}>Get Early Access →</a>
+              <a href="https://findfoundfast-final.vercel.app" className="btn-p" style={{width:'100%',textAlign:'center',display:'block',fontSize:'12px'}}>Get Early Access →</a>
               <div className="pc-note">No credit card · 30-day free trial</div>
             </div>
           </div>
@@ -251,7 +251,7 @@ export default function Home() {
       <div className="fcta">
         <h2>Stop giving<br/>crappy directions.</h2>
         <p>One link. Every photo. Codes that vanish. FFFliping done.</p>
-        <a href="https://findfoundfast.vercel.app" className="btn-p" style={{fontSize:'14px',padding:'16px 40px',background:'#0A0A0A',color:'#00FF87'}}>Start Free Today →</a>
+        <a href="https://findfoundfast-final.vercel.app" className="btn-p" style={{fontSize:'14px',padding:'16px 40px',background:'#0A0A0A',color:'#00FF87'}}>Start Free Today →</a>
       </div>
 
       <footer><p><span>FindFoundFast</span> · Built different · <span>FFFliping Cool</span> · findfoundfast.com</p></footer>
