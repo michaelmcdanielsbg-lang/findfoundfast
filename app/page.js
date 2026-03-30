@@ -56,37 +56,37 @@ export default function Home() {
         </div>
       </header>
 
-      <main className="relative z-10 flex flex-1 flex-col items-center justify-center px-4 pt-6 pb-10 text-center sm:px-6 sm:pt-8 sm:pb-12">
-        <p className="mb-1.5 max-w-2xl px-2 font-mono text-[11px] font-bold uppercase tracking-[0.18em] text-fff-green sm:text-xs">
+      <main className="relative z-10 flex flex-1 flex-col items-center justify-center px-4 pt-5 pb-8 text-center sm:px-5 sm:pt-6 sm:pb-10">
+        <p className="mb-1 max-w-xl px-2 font-mono text-[11px] font-bold uppercase tracking-[0.18em] text-fff-green sm:text-xs">
           For property &amp; ops teams
         </p>
-        <p className="mb-4 max-w-2xl px-2 font-sans text-[15px] font-medium leading-relaxed tracking-normal text-fff-white/88 sm:mb-5 sm:text-base lg:max-w-3xl">
+        <p className="mb-3 max-w-xl px-2 font-sans text-[15px] font-medium leading-snug tracking-normal text-fff-white/88 sm:mb-4 sm:text-base">
           Apartments · Offices · Nursing homes · Hospitals · School · Homes
         </p>
 
-        <h1 className="mb-4 max-w-4xl text-[clamp(2.25rem,8vw,3.75rem)] font-extrabold leading-[1.05] tracking-tight sm:mb-5 sm:text-5xl md:text-6xl">
+        <h1 className="mb-3 max-w-xl text-[clamp(2.1rem,7vw,3.35rem)] font-extrabold leading-[1.05] tracking-tight sm:mb-4 sm:text-5xl md:text-6xl">
           <span className="text-fff-green">Find</span>
           <span className="text-fff-white">Found</span>
           <span className="text-fff-green">Fast</span>
         </h1>
 
-        <p className="mb-6 max-w-lg font-mono text-[15px] leading-snug text-fff-yellow sm:mb-7 sm:text-base lg:max-w-2xl">
+        <p className="mb-5 max-w-md font-mono text-[15px] leading-snug text-fff-yellow sm:mb-6 sm:text-base">
           Google Maps for your food & your homies
         </p>
 
         <section
-          className="mb-8 w-full max-w-6xl rounded-2xl border border-white/[0.09] bg-white/[0.03] px-4 py-6 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.04)] sm:mb-10 sm:px-6 sm:py-8"
+          className="mb-6 w-full max-w-xl rounded-2xl border border-white/[0.09] bg-white/[0.03] px-4 py-5 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.04)] sm:mb-8 sm:px-5 sm:py-6"
           aria-label="Problem and solution"
         >
-          <div className="flex flex-col gap-6 border-b border-white/[0.08] pb-8 sm:gap-8 sm:pb-10">
+          <div className="flex flex-col gap-4 border-b border-white/[0.08] pb-6 sm:gap-5 sm:pb-7">
             <div className="text-left">
               <h2
                 id="problem-heading"
-                className="mb-3 font-mono text-sm font-bold uppercase tracking-[0.18em] text-fff-rose/95 sm:text-base"
+                className="mb-2 font-mono text-sm font-bold uppercase tracking-[0.18em] text-fff-rose/95 sm:text-base"
               >
                 Problem
               </h2>
-              <p className="max-w-md text-base leading-relaxed text-fff-white/90 sm:text-lg sm:leading-snug">
+              <p className="text-[15px] leading-relaxed text-fff-white/90 sm:text-base sm:leading-snug">
                 Google Maps gets them to the address.{' '}
                 <span className="font-semibold text-fff-yellow">Now what?</span>
               </p>
@@ -96,24 +96,24 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="flex justify-center py-6" aria-hidden>
-            <span className="rounded-full border border-white/[0.12] bg-fff-bg px-5 py-1.5 font-mono text-xs font-bold uppercase tracking-wider text-fff-white/55">
+          <div className="flex justify-center py-4" aria-hidden>
+            <span className="rounded-full border border-white/[0.12] bg-fff-bg px-4 py-1 font-mono text-[11px] font-bold uppercase tracking-wider text-fff-white/55 sm:px-5 sm:text-xs">
               vs
             </span>
           </div>
 
-          <div className="flex flex-col gap-6 pt-2 sm:gap-8 sm:pt-0">
+          <div className="flex flex-col gap-4 sm:gap-5">
             <div className="text-left">
               <h2
                 id="solution-heading"
-                className="mb-3 font-mono text-sm font-bold uppercase tracking-[0.18em] text-fff-green sm:text-base"
+                className="mb-2 font-mono text-sm font-bold uppercase tracking-[0.18em] text-fff-green sm:text-base"
               >
                 Solution
               </h2>
-              <p className="mb-3 font-sans text-[1.65rem] font-extrabold leading-tight tracking-tight text-fff-green sm:text-3xl">
+              <p className="mb-2 font-sans text-[1.5rem] font-extrabold leading-tight tracking-tight text-fff-green sm:mb-3 sm:text-3xl">
                 A guide to you
               </p>
-              <p className="max-w-md text-[15px] leading-relaxed text-fff-white/78 sm:text-[17px] sm:leading-relaxed">
+              <p className="text-[15px] leading-relaxed text-fff-white/78 sm:text-[16px] sm:leading-relaxed">
                 Step-by-step from where to park to where you’re going—door, gate, or lobby. No app needed.
               </p>
             </div>
@@ -123,7 +123,7 @@ export default function Home() {
           </div>
         </section>
 
-        <p className="mb-8 max-w-lg text-[15px] leading-relaxed text-fff-white/75 sm:mb-8 sm:max-w-2xl sm:text-base sm:leading-relaxed lg:max-w-3xl">
+        <p className="mb-6 max-w-xl text-[15px] leading-relaxed text-fff-white/75 sm:mb-8 sm:text-base sm:leading-relaxed">
           Help drivers and guests find your resident—not just the building. A perk for property teams and the people who live there.
         </p>
 
@@ -179,7 +179,7 @@ export default function Home() {
         </p>
 
         <section
-          className="mt-10 w-full max-w-5xl rounded-2xl border border-white/[0.08] bg-fff-card/40 px-4 py-5 sm:px-6"
+          className="mt-8 w-full max-w-3xl rounded-2xl border border-white/[0.08] bg-fff-card/40 px-4 py-4 sm:mt-10 sm:px-5 sm:py-5"
           aria-label="What people are saying"
         >
           <div className="flex items-baseline justify-between gap-4">
