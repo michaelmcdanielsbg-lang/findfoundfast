@@ -5,7 +5,7 @@ import Link from 'next/link';
 const APP_URL = 'https://findfoundfast-final.vercel.app';
 
 export default function HowItWorks() {
-  const [activeTab, setActiveTab] = useState('driver');
+  const [activeTab, setActiveTab] = useState('manager');
 
   const driverSteps = [
     { step: 1, title: 'Parking / Drop-off', desc: 'Pull into Entrance B – any uncovered spot near the blue sign', url: 'https://i.ibb.co/1t4MWkgH/Modern-apartment-at-dusk.png' },
