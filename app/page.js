@@ -2,6 +2,9 @@ import Link from "next/link";
 
 const APP_URL = "https://findfoundfast-final.vercel.app";
 
+const focusRing =
+  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fff-green/55 focus-visible:ring-offset-2 focus-visible:ring-offset-fff-bg";
+
 export default function Home() {
   return (
     <div className="relative flex min-h-screen flex-col overflow-x-hidden bg-fff-bg">
@@ -24,21 +27,25 @@ export default function Home() {
       />
 
       <header className="relative z-10 flex items-center justify-between border-b border-white/[0.08] bg-fff-bg/90 px-4 py-3 pt-[max(0.75rem,env(safe-area-inset-top))] backdrop-blur-md sm:px-6 sm:py-4">
-        <div className="text-lg font-extrabold tracking-tight text-fff-white">
+        <Link
+          href="/"
+          className={`text-lg font-extrabold tracking-tight text-fff-white transition-colors hover:text-fff-white/90 ${focusRing} rounded-sm`}
+        >
           Find<span className="text-fff-green">Found</span>Fast
-        </div>
+        </Link>
         <a
           href={APP_URL}
-          className="font-mono text-sm font-bold uppercase tracking-wide text-fff-green transition hover:text-fff-yellow"
+          rel="noopener noreferrer"
+          className={`font-mono text-sm font-bold uppercase tracking-wide text-fff-green transition-colors hover:text-fff-yellow ${focusRing} rounded-sm`}
         >
           Try it free →
         </a>
       </header>
 
-      <main className="relative z-10 flex flex-1 flex-col items-center justify-center px-4 py-10 text-center sm:px-6 sm:py-16">
-        <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-fff-green/25 bg-fff-green/10 px-4 py-2 font-mono text-[10px] font-bold uppercase tracking-[0.15em] text-fff-green sm:mb-8 sm:text-xs sm:tracking-[0.2em]">
-          FFFliping Cool · No App Required
-        </div>
+      <main className="relative z-10 flex flex-1 flex-col items-center justify-center px-4 py-12 text-center sm:px-6 sm:py-16">
+        <p className="mb-6 inline-flex items-center gap-2 rounded-full border border-fff-green/25 bg-fff-green/10 px-4 py-2 font-mono text-[10px] font-bold uppercase tracking-[0.15em] text-fff-green sm:mb-8 sm:text-xs sm:tracking-[0.2em]">
+          Timed links · No app · Curb to door
+        </p>
 
         <h1 className="mb-5 max-w-4xl text-[clamp(2.5rem,10vw,4.5rem)] font-extrabold leading-[0.95] tracking-tight sm:mb-6 sm:text-6xl md:text-7xl">
           <span className="text-fff-green">Find.</span>
@@ -48,38 +55,62 @@ export default function Home() {
           <span className="text-fff-green">Fast.</span>
         </h1>
 
-        <p className="mb-6 max-w-md font-mono text-sm leading-snug text-fff-yellow sm:mb-8 sm:text-base">
-          Google Maps for your food & your homies — and for every building tired of the &quot;I&apos;m outside&quot; loop.
+        <p className="mb-8 max-w-md font-mono text-sm leading-snug text-fff-yellow/95 sm:mb-9 sm:text-[15px]">
+          Google Maps for your food & your homies 🗺️
         </p>
 
-        {/* Problem + concept — speaks to property / ops without a long scroll */}
-        <div className="mb-6 max-w-lg space-y-3 text-[15px] leading-relaxed text-fff-white/60 sm:mb-8 sm:text-base">
-          <p>
-            <span className="text-fff-white/85">The problem:</span> Drivers and guests stall at gates and lobbies;
-            residents fire off directions and codes that get screenshot-shared forever.
-          </p>
-          <p>
-            <span className="text-fff-green">The idea:</span> One timed link per building—your step-by-step photos
-            and gate codes that expire when the timer ends.{' '}
-            <span className="text-fff-white/70">No app for whoever&apos;s walking in.</span>
-          </p>
-        </div>
+        <section
+          className="mb-8 w-full max-w-lg rounded-2xl border border-white/[0.09] bg-white/[0.03] px-5 py-6 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.04)] sm:mb-10 sm:px-7 sm:py-7"
+          aria-label="Problem and solution"
+        >
+          <div className="border-b border-white/[0.08] pb-6 text-center sm:pb-7">
+            <h2
+              id="problem-heading"
+              className="mb-3 font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-fff-rose/95"
+            >
+              Problem
+            </h2>
+            <p className="mx-auto max-w-[22rem] text-base leading-relaxed text-fff-white/88 sm:text-lg sm:leading-snug">
+              Google Maps gets them to the pin.{' '}
+              <span className="font-semibold text-fff-yellow">Now what?</span>
+            </p>
+          </div>
+          <div className="pt-6 text-center sm:pt-7">
+            <h2
+              id="solution-heading"
+              className="mb-3 font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-fff-green"
+            >
+              Solution
+            </h2>
+            <p className="mb-3 font-sans text-[1.65rem] font-extrabold leading-tight tracking-tight text-fff-green sm:text-3xl">
+              A guide to you
+            </p>
+            <p className="mx-auto max-w-[24rem] text-sm leading-relaxed text-fff-white/68 sm:text-[15px] sm:leading-relaxed">
+              Step-by-step from the curb to the door, with codes that expire. No app for whoever&apos;s walking in.
+            </p>
+          </div>
+        </section>
 
-        <p className="mb-8 max-w-md font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-fff-muted sm:mb-10 sm:text-[11px] sm:tracking-[0.22em]">
-          Property & ops teams · multifamily · offices · hotels · hospitals · homes
+        <p className="mb-8 max-w-md text-xs leading-relaxed text-fff-white/55 sm:mb-10 sm:max-w-lg sm:text-sm sm:leading-relaxed">
+          Help drivers and guests find your resident—not just the building. A perk for property teams and the people who live there.
+        </p>
+
+        <p className="mb-8 max-w-md font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-fff-muted sm:mb-10 sm:text-[11px] sm:tracking-[0.22em]">
+          Built for property & ops teams · multifamily · offices · hotels · hospitals · homes
         </p>
 
         <div className="flex w-full max-w-md flex-col items-center gap-4 sm:max-w-none sm:flex-row sm:justify-center sm:gap-5">
           <a
             href={APP_URL}
-            className="inline-flex min-h-[48px] w-full min-w-0 items-center justify-center rounded-lg bg-fff-green px-6 py-3.5 font-mono text-xs font-bold uppercase tracking-wide text-fff-bg transition active:opacity-90 sm:w-auto sm:px-8 hover:bg-fff-yellow"
+            rel="noopener noreferrer"
+            className={`inline-flex min-h-[48px] w-full min-w-0 items-center justify-center rounded-lg bg-fff-green px-6 py-3.5 font-mono text-xs font-bold uppercase tracking-wide text-fff-bg transition-colors active:opacity-90 sm:w-auto sm:px-8 hover:bg-fff-yellow ${focusRing}`}
           >
             Try it free →
           </a>
           <div className="flex w-full flex-col items-center gap-1.5 sm:w-auto">
             <Link
               href="/how-it-works?tab=manager"
-              className="inline-flex min-h-[48px] w-full min-w-0 items-center justify-center rounded-lg border border-white/[0.18] bg-transparent px-6 py-3.5 font-mono text-xs font-bold uppercase tracking-wide text-fff-white transition active:bg-white/5 sm:w-auto sm:min-w-[200px] sm:px-8 hover:border-fff-green/50 hover:text-fff-green"
+              className={`inline-flex min-h-[48px] w-full min-w-0 items-center justify-center rounded-lg border border-white/[0.18] bg-transparent px-6 py-3.5 font-mono text-xs font-bold uppercase tracking-wide text-fff-white transition-colors active:bg-white/5 sm:w-auto sm:min-w-[200px] sm:px-8 hover:border-fff-green/50 hover:text-fff-green ${focusRing}`}
             >
               How it works
             </Link>
@@ -91,7 +122,15 @@ export default function Home() {
       </main>
 
       <footer className="relative z-10 border-t border-white/[0.06] py-6 pb-[max(1.5rem,env(safe-area-inset-bottom))] text-center font-mono text-xs text-fff-muted sm:py-8">
-        FindFoundFast · findfoundfast.com
+        <span className="text-fff-white/70">FindFoundFast</span>
+        <span className="mx-1.5 text-fff-muted/80">·</span>
+        <a
+          href="https://findfoundfast.com"
+          rel="noopener noreferrer"
+          className={`text-fff-muted transition-colors hover:text-fff-green ${focusRing} rounded-sm`}
+        >
+          findfoundfast.com
+        </a>
       </footer>
     </div>
   );

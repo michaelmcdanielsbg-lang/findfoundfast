@@ -15,7 +15,8 @@ const spaceMono = Space_Mono({
 
 export const metadata = {
   title: 'FindFoundFast — Deliveries. Simplified.',
-  description: 'Property managers set up once. Every driver finds every unit instantly.',
+  description:
+    'After Google Maps: a timed guide from curb to door so drivers and guests find your resident—no app required.',
 }
 
 export const viewport = {
