@@ -107,7 +107,7 @@ export default function PricingPage() {
           rel="noopener noreferrer"
           className={`inline-flex min-h-[48px] items-center justify-center rounded-lg bg-fff-green px-8 py-3.5 font-mono text-xs font-bold uppercase tracking-wide text-fff-bg transition-colors hover:bg-fff-yellow ${focusRing}`}
         >
-          Try it free →
+          Start now →
         </a>
         <p className="mt-8">
           <Link href="/" className={`text-sm text-fff-white/70 underline-offset-4 transition-colors hover:text-fff-green ${focusRing} rounded-sm`}>

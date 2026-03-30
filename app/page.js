@@ -129,13 +129,12 @@ export default function Home() {
         </section>
 
         <div className="flex w-full max-w-md flex-col items-center gap-4 sm:max-w-none sm:flex-row sm:justify-center sm:gap-5">
-          <a
-            href={APP_URL}
-            rel="noopener noreferrer"
+          <Link
+            href="/pricing"
             className={`inline-flex min-h-[48px] w-full min-w-0 items-center justify-center rounded-lg bg-fff-green px-6 py-3.5 font-mono text-xs font-bold uppercase tracking-wide text-fff-bg transition-colors active:opacity-90 sm:w-auto sm:px-8 hover:bg-fff-yellow ${focusRing}`}
           >
-            Try it free →
-          </a>
+            Pricing →
+          </Link>
           <Link
             href="/how-it-works?tab=manager"
             className={`inline-flex min-h-[48px] w-full min-w-0 items-center justify-center rounded-lg border border-white/[0.18] bg-transparent px-6 py-3.5 font-mono text-xs font-bold uppercase tracking-wide text-fff-white transition-colors active:bg-white/5 sm:w-auto sm:min-w-[200px] sm:px-8 hover:border-fff-green/50 hover:text-fff-green ${focusRing}`}
