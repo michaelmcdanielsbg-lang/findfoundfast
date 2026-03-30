@@ -1,7 +1,5 @@
 import Link from "next/link";
 
-const APP_URL = "https://findfoundfast-final.vercel.app";
-
 const focusRing =
   "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fff-green/55 focus-visible:ring-offset-2 focus-visible:ring-offset-fff-bg";
 
@@ -50,14 +48,17 @@ export default function Home() {
             href="/get-started"
             className={`inline-flex min-h-[40px] items-center justify-center rounded-lg bg-fff-green px-4 py-2 font-mono text-[11px] font-bold uppercase tracking-wide text-fff-bg transition-colors hover:bg-fff-yellow ${focusRing}`}
           >
-            Start now →
+            Get started →
           </Link>
         </div>
       </header>
 
       <main className="relative z-10 flex flex-1 flex-col items-center justify-center px-4 py-12 text-center sm:px-6 sm:py-16">
+        <p className="mb-2 max-w-2xl px-2 font-mono text-[11px] font-bold uppercase tracking-[0.18em] text-fff-green sm:text-xs">
+          For property &amp; ops teams
+        </p>
         <p className="mb-6 max-w-2xl px-2 font-sans text-[15px] font-medium leading-relaxed tracking-normal text-fff-white/88 sm:mb-8 sm:text-base">
-          Built for property & ops teams · Apartments · Offices · Nursing homes · Hospitals · School · Homes
+          Apartments · Offices · Nursing homes · Hospitals · School · Homes
         </p>
 
         <h1 className="mb-5 max-w-4xl text-[clamp(2.5rem,10vw,4.5rem)] font-extrabold leading-[0.95] tracking-tight sm:mb-6 sm:text-6xl md:text-7xl">
@@ -127,19 +128,25 @@ export default function Home() {
             Unlimited buildings &amp; units.
           </p>
           <Link
-            href="/pricing"
+            href="/get-started"
             className={`mt-5 inline-block font-mono text-xs font-bold uppercase tracking-wide text-fff-green underline-offset-4 transition-colors hover:text-fff-yellow ${focusRing} rounded-sm`}
           >
-            See full plan →
+            Get started →
           </Link>
+          <p className="mt-3 font-mono text-[10px] uppercase tracking-[0.15em] text-fff-white/45">
+            or{' '}
+            <Link href="/pricing" className="text-fff-white/60 underline-offset-2 hover:text-fff-green">
+              view full pricing
+            </Link>
+          </p>
         </section>
 
         <div className="flex w-full max-w-md flex-col items-center gap-4 sm:max-w-none sm:flex-row sm:justify-center sm:gap-5">
           <Link
-            href="/pricing"
+            href="/get-started"
             className={`inline-flex min-h-[48px] w-full min-w-0 items-center justify-center rounded-lg bg-fff-green px-6 py-3.5 font-mono text-xs font-bold uppercase tracking-wide text-fff-bg transition-colors active:opacity-90 sm:w-auto sm:px-8 hover:bg-fff-yellow ${focusRing}`}
           >
-            Pricing →
+            Get started →
           </Link>
           <Link
             href="/how-it-works?tab=manager"

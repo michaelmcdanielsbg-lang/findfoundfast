@@ -2,8 +2,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 
-const APP_URL = 'https://findfoundfast-final.vercel.app';
-
 const focusRing =
   'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fff-green/55 focus-visible:ring-offset-2 focus-visible:ring-offset-fff-bg';
 
@@ -101,7 +99,7 @@ export default function HowItWorks() {
             href="/get-started"
             className={`inline-flex min-h-[40px] items-center justify-center rounded-lg bg-fff-green px-4 py-2 font-mono text-[11px] font-bold uppercase tracking-wide text-fff-bg transition-colors hover:bg-fff-yellow ${focusRing}`}
           >
-            Start now →
+            Get started →
           </Link>
         </div>
       </header>
@@ -306,10 +304,10 @@ export default function HowItWorks() {
           Ready to make arrivals FFFLipping Cool for your property?
         </h2>
         <Link
-          href={APP_URL}
-          className="inline-flex min-h-[48px] items-center justify-center rounded-xl bg-fff-green px-8 py-3.5 font-mono text-sm font-bold uppercase tracking-wide text-fff-bg transition active:opacity-90 sm:px-10 sm:py-4 hover:bg-fff-yellow"
+          href="/get-started"
+          className={`inline-flex min-h-[48px] items-center justify-center rounded-xl bg-fff-green px-8 py-3.5 font-mono text-sm font-bold uppercase tracking-wide text-fff-bg transition active:opacity-90 sm:px-10 sm:py-4 hover:bg-fff-yellow ${focusRing}`}
         >
-          Request a free demo
+          Get started →
         </Link>
       </section>
 

@@ -99,7 +99,13 @@ export default function GetStartedPage() {
           Find<span className="text-fff-green">Found</span>Fast
         </Link>
 
-        <div className="flex items-center gap-4 sm:gap-6">
+        <div className="flex max-w-[min(100%,22rem)] flex-wrap items-center justify-end gap-x-4 gap-y-2 sm:max-w-none sm:gap-6">
+          <Link
+            href="/"
+            className={`font-mono text-sm font-bold uppercase tracking-wide text-fff-white/90 transition-colors hover:text-fff-green ${focusRing} rounded-sm`}
+          >
+            Home
+          </Link>
           <Link
             href="/pricing"
             className={`font-mono text-sm font-bold uppercase tracking-wide text-fff-white/90 transition-colors hover:text-fff-green ${focusRing} rounded-sm`}
@@ -112,6 +118,9 @@ export default function GetStartedPage() {
           >
             How it works
           </Link>
+          <span className="font-mono text-sm font-bold uppercase tracking-wide text-fff-green">
+            Get started
+          </span>
         </div>
       </header>
 
@@ -124,8 +133,12 @@ export default function GetStartedPage() {
           <h1 className="mb-2 text-3xl font-extrabold tracking-tight text-fff-white sm:text-4xl">
             Tell us about your property
           </h1>
-          <p className="mb-8 max-w-2xl text-[15px] leading-relaxed text-fff-white/70 sm:text-base">
+          <p className="mb-3 max-w-2xl text-[15px] leading-relaxed text-fff-white/70 sm:text-base">
             We’ll reach out by email. Fill in the basics below and we’ll take it from there.
+          </p>
+          <p className="mb-8 max-w-2xl text-sm text-fff-white/55 sm:text-[15px]">
+            Typical reply: <span className="text-fff-white/75">within one business day</span> with next steps
+            and billing (monthly or annual—your call).
           </p>
 
           {submitted ? (
