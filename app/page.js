@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ProblemVisual, SolutionVisual } from "@/components/ProblemSolutionGraphics";
 
 const focusRing =
   "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fff-green/55 focus-visible:ring-offset-2 focus-visible:ring-offset-fff-bg";
@@ -74,34 +75,51 @@ export default function Home() {
         </p>
 
         <section
-          className="mb-8 w-full max-w-lg rounded-2xl border border-white/[0.09] bg-white/[0.03] px-5 py-6 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.04)] sm:mb-10 sm:px-7 sm:py-7 lg:max-w-2xl"
+          className="mb-8 w-full max-w-6xl rounded-2xl border border-white/[0.09] bg-white/[0.03] px-4 py-6 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.04)] sm:mb-10 sm:px-6 sm:py-8"
           aria-label="Problem and solution"
         >
-          <div className="border-b border-white/[0.08] pb-6 text-center sm:pb-7">
-            <h2
-              id="problem-heading"
-              className="mb-3 font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-fff-rose/95"
-            >
-              Problem
-            </h2>
-            <p className="mx-auto max-w-[22rem] text-base leading-relaxed text-fff-white/90 sm:text-lg sm:leading-snug lg:max-w-xl">
-              Google Maps gets them to the address.{' '}
-              <span className="font-semibold text-fff-yellow">Now what?</span>
-            </p>
+          <div className="grid gap-6 border-b border-white/[0.08] pb-8 lg:grid-cols-2 lg:items-center lg:gap-8 lg:pb-10">
+            <div className="text-left">
+              <h2
+                id="problem-heading"
+                className="mb-3 font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-fff-rose/95"
+              >
+                Problem
+              </h2>
+              <p className="max-w-md text-base leading-relaxed text-fff-white/90 sm:text-lg sm:leading-snug">
+                Google Maps gets them to the address.{' '}
+                <span className="font-semibold text-fff-yellow">Now what?</span>
+              </p>
+            </div>
+            <div className="flex w-full justify-center lg:justify-end">
+              <ProblemVisual />
+            </div>
           </div>
-          <div className="pt-6 text-center sm:pt-7">
-            <h2
-              id="solution-heading"
-              className="mb-3 font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-fff-green"
-            >
-              Solution
-            </h2>
-            <p className="mb-3 font-sans text-[1.65rem] font-extrabold leading-tight tracking-tight text-fff-green sm:text-3xl">
-              A guide to you
-            </p>
-            <p className="mx-auto max-w-[24rem] text-[15px] leading-relaxed text-fff-white/78 sm:text-[17px] sm:leading-relaxed lg:max-w-xl">
-              Step-by-step from the curb to the door, with codes that expire. No app for whoever&apos;s walking in.
-            </p>
+
+          <div className="flex justify-center py-6" aria-hidden>
+            <span className="rounded-full border border-white/[0.12] bg-fff-bg px-5 py-1.5 font-mono text-xs font-bold uppercase tracking-wider text-fff-white/55">
+              vs
+            </span>
+          </div>
+
+          <div className="grid gap-6 pt-2 lg:grid-cols-2 lg:items-start lg:gap-8 lg:pt-0">
+            <div className="text-left">
+              <h2
+                id="solution-heading"
+                className="mb-3 font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-fff-green"
+              >
+                Solution
+              </h2>
+              <p className="mb-3 font-sans text-[1.65rem] font-extrabold leading-tight tracking-tight text-fff-green sm:text-3xl">
+                A guide to you
+              </p>
+              <p className="max-w-md text-[15px] leading-relaxed text-fff-white/78 sm:text-[17px] sm:leading-relaxed">
+                Step-by-step from where to park to where you’re going—door, gate, or lobby. No app needed.
+              </p>
+            </div>
+            <div className="flex w-full justify-center lg:justify-end">
+              <SolutionVisual />
+            </div>
           </div>
         </section>
 
