@@ -6,9 +6,9 @@
 
 ## What it is
 
-A **web-based micro-location delivery guidance** product. It solves the *“I’m outside but I can’t find you”* problem at apartments, hotels, offices, hospitals, schools, and homes.
+A simple **web-based micro-location guidance** product for apartment complexes, nursing homes, hospitals, offices, hotels, schools, and large residential communities.
 
-Instead of residents texting confusing directions and gate codes that get screenshot-shared forever, FindFoundFast gives drivers and guests a **single, timed link** with **step-by-step photos** and **expiring gate codes**.
+Property managers set up each building once. Residents then use either a **Permanent link** (never expires) or a **Timed link** (30 minutes / 1 hour / 1 day) so drivers and guests can follow step-by-step photos and reach the right door fast.
 
 ## Core flows
 
@@ -17,20 +17,25 @@ Instead of residents texting confusing directions and gate codes that get screen
 1. Creates a building profile (Building A, North Tower, Tower 3, etc.).
 2. Uploads **4 base photos:** Parking → Entrance → Lobby → Elevator.
 3. Optionally adds arrows and gate/door codes.
-4. Gets **one permanent link per building** (e.g. `findfoundfast.com/link/sunny-a`).
+4. Decides whether gate codes are part of that building setup.
+5. Residents in that building automatically use the same guidance setup.
 
 ### Resident
 
 1. Receives a **5-character code** from the property manager.
-2. Logs in once, selects **building + unit**.
-3. Chooses a timer: **30 minutes, 1 hour, or 1 day**.
-4. **Copies a unique timed link** and sends it to the driver or guest.
+2. Logs in once (first-time setup), selects **building + unit**.
+3. After that, simply opens FindFoundFast to immediately see building links.
+4. Chooses a link type:
+   - **Permanent link** (never expires; no gate code required)
+   - **Timed link** (**30 minutes, 1 hour, or 1 day**) when auto-expiring code visibility is needed
+5. Copies the link into delivery apps, text messages, or guest chats.
 
 ### Driver / guest (no app, no login)
 
 1. Clicks the link.
-2. Sees a **photo guide** with step numbers, descriptions, and gate code.
-3. When the timer ends, **codes disappear and the link stops working** (reduces stale screenshots).
+2. Sees a **photo guide** with step numbers and descriptions.
+3. If it is a **timed link**, gate code details appear and then expire with the timer.
+4. If it is a **permanent link**, the guide stays active with no expiration.
 
 ## Marketing site (this repo)
 
@@ -39,7 +44,7 @@ Instead of residents texting confusing directions and gate codes that get screen
 | `/` | Minimal landing: brand headline, value prop, **Try it free** (app), **How it works** → `/how-it-works` |
 | `/how-it-works` | Tabbed walkthrough: **Property manager** (default tab) → Resident → Driver; demos, chat before/after, link preview |
 
-**Goal:** Make value obvious fast for **property managers** and show **residents** exactly what they send to drivers.
+**Goal:** Make value obvious fast for **property managers** and show **residents** exactly how Permanent and Timed links work in real life.
 
 ## Tech stack (current)
 
@@ -60,4 +65,4 @@ Fun, bold, confident, **anti-frustration**. Speaks to residents like a friend an
 
 ---
 
-*Last updated: project brief synced for Cursor / agent context.*
+*Last updated: concept brief refreshed for one-time resident login + Permanent/Timed link model.*
