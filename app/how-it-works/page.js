@@ -1,4 +1,3 @@
-// app/how-it-works/page.js
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
@@ -22,7 +21,7 @@ export default function HowItWorks() {
             🚀 FFFLIPING COOL • NO APP REQUIRED
           </div>
           <h1 className="text-6xl font-bold leading-tight mb-6">
-            Never text <span className="text-emerald-400">"where are you?"</span> again
+            Never text <span className="text-emerald-400">&quot;where are you?&quot;</span> again
           </h1>
           <p className="text-2xl text-zinc-400">One link per building. Crystal-clear photos. Codes that vanish automatically.</p>
         </div>
@@ -31,42 +30,39 @@ export default function HowItWorks() {
       {/* Tabs */}
       <div className="max-w-6xl mx-auto px-6 py-12">
         <div className="flex flex-wrap gap-4 justify-center mb-12">
-          <button onClick={() => setActiveTab('manager')} className={`px-8 py-4 rounded-3xl font-semibold text-lg transition ${activeTab === 'manager' ? 'bg-emerald-500 text-black' : 'bg-zinc-900 hover:bg-zinc-800'}`}>🏢 Property Manager</button>
-          <button onClick={() => setActiveTab('resident')} className={`px-8 py-4 rounded-3xl font-semibold text-lg transition ${activeTab === 'resident' ? 'bg-emerald-500 text-black' : 'bg-zinc-900 hover:bg-zinc-800'}`}>🏠 Resident Routes</button>
-          <button onClick={() => setActiveTab('driver')} className={`px-8 py-4 rounded-3xl font-semibold text-lg transition ${activeTab === 'driver' ? 'bg-emerald-500 text-black' : 'bg-zinc-900 hover:bg-zinc-800'}`}>🚗 Driver View</button>
+          <button type="button" onClick={() => setActiveTab('manager')} className={`px-8 py-4 rounded-3xl font-semibold text-lg transition ${activeTab === 'manager' ? 'bg-emerald-500 text-black' : 'bg-zinc-900 hover:bg-zinc-800'}`}>🏢 Property Manager</button>
+          <button type="button" onClick={() => setActiveTab('resident')} className={`px-8 py-4 rounded-3xl font-semibold text-lg transition ${activeTab === 'resident' ? 'bg-emerald-500 text-black' : 'bg-zinc-900 hover:bg-zinc-800'}`}>🏠 Resident Routes</button>
+          <button type="button" onClick={() => setActiveTab('driver')} className={`px-8 py-4 rounded-3xl font-semibold text-lg transition ${activeTab === 'driver' ? 'bg-emerald-500 text-black' : 'bg-zinc-900 hover:bg-zinc-800'}`}>🚗 Driver View</button>
         </div>
 
-        {/* PROPERTY MANAGER - Full-width improved version */}
+        {/* PROPERTY MANAGER (unchanged) */}
         {activeTab === 'manager' && (
           <div className="bg-zinc-900 rounded-3xl p-10">
             <h2 className="text-4xl font-bold mb-6">Property Manager Instructions</h2>
             <p className="text-zinc-400 mb-10">Set up once per building. Every resident inherits the guide automatically.</p>
-            
             <div className="space-y-12">
               <div className="bg-zinc-800 rounded-2xl p-8">
                 <h3 className="font-semibold text-2xl mb-3">1. Add your building</h3>
                 <p className="text-emerald-400 text-xl">Building A, Building B, North Tower, Tower 3, etc.</p>
                 <p className="text-zinc-400 mt-2">Label it however you want</p>
               </div>
-
               <div className="bg-zinc-800 rounded-2xl p-8">
                 <h3 className="font-semibold text-2xl mb-4">2. Take 4 base photos</h3>
                 <p className="text-emerald-400 text-xl mb-8">Parking → Entrance → Lobby → Elevator</p>
                 <p className="text-zinc-400 mb-8">Optional: draw arrows (← → ↑ ↓) on any photo</p>
-
                 <div className="grid grid-cols-2 gap-6">
                   {driverSteps.map((photo) => (
                     <div key={photo.step} className="group">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img src={photo.url} alt={photo.title} className="w-full h-64 object-cover rounded-2xl border border-zinc-700 shadow-lg transition group-hover:scale-105" />
                       <p className="mt-4 text-center text-emerald-400 font-medium text-lg">{photo.title}</p>
                     </div>
                   ))}
                 </div>
-
                 <div className="mt-12 bg-zinc-900 rounded-2xl p-8 text-center">
                   <p className="text-zinc-400 text-2xl leading-tight">
                     One link per building = every unit in that building.<br />
-                    Updates instantly reflect on every resident’s link.
+                    Updates instantly reflect on every resident&apos;s link.
                   </p>
                 </div>
               </div>
@@ -74,13 +70,14 @@ export default function HowItWorks() {
           </div>
         )}
 
-        {/* RESIDENT ROUTES */}
+        {/* RESIDENT ROUTES - Updated with new timers + new Generated Link preview */}
         {activeTab === 'resident' && (
           <div className="bg-zinc-900 rounded-3xl p-10">
             <h2 className="text-4xl font-bold mb-6">Resident Routes</h2>
             <p className="text-zinc-400 mb-10">Your property manager gives you a 5-character code when they set up the building.</p>
 
             <div className="grid md:grid-cols-3 gap-8 items-stretch">
+              {/* How you get your link */}
               <div className="bg-zinc-800 rounded-3xl p-8 flex flex-col">
                 <div className="text-5xl mb-6">🔑</div>
                 <h3 className="text-2xl font-semibold mb-6">How you get your link</h3>
@@ -92,13 +89,14 @@ export default function HowItWorks() {
                 </ol>
               </div>
 
+              {/* From this / To this */}
               <div className="md:col-span-2 grid grid-cols-2 gap-6">
                 <div className="flex flex-col">
                   <div className="text-red-400 text-sm font-medium mb-3">FROM THIS...</div>
                   <div className="bg-white rounded-3xl p-5 flex-1 flex flex-col gap-4 text-zinc-900">
                     <div className="text-xs text-zinc-400">DRIVER TO RESIDENT</div>
-                    <div className="bg-zinc-200 rounded-2xl px-4 py-3 text-sm max-w-[80%]">I’m here, how do I get in?</div>
-                    <div className="bg-zinc-200 rounded-2xl px-4 py-3 text-sm max-w-[80%]">No code? I can’t access the building</div>
+                    <div className="bg-zinc-200 rounded-2xl px-4 py-3 text-sm max-w-[80%]">I&apos;m here, how do I get in?</div>
+                    <div className="bg-zinc-200 rounded-2xl px-4 py-3 text-sm max-w-[80%]">No code? I can&apos;t access the building</div>
                     <div className="bg-emerald-400 text-white rounded-2xl px-4 py-3 text-sm max-w-[80%] self-end">Go to the second entrance, turn left at the—</div>
                     <div className="bg-zinc-200 rounded-2xl px-4 py-3 text-sm max-w-[80%]">Order cancelled. Sorry.</div>
                   </div>
@@ -119,14 +117,14 @@ export default function HowItWorks() {
               </div>
             </div>
 
-            {/* Your Generated Link Preview */}
+            {/* NEW SECTION - What your generated link looks like */}
             <div className="mt-16">
               <h3 className="text-2xl font-semibold mb-6 text-center">What your generated link looks like</h3>
               <div className="max-w-md mx-auto bg-zinc-800 rounded-3xl p-8 text-center border border-zinc-700">
                 <div className="text-emerald-400 font-medium mb-1">findfoundfast.com/link/sunny-a</div>
                 <div className="text-3xl font-bold text-white mb-4">Expires in <span className="text-emerald-400">42 minutes</span></div>
                 <div className="bg-emerald-500 text-black font-semibold py-4 rounded-2xl text-xl mb-6">COPY LINK</div>
-                <p className="text-zinc-400 text-sm">Send this link to your driver or guest. They’ll see the exact step-by-step photos and gate code.</p>
+                <p className="text-zinc-400 text-sm">Send this link to your driver or guest. They&apos;ll see the exact step-by-step photos and gate code.</p>
               </div>
             </div>
           </div>
@@ -144,6 +142,7 @@ export default function HowItWorks() {
               <div className="p-8 space-y-10">
                 {driverSteps.map((photo) => (
                   <div key={photo.step} className="bg-zinc-800 rounded-2xl p-4">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img src={photo.url} alt={photo.title} className="w-full h-80 object-cover rounded-xl mb-4" />
                     <div className="flex gap-4">
                       <div className="bg-emerald-500 text-black w-8 h-8 rounded-2xl flex items-center justify-center font-bold flex-shrink-0">{photo.step}</div>
@@ -166,7 +165,7 @@ export default function HowItWorks() {
       {/* Final CTA */}
       <div className="py-24 text-center bg-zinc-950">
         <h2 className="text-4xl font-bold mb-6">Ready to make arrivals Flipping Cool for your property?</h2>
-        <Link href="#" className="inline-block bg-emerald-500 hover:bg-emerald-600 text-black px-12 py-5 rounded-3xl font-semibold text-xl">
+        <Link href="https://findfoundfast-final.vercel.app" className="inline-block bg-emerald-500 hover:bg-emerald-600 text-black px-12 py-5 rounded-3xl font-semibold text-xl">
           Request a Free Demo
         </Link>
       </div>
