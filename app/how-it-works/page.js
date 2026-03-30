@@ -81,27 +81,28 @@ export default function HowItWorks() {
         aria-hidden
       />
 
-      <header className="relative z-10 flex items-center justify-between border-b border-white/[0.08] bg-fff-bg/90 px-4 py-3 pt-[max(0.75rem,env(safe-area-inset-top))] backdrop-blur-md sm:px-6 sm:py-4">
+      <header className="relative z-10 border-b border-white/[0.08] bg-fff-bg/90 px-4 py-3 pt-[max(0.75rem,env(safe-area-inset-top))] backdrop-blur-md sm:px-6 sm:py-4">
+        <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
         <Link
           href="/"
           className={`text-lg font-extrabold tracking-tight text-fff-white transition-colors hover:text-fff-white/90 ${focusRing} rounded-sm`}
         >
           Find<span className="text-fff-green">Found</span>Fast
         </Link>
-        <div className="flex items-center gap-4 sm:gap-6">
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-2 sm:gap-6">
           <Link
             href="/"
-            className={`font-mono text-sm font-bold uppercase tracking-wide text-fff-white/90 transition-colors hover:text-fff-green ${focusRing} rounded-sm`}
+            className={`font-mono text-xs font-bold uppercase tracking-wide text-fff-white/90 transition-colors hover:text-fff-green sm:text-sm ${focusRing} rounded-sm`}
           >
             Home
           </Link>
           <Link
             href="/pricing"
-            className={`font-mono text-sm font-bold uppercase tracking-wide text-fff-white/90 transition-colors hover:text-fff-green ${focusRing} rounded-sm`}
+            className={`font-mono text-xs font-bold uppercase tracking-wide text-fff-white/90 transition-colors hover:text-fff-green sm:text-sm ${focusRing} rounded-sm`}
           >
             Pricing
           </Link>
-          <span className="font-mono text-sm font-bold uppercase tracking-wide text-fff-green">
+          <span className="font-mono text-xs font-bold uppercase tracking-wide text-fff-green sm:text-sm">
             How it works
           </span>
           <Link
@@ -111,13 +112,11 @@ export default function HowItWorks() {
             Get started →
           </Link>
         </div>
+        </div>
       </header>
 
-      <section className="relative z-10 border-b border-white/[0.08] px-4 pb-12 pt-8 text-center sm:px-6 sm:pb-16 sm:pt-12">
+      <section className="relative z-10 border-b border-white/[0.08] px-4 pb-6 pt-8 text-center sm:px-6 sm:pb-8 sm:pt-12">
         <div className="mx-auto max-w-3xl">
-          <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-fff-green/25 bg-fff-green/10 px-4 py-2 font-mono text-[11px] font-bold uppercase tracking-[0.14em] text-fff-green sm:text-xs sm:tracking-[0.2em]">
-            FFFLipping Cool · No app required
-          </p>
           <h1 className="mb-5 text-[clamp(1.75rem,6vw,3.75rem)] font-extrabold leading-[1.1] tracking-tight text-fff-white sm:text-5xl md:text-6xl">
             Never text <span className="text-fff-green">&quot;where are you?&quot;</span> again
           </h1>
@@ -129,7 +128,7 @@ export default function HowItWorks() {
         </div>
       </section>
 
-      <div className="relative z-10 mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-14">
+      <div className="relative z-10 mx-auto max-w-6xl px-4 py-5 sm:px-6 sm:py-8">
         <p className="mb-4 text-center font-mono text-xs font-bold uppercase tracking-[0.2em] text-fff-green">Pick a perspective</p>
         <div className="mb-10 flex flex-wrap justify-center gap-2 sm:gap-3" role="tablist" aria-label="How it works by role">
           {tabBtn('manager', '🏢 Property manager')}

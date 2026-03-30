@@ -22,26 +22,27 @@ export default function PricingPage() {
         }}
       />
 
-      <header className="relative z-10 flex items-center justify-between border-b border-white/[0.08] bg-fff-bg/90 px-4 py-3 pt-[max(0.75rem,env(safe-area-inset-top))] backdrop-blur-md sm:px-6 sm:py-4">
+      <header className="relative z-10 border-b border-white/[0.08] bg-fff-bg/90 px-4 py-3 pt-[max(0.75rem,env(safe-area-inset-top))] backdrop-blur-md sm:px-6 sm:py-4">
+        <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
         <Link
           href="/"
           className={`text-lg font-extrabold tracking-tight text-fff-white transition-colors hover:text-fff-white/90 ${focusRing} rounded-sm`}
         >
           Find<span className="text-fff-green">Found</span>Fast
         </Link>
-        <div className="flex items-center gap-4 sm:gap-6">
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-2 sm:gap-6">
           <Link
             href="/"
-            className={`font-mono text-sm font-bold uppercase tracking-wide text-fff-white/90 transition-colors hover:text-fff-green ${focusRing} rounded-sm`}
+            className={`font-mono text-xs font-bold uppercase tracking-wide text-fff-white/90 transition-colors hover:text-fff-green sm:text-sm ${focusRing} rounded-sm`}
           >
             Home
           </Link>
-          <span className="font-mono text-sm font-bold uppercase tracking-wide text-fff-green">
+          <span className="font-mono text-xs font-bold uppercase tracking-wide text-fff-green sm:text-sm">
             Pricing
           </span>
           <Link
             href="/how-it-works?tab=manager"
-            className={`font-mono text-sm font-bold uppercase tracking-wide text-fff-white/90 transition-colors hover:text-fff-green ${focusRing} rounded-sm`}
+            className={`font-mono text-xs font-bold uppercase tracking-wide text-fff-white/90 transition-colors hover:text-fff-green sm:text-sm ${focusRing} rounded-sm`}
           >
             How it works
           </Link>
@@ -51,6 +52,7 @@ export default function PricingPage() {
           >
             Get started →
           </Link>
+        </div>
         </div>
       </header>
 

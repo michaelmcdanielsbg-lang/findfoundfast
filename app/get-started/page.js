@@ -91,7 +91,8 @@ export default function GetStartedPage() {
         aria-hidden
       />
 
-      <header className="relative z-10 flex items-center justify-between border-b border-white/[0.08] bg-fff-bg/90 px-4 py-3 pt-[max(0.75rem,env(safe-area-inset-top))] backdrop-blur-md sm:px-6 sm:py-4">
+      <header className="relative z-10 border-b border-white/[0.08] bg-fff-bg/90 px-4 py-3 pt-[max(0.75rem,env(safe-area-inset-top))] backdrop-blur-md sm:px-6 sm:py-4">
+        <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
         <Link
           href="/"
           className={`text-lg font-extrabold tracking-tight text-fff-white transition-colors hover:text-fff-white/90 ${focusRing} rounded-sm`}
@@ -99,28 +100,29 @@ export default function GetStartedPage() {
           Find<span className="text-fff-green">Found</span>Fast
         </Link>
 
-        <div className="flex max-w-[min(100%,22rem)] flex-wrap items-center justify-end gap-x-4 gap-y-2 sm:max-w-none sm:gap-6">
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-2 sm:gap-6">
           <Link
             href="/"
-            className={`font-mono text-sm font-bold uppercase tracking-wide text-fff-white/90 transition-colors hover:text-fff-green ${focusRing} rounded-sm`}
+            className={`font-mono text-xs font-bold uppercase tracking-wide text-fff-white/90 transition-colors hover:text-fff-green sm:text-sm ${focusRing} rounded-sm`}
           >
             Home
           </Link>
           <Link
             href="/pricing"
-            className={`font-mono text-sm font-bold uppercase tracking-wide text-fff-white/90 transition-colors hover:text-fff-green ${focusRing} rounded-sm`}
+            className={`font-mono text-xs font-bold uppercase tracking-wide text-fff-white/90 transition-colors hover:text-fff-green sm:text-sm ${focusRing} rounded-sm`}
           >
             Pricing
           </Link>
           <Link
             href="/how-it-works?tab=manager"
-            className={`font-mono text-sm font-bold uppercase tracking-wide text-fff-white/90 transition-colors hover:text-fff-green ${focusRing} rounded-sm`}
+            className={`font-mono text-xs font-bold uppercase tracking-wide text-fff-white/90 transition-colors hover:text-fff-green sm:text-sm ${focusRing} rounded-sm`}
           >
             How it works
           </Link>
-          <span className="font-mono text-sm font-bold uppercase tracking-wide text-fff-green">
+          <span className="font-mono text-xs font-bold uppercase tracking-wide text-fff-green sm:text-sm">
             Get started
           </span>
+        </div>
         </div>
       </header>
 

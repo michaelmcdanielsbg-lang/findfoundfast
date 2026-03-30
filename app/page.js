@@ -59,7 +59,7 @@ export default function Home() {
         <p className="mb-2 max-w-2xl px-2 font-mono text-[11px] font-bold uppercase tracking-[0.18em] text-fff-green sm:text-xs">
           For property &amp; ops teams
         </p>
-        <p className="mb-6 max-w-2xl px-2 font-sans text-[15px] font-medium leading-relaxed tracking-normal text-fff-white/88 sm:mb-8 sm:text-base">
+        <p className="mb-6 max-w-2xl px-2 font-sans text-[15px] font-medium leading-relaxed tracking-normal text-fff-white/88 sm:mb-8 sm:text-base lg:max-w-3xl">
           Apartments · Offices · Nursing homes · Hospitals · School · Homes
         </p>
 
@@ -71,12 +71,12 @@ export default function Home() {
           <span className="text-fff-green">Fast.</span>
         </h1>
 
-        <p className="mb-8 max-w-lg font-mono text-[15px] leading-snug text-fff-yellow sm:mb-9 sm:text-base">
+        <p className="mb-8 max-w-lg font-mono text-[15px] leading-snug text-fff-yellow sm:mb-9 sm:text-base lg:max-w-2xl">
           Google Maps for your food & your homies
         </p>
 
         <section
-          className="mb-8 w-full max-w-lg rounded-2xl border border-white/[0.09] bg-white/[0.03] px-5 py-6 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.04)] sm:mb-10 sm:px-7 sm:py-7"
+          className="mb-8 w-full max-w-lg rounded-2xl border border-white/[0.09] bg-white/[0.03] px-5 py-6 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.04)] sm:mb-10 sm:px-7 sm:py-7 lg:max-w-2xl"
           aria-label="Problem and solution"
         >
           <div className="border-b border-white/[0.08] pb-6 text-center sm:pb-7">
@@ -86,7 +86,7 @@ export default function Home() {
             >
               Problem
             </h2>
-            <p className="mx-auto max-w-[22rem] text-base leading-relaxed text-fff-white/90 sm:text-lg sm:leading-snug">
+            <p className="mx-auto max-w-[22rem] text-base leading-relaxed text-fff-white/90 sm:text-lg sm:leading-snug lg:max-w-xl">
               Google Maps gets them to the address.{' '}
               <span className="font-semibold text-fff-yellow">Now what?</span>
             </p>
@@ -101,19 +101,19 @@ export default function Home() {
             <p className="mb-3 font-sans text-[1.65rem] font-extrabold leading-tight tracking-tight text-fff-green sm:text-3xl">
               A guide to you
             </p>
-            <p className="mx-auto max-w-[24rem] text-[15px] leading-relaxed text-fff-white/78 sm:text-[17px] sm:leading-relaxed">
+            <p className="mx-auto max-w-[24rem] text-[15px] leading-relaxed text-fff-white/78 sm:text-[17px] sm:leading-relaxed lg:max-w-xl">
               Step-by-step from the curb to the door, with codes that expire. No app for whoever&apos;s walking in.
             </p>
           </div>
         </section>
 
-        <p className="mb-8 max-w-lg text-[15px] leading-relaxed text-fff-white/75 sm:mb-8 sm:max-w-2xl sm:text-base sm:leading-relaxed">
+        <p className="mb-8 max-w-lg text-[15px] leading-relaxed text-fff-white/75 sm:mb-8 sm:max-w-2xl sm:text-base sm:leading-relaxed lg:max-w-3xl">
           Help drivers and guests find your resident—not just the building. A perk for property teams and the people who live there.
         </p>
 
         <section
           id="pricing"
-          className="mb-10 w-full max-w-sm rounded-2xl border border-fff-green/20 bg-fff-green/[0.06] px-5 py-6 text-center shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05)] sm:mb-10 sm:px-6 sm:py-6"
+          className="mb-10 w-full max-w-sm rounded-2xl border border-fff-green/20 bg-fff-green/[0.06] px-5 py-6 text-center shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05)] sm:mb-10 sm:px-6 sm:py-6 lg:max-w-md"
           aria-labelledby="pricing-heading"
         >
           <h2
@@ -143,7 +143,7 @@ export default function Home() {
           </p>
         </section>
 
-        <div className="flex w-full max-w-md flex-col items-center gap-4 sm:max-w-none sm:flex-row sm:justify-center sm:gap-5">
+        <div className="flex w-full max-w-md flex-col items-center gap-4 sm:max-w-none sm:flex-row sm:justify-center sm:gap-5 lg:max-w-xl">
           <Link
             href="/get-started"
             className={`inline-flex min-h-[48px] w-full min-w-0 items-center justify-center rounded-lg bg-fff-green px-6 py-3.5 font-mono text-xs font-bold uppercase tracking-wide text-fff-bg transition-colors active:opacity-90 sm:w-auto sm:px-8 hover:bg-fff-yellow ${focusRing}`}
