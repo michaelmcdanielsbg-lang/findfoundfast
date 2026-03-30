@@ -14,9 +14,9 @@ const spaceMono = Space_Mono({
 })
 
 export const metadata = {
-  title: 'FindFoundFast — Deliveries. Simplified.',
+  title: 'FindFoundFast — Micro-location guidance for deliveries or visitors',
   description:
-    'After Google Maps: a timed guide from curb to door so drivers and guests find your resident—no app required.',
+    'Micro-location guidance for deliveries or visitors—timed photo links and expiring gate codes so people find the door, not just the pin. No app for guests.',
 }
 
 export const viewport = {
@@ -29,7 +29,7 @@ export const viewport = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${dmSans.variable} ${spaceMono.variable}`}>
-      <body className="min-h-[100dvh] bg-fff-bg font-sans text-fff-white antialiased">
+      <body className="min-h-[100dvh] bg-fff-bg font-sans text-[17px] leading-relaxed text-fff-white antialiased">
         {children}
       </body>
     </html>

@@ -12,7 +12,8 @@ module.exports = {
           green: '#00FF87',
           yellow: '#FFE135',
           white: '#F5F5F5',
-          muted: '#555555',
+          // Secondary text on #0A0A0A — was #555 (too low-contrast for small UI copy)
+          muted: '#A3A3A3',
           rose: '#FF3D3D',
         },
         sky: { DEFAULT: '#2E8FF0', dark: '#1A5FA8', light: '#EBF4FE' },

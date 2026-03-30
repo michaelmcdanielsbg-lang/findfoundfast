@@ -82,20 +82,22 @@ export default function HowItWorks() {
 
       <section className="relative z-10 border-b border-white/[0.08] px-4 pb-12 pt-8 text-center sm:px-6 sm:pb-16 sm:pt-12">
         <div className="mx-auto max-w-3xl">
-          <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-fff-green/25 bg-fff-green/10 px-4 py-2 font-mono text-[10px] font-bold uppercase tracking-[0.15em] text-fff-green sm:text-xs sm:tracking-[0.2em]">
-            FFFliping Cool · No App Required
+          <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-fff-green/25 bg-fff-green/10 px-4 py-2 font-mono text-[11px] font-bold uppercase tracking-[0.14em] text-fff-green sm:text-xs sm:tracking-[0.2em]">
+            FFFLipping Cool · No app required
           </p>
           <h1 className="mb-5 text-[clamp(1.75rem,6vw,3.75rem)] font-extrabold leading-[1.1] tracking-tight text-fff-white sm:text-5xl md:text-6xl">
             Never text <span className="text-fff-green">&quot;where are you?&quot;</span> again
           </h1>
-          <p className="mx-auto max-w-2xl text-lg leading-relaxed text-fff-white/55 sm:text-xl">
-            One link per building. Crystal-clear photos. Codes that vanish automatically.
+          <p className="mx-auto max-w-2xl text-[17px] leading-relaxed text-fff-white/75 sm:text-xl sm:leading-relaxed">
+            <span className="font-semibold text-fff-white/90">
+              Micro-location guidance for deliveries or visitors
+            </span>
           </p>
         </div>
       </section>
 
       <div className="relative z-10 mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-14">
-        <p className="mb-4 text-center font-mono text-xs font-bold uppercase tracking-[0.2em] text-fff-green/90">Pick a perspective</p>
+        <p className="mb-4 text-center font-mono text-xs font-bold uppercase tracking-[0.2em] text-fff-green">Pick a perspective</p>
         <div className="mb-10 flex flex-wrap justify-center gap-2 sm:gap-3" role="tablist" aria-label="How it works by role">
           {tabBtn('manager', '🏢 Property manager')}
           {tabBtn('resident', '🏠 Resident')}
@@ -106,19 +108,21 @@ export default function HowItWorks() {
           {activeTab === 'manager' && (
             <div className="rounded-2xl border border-white/[0.08] bg-fff-card/80 p-6 shadow-2xl shadow-black/40 backdrop-blur-sm sm:p-10">
               <h2 className="mb-2 text-3xl font-extrabold tracking-tight text-fff-white sm:text-4xl">Property manager</h2>
-              <p className="mb-10 max-w-2xl text-fff-white/55">Set up once per building. Every resident inherits the guide automatically.</p>
+              <p className="mb-10 max-w-2xl text-[17px] leading-relaxed text-fff-white/75">
+                Set up once per building (profile + four base photos). Every resident inherits the same guide—your link updates for everyone.
+              </p>
               <div className="space-y-8">
                 <div className="rounded-2xl border border-white/[0.08] bg-fff-bg/80 p-6 sm:p-8">
                   <span className="font-mono text-xs font-bold uppercase tracking-wider text-fff-green">Step 1</span>
                   <h3 className="mt-2 text-xl font-bold text-fff-white sm:text-2xl">Add your building</h3>
                   <p className="mt-3 text-lg text-fff-green">Building A, Building B, North Tower, Tower 3, etc.</p>
-                  <p className="mt-2 text-sm text-fff-muted">Label it however you want.</p>
+                  <p className="mt-2 text-[15px] text-fff-muted">Label it however you want.</p>
                 </div>
                 <div className="rounded-2xl border border-white/[0.08] bg-fff-bg/80 p-6 sm:p-8">
                   <span className="font-mono text-xs font-bold uppercase tracking-wider text-fff-green">Step 2</span>
                   <h3 className="mt-2 text-xl font-bold text-fff-white sm:text-2xl">Take four base photos</h3>
                   <p className="mt-3 text-lg text-fff-green">Parking → Entrance → Lobby → Elevator</p>
-                  <p className="mt-2 text-sm text-fff-muted">Optional: draw arrows (← → ↑ ↓) on any photo.</p>
+                  <p className="mt-2 text-[15px] text-fff-muted">Optional: draw arrows (← → ↑ ↓) on any photo.</p>
                   <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2">
                     {driverSteps.map((photo) => (
                       <div key={photo.step} className="group">
@@ -136,7 +140,7 @@ export default function HowItWorks() {
                     <p className="text-base leading-relaxed text-fff-white/80 sm:text-lg">
                       One link per building = every unit in that building.
                       <br />
-                      <span className="text-fff-muted">Updates instantly for every resident&apos;s link.</span>
+                      <span className="text-fff-white/65">Updates instantly for every resident&apos;s link.</span>
                     </p>
                   </div>
                 </div>
@@ -149,13 +153,15 @@ export default function HowItWorks() {
           {activeTab === 'resident' && (
             <div className="rounded-2xl border border-white/[0.08] bg-fff-card/80 p-6 shadow-2xl shadow-black/40 backdrop-blur-sm sm:p-10">
               <h2 className="mb-2 text-3xl font-extrabold tracking-tight text-fff-white sm:text-4xl">Resident</h2>
-              <p className="mb-10 max-w-2xl text-fff-white/55">Your property manager gives you a 5-character code when they set up the building.</p>
+              <p className="mb-10 max-w-2xl text-[17px] leading-relaxed text-fff-white/75">
+                Your property manager gives you a 5-character code. Log in once, pick building + unit, choose a timer, copy your link.
+              </p>
 
               <div className="grid gap-8 lg:grid-cols-3">
                 <div className="flex flex-col rounded-2xl border border-white/[0.08] bg-fff-bg/80 p-6 sm:p-8">
                   <div className="mb-4 text-4xl">🔑</div>
                   <h3 className="mb-5 text-xl font-bold text-fff-white">How you get your link</h3>
-                  <ol className="flex flex-1 flex-col gap-4 text-left text-[15px] leading-relaxed text-fff-white/55">
+                  <ol className="flex flex-1 flex-col gap-4 text-left text-[16px] leading-relaxed text-fff-white/75">
                     <li>
                       <span className="font-semibold text-fff-green">1.</span> Log in with the code from your property manager
                     </li>
@@ -175,19 +181,19 @@ export default function HowItWorks() {
                   <div>
                     <p className="mb-3 font-mono text-xs font-bold uppercase tracking-wider text-fff-rose">Before</p>
                     <div className="flex h-full min-h-[280px] flex-col gap-3 rounded-2xl border border-white/[0.08] bg-fff-bg/90 p-4">
-                      <p className="text-center text-[10px] font-mono font-bold uppercase tracking-wider text-fff-muted">Driver ↔ Resident</p>
+                      <p className="text-center text-[11px] font-mono font-bold uppercase tracking-wider text-fff-muted">Driver ↔ Resident</p>
                       <div className="rounded-xl bg-fff-gray/80 px-3 py-2.5 text-sm text-fff-white/80">I&apos;m here, how do I get in?</div>
                       <div className="rounded-xl bg-fff-gray/80 px-3 py-2.5 text-sm text-fff-white/80">No code? I can&apos;t access the building.</div>
                       <div className="ml-auto max-w-[90%] rounded-xl border border-fff-green/25 bg-fff-green/10 px-3 py-2.5 text-sm text-fff-white">
                         Go to the second entrance, turn left at the—
                       </div>
-                      <div className="rounded-xl bg-fff-gray/80 px-3 py-2.5 text-sm text-fff-white/50">Order cancelled. Sorry.</div>
+                      <div className="rounded-xl bg-fff-gray/80 px-3 py-2.5 text-sm text-fff-white/65">Order cancelled. Sorry.</div>
                     </div>
                   </div>
                   <div>
                     <p className="mb-3 font-mono text-xs font-bold uppercase tracking-wider text-fff-green">After</p>
                     <div className="flex h-full min-h-[280px] flex-col gap-3 rounded-2xl border border-white/[0.08] bg-fff-bg/90 p-4">
-                      <p className="text-center text-[10px] font-mono font-bold uppercase tracking-wider text-fff-muted">Driver ↔ Resident</p>
+                      <p className="text-center text-[11px] font-mono font-bold uppercase tracking-wider text-fff-muted">Driver ↔ Resident</p>
                       <div className="rounded-xl bg-fff-gray/80 px-3 py-2.5 text-sm text-fff-white/80">On the way</div>
                       <div className="ml-auto max-w-[90%] rounded-xl border border-fff-green/35 bg-fff-green/15 px-3 py-2.5 text-sm text-fff-bg">
                         Here are the instructions — tap the link:
@@ -210,8 +216,8 @@ export default function HowItWorks() {
                     Expires in <span className="text-fff-green">42 minutes</span>
                   </div>
                   <div className="mt-6 rounded-xl bg-fff-green py-3.5 font-mono text-base font-bold uppercase tracking-wide text-fff-bg">Copy link</div>
-                  <p className="mt-5 text-sm leading-relaxed text-fff-muted">
-                    Send this to your driver or guest. They&apos;ll see photos and gate codes in one place.
+                  <p className="mt-5 text-[15px] leading-relaxed text-fff-white/70">
+                    Send this to your driver or guest. They&apos;ll see photos and gate codes in one place—no app.
                   </p>
                 </div>
               </div>
@@ -223,7 +229,9 @@ export default function HowItWorks() {
           {activeTab === 'driver' && (
             <div className="rounded-2xl border border-white/[0.08] bg-fff-card/80 p-6 shadow-2xl shadow-black/40 backdrop-blur-sm sm:p-10">
               <h2 className="mb-2 text-center text-3xl font-extrabold tracking-tight text-fff-white sm:text-4xl">Driver view</h2>
-              <p className="mx-auto mb-10 max-w-lg text-center text-fff-white/55">What they see in the browser — no install, no login.</p>
+              <p className="mx-auto mb-10 max-w-lg text-center text-[17px] leading-relaxed text-fff-white/75">
+                What they see in the browser—no install, no login.
+              </p>
               <div className="mx-auto max-w-lg overflow-hidden rounded-2xl border border-white/[0.1] bg-fff-bg shadow-2xl">
                 <div className="flex items-center justify-between border-b border-white/[0.08] bg-fff-bg px-5 py-4">
                   <span className="text-base font-extrabold text-fff-green">FindFoundFast</span>
@@ -238,7 +246,7 @@ export default function HowItWorks() {
                         <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-xl bg-fff-green font-mono text-sm font-bold text-fff-bg">{photo.step}</div>
                         <div>
                           <div className="font-semibold text-fff-white">{photo.title}</div>
-                          <div className="mt-1 text-sm leading-relaxed text-fff-white/50">{photo.desc}</div>
+                          <div className="mt-1 text-[15px] leading-relaxed text-fff-white/70">{photo.desc}</div>
                         </div>
                       </div>
                     </div>
@@ -255,7 +263,7 @@ export default function HowItWorks() {
 
       <section className="relative z-10 border-t border-white/[0.08] bg-fff-bg px-4 py-12 text-center sm:px-6 sm:py-20">
         <h2 className="mx-auto mb-6 max-w-xl text-2xl font-extrabold tracking-tight text-fff-white sm:text-3xl md:text-4xl">
-          Ready to make arrivals Flipping Cool for your property?
+          Ready to make arrivals FFFLipping Cool for your property?
         </h2>
         <Link
           href={APP_URL}
@@ -265,8 +273,12 @@ export default function HowItWorks() {
         </Link>
       </section>
 
-      <footer className="relative z-10 border-t border-white/[0.06] py-6 pb-[max(1.5rem,env(safe-area-inset-bottom))] text-center font-mono text-xs text-fff-muted sm:py-8">
-        FindFoundFast · findfoundfast.com
+      <footer className="relative z-10 border-t border-white/[0.06] py-6 pb-[max(1.5rem,env(safe-area-inset-bottom))] text-center font-mono text-[13px] text-fff-muted sm:py-8 sm:text-sm">
+        <span className="text-fff-white/80">FindFoundFast</span>
+        <span className="mx-1.5 text-fff-muted/90">·</span>
+        <a href="https://findfoundfast.com" rel="noopener noreferrer" className="transition-colors hover:text-fff-green">
+          findfoundfast.com
+        </a>
       </footer>
     </div>
   );
