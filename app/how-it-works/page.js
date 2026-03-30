@@ -165,7 +165,7 @@ export default function HowItWorks() {
       {/* Final CTA */}
       <div className="py-24 text-center bg-zinc-950">
         <h2 className="text-4xl font-bold mb-6">Ready to make arrivals Flipping Cool for your property?</h2>
-        <Link href="https://findfoundfast-final.vercel.app" className="inline-block bg-emerald-500 hover:bg-emerald-600 text-black px-12 py-5 rounded-3xl font-semibold text-xl">
+        <Link href="https://findfoundfast.vercel.app" className="inline-block bg-emerald-500 hover:bg-emerald-600 text-black px-12 py-5 rounded-3xl font-semibold text-xl">
           Request a Free Demo
         </Link>
       </div>
