@@ -78,11 +78,11 @@ export default function Home() {
           className="mb-8 w-full max-w-6xl rounded-2xl border border-white/[0.09] bg-white/[0.03] px-4 py-6 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.04)] sm:mb-10 sm:px-6 sm:py-8"
           aria-label="Problem and solution"
         >
-          <div className="grid gap-6 border-b border-white/[0.08] pb-8 lg:grid-cols-2 lg:items-center lg:gap-8 lg:pb-10">
+          <div className="flex flex-col gap-6 border-b border-white/[0.08] pb-8 sm:gap-8 sm:pb-10">
             <div className="text-left">
               <h2
                 id="problem-heading"
-                className="mb-3 font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-fff-rose/95"
+                className="mb-3 font-mono text-sm font-bold uppercase tracking-[0.18em] text-fff-rose/95 sm:text-base"
               >
                 Problem
               </h2>
@@ -91,7 +91,7 @@ export default function Home() {
                 <span className="font-semibold text-fff-yellow">Now what?</span>
               </p>
             </div>
-            <div className="flex w-full justify-center lg:justify-end">
+            <div className="flex w-full justify-center">
               <ProblemVisual />
             </div>
           </div>
@@ -102,11 +102,11 @@ export default function Home() {
             </span>
           </div>
 
-          <div className="grid gap-6 pt-2 lg:grid-cols-2 lg:items-start lg:gap-8 lg:pt-0">
+          <div className="flex flex-col gap-6 pt-2 sm:gap-8 sm:pt-0">
             <div className="text-left">
               <h2
                 id="solution-heading"
-                className="mb-3 font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-fff-green"
+                className="mb-3 font-mono text-sm font-bold uppercase tracking-[0.18em] text-fff-green sm:text-base"
               >
                 Solution
               </h2>
@@ -117,7 +117,7 @@ export default function Home() {
                 Step-by-step from where to park to where you’re going—door, gate, or lobby. No app needed.
               </p>
             </div>
-            <div className="flex w-full justify-center lg:justify-end">
+            <div className="flex w-full justify-center">
               <SolutionVisual />
             </div>
           </div>
