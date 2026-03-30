@@ -4,6 +4,9 @@ import Link from 'next/link';
 
 const APP_URL = 'https://findfoundfast-final.vercel.app';
 
+const focusRing =
+  'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fff-green/55 focus-visible:ring-offset-2 focus-visible:ring-offset-fff-bg';
+
 export default function HowItWorks() {
   /** Property manager first — default for “How it works” */
   const [activeTab, setActiveTab] = useState('manager');
@@ -72,12 +75,29 @@ export default function HowItWorks() {
       />
 
       <header className="relative z-10 flex items-center justify-between border-b border-white/[0.08] bg-fff-bg/90 px-4 py-3 pt-[max(0.75rem,env(safe-area-inset-top))] backdrop-blur-md sm:px-6 sm:py-4">
-        <Link href="/" className="text-lg font-extrabold tracking-tight">
+        <Link
+          href="/"
+          className={`text-lg font-extrabold tracking-tight text-fff-white transition-colors hover:text-fff-white/90 ${focusRing} rounded-sm`}
+        >
           Find<span className="text-fff-green">Found</span>Fast
         </Link>
-        <a href={APP_URL} className="font-mono text-sm font-bold uppercase tracking-wide text-fff-green transition hover:text-fff-yellow">
-          Try app →
-        </a>
+        <div className="flex items-center gap-4 sm:gap-6">
+          <Link
+            href="/"
+            className={`font-mono text-sm font-bold uppercase tracking-wide text-fff-white/90 transition-colors hover:text-fff-green ${focusRing} rounded-sm`}
+          >
+            Home
+          </Link>
+          <Link
+            href="/pricing"
+            className={`font-mono text-sm font-bold uppercase tracking-wide text-fff-white/90 transition-colors hover:text-fff-green ${focusRing} rounded-sm`}
+          >
+            Pricing
+          </Link>
+          <span className="font-mono text-sm font-bold uppercase tracking-wide text-fff-green">
+            How it works
+          </span>
+        </div>
       </header>
 
       <section className="relative z-10 border-b border-white/[0.08] px-4 pb-12 pt-8 text-center sm:px-6 sm:pb-16 sm:pt-12">
@@ -180,28 +200,42 @@ export default function HowItWorks() {
                 <div className="grid gap-6 lg:col-span-2 lg:grid-cols-2">
                   <div>
                     <p className="mb-3 font-mono text-xs font-bold uppercase tracking-wider text-fff-rose">Before</p>
-                    <div className="flex h-full min-h-[280px] flex-col gap-3 rounded-2xl border border-white/[0.08] bg-fff-bg/90 p-4">
-                      <p className="text-center text-[11px] font-mono font-bold uppercase tracking-wider text-fff-muted">Driver ↔ Resident</p>
-                      <div className="rounded-xl bg-fff-gray/80 px-3 py-2.5 text-sm text-fff-white/80">I&apos;m here, how do I get in?</div>
-                      <div className="rounded-xl bg-fff-gray/80 px-3 py-2.5 text-sm text-fff-white/80">No code? I can&apos;t access the building.</div>
-                      <div className="ml-auto max-w-[90%] rounded-xl border border-fff-green/25 bg-fff-green/10 px-3 py-2.5 text-sm text-fff-white">
+                    <div className="flex h-full min-h-[280px] flex-col gap-3 rounded-2xl border border-white/[0.14] bg-[#161616] p-4 shadow-inner shadow-black/20">
+                      <p className="text-center text-[11px] font-mono font-bold uppercase tracking-wider text-fff-white/65">
+                        Driver ↔ Resident
+                      </p>
+                      <div className="rounded-xl border border-white/[0.06] bg-white/[0.07] px-3 py-2.5 text-sm leading-snug text-fff-white/92">
+                        I&apos;m here, how do I get in?
+                      </div>
+                      <div className="rounded-xl border border-white/[0.06] bg-white/[0.07] px-3 py-2.5 text-sm leading-snug text-fff-white/92">
+                        No code? I can&apos;t access the building.
+                      </div>
+                      <div className="ml-auto max-w-[90%] rounded-xl border border-fff-green/40 bg-fff-green/20 px-3 py-2.5 text-sm font-medium leading-snug text-fff-white">
                         Go to the second entrance, turn left at the—
                       </div>
-                      <div className="rounded-xl bg-fff-gray/80 px-3 py-2.5 text-sm text-fff-white/65">Order cancelled. Sorry.</div>
+                      <div className="rounded-xl border border-white/[0.06] bg-white/[0.07] px-3 py-2.5 text-sm leading-snug text-fff-white/80">
+                        Order cancelled. Sorry.
+                      </div>
                     </div>
                   </div>
                   <div>
                     <p className="mb-3 font-mono text-xs font-bold uppercase tracking-wider text-fff-green">After</p>
-                    <div className="flex h-full min-h-[280px] flex-col gap-3 rounded-2xl border border-white/[0.08] bg-fff-bg/90 p-4">
-                      <p className="text-center text-[11px] font-mono font-bold uppercase tracking-wider text-fff-muted">Driver ↔ Resident</p>
-                      <div className="rounded-xl bg-fff-gray/80 px-3 py-2.5 text-sm text-fff-white/80">On the way</div>
-                      <div className="ml-auto max-w-[90%] rounded-xl border border-fff-green/35 bg-fff-green/15 px-3 py-2.5 text-sm text-fff-bg">
+                    <div className="flex h-full min-h-[280px] flex-col gap-3 rounded-2xl border border-white/[0.14] bg-[#161616] p-4 shadow-inner shadow-black/20">
+                      <p className="text-center text-[11px] font-mono font-bold uppercase tracking-wider text-fff-white/65">
+                        Driver ↔ Resident
+                      </p>
+                      <div className="rounded-xl border border-white/[0.06] bg-white/[0.07] px-3 py-2.5 text-sm leading-snug text-fff-white/92">
+                        On the way
+                      </div>
+                      <div className="ml-auto max-w-[90%] rounded-xl border border-fff-green/50 bg-fff-green/25 px-3 py-2.5 text-sm font-medium leading-snug text-fff-white shadow-sm shadow-fff-green/10">
                         Here are the instructions — tap the link:
                       </div>
-                      <div className="rounded-xl border border-fff-green/25 bg-fff-card p-3 text-left text-xs">
-                        <div className="font-bold text-fff-green">FindFoundFast</div>
-                        <div className="mt-0.5 text-fff-white/90">Sunny Apartments · Building A</div>
-                        <div className="mt-1 font-mono text-[10px] text-fff-green/90">Expires in 42 min · Step-by-step photos</div>
+                      <div className="rounded-xl border border-fff-green/35 bg-[#1e1e1e] p-3.5 text-left shadow-sm shadow-black/30">
+                        <div className="text-sm font-bold text-fff-green">FindFoundFast</div>
+                        <div className="mt-1 text-sm text-fff-white/95">Sunny Apartments · Building A</div>
+                        <div className="mt-2 font-mono text-[11px] font-medium leading-snug text-fff-green">
+                          Expires in 42 min · Step-by-step photos
+                        </div>
                       </div>
                     </div>
                   </div>

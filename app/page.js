@@ -40,13 +40,12 @@ export default function Home() {
           >
             Pricing
           </Link>
-          <a
-            href={APP_URL}
-            rel="noopener noreferrer"
-            className={`font-mono text-sm font-bold uppercase tracking-wide text-fff-green transition-colors hover:text-fff-yellow ${focusRing} rounded-sm`}
+          <Link
+            href="/how-it-works?tab=manager"
+            className={`font-mono text-sm font-bold uppercase tracking-wide text-fff-white/90 transition-colors hover:text-fff-green ${focusRing} rounded-sm`}
           >
-            Try it free →
-          </a>
+            How it works
+          </Link>
         </div>
       </header>
 
