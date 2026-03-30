@@ -115,20 +115,15 @@ export default function HowItWorks() {
         </div>
       </header>
 
-      <section className="relative z-10 border-b border-white/[0.08] px-4 pb-6 pt-8 text-center sm:px-6 sm:pb-8 sm:pt-12">
+      <section className="relative z-10 border-b border-white/[0.08] px-4 pb-4 pt-5 text-center sm:px-6 sm:pb-5 sm:pt-8">
         <div className="mx-auto max-w-3xl">
-          <h1 className="mb-5 text-[clamp(1.75rem,6vw,3.75rem)] font-extrabold leading-[1.1] tracking-tight text-fff-white sm:text-5xl md:text-6xl">
-            Never text <span className="text-fff-green">&quot;where are you?&quot;</span> again
+          <h1 className="text-[clamp(1.5rem,5vw,2.75rem)] font-extrabold leading-[1.15] tracking-tight text-fff-white sm:text-4xl md:text-5xl">
+            <span className="text-fff-white/95">Micro-location guidance for deliveries or visitors</span>
           </h1>
-          <p className="mx-auto max-w-2xl text-[17px] leading-relaxed text-fff-white/75 sm:text-xl sm:leading-relaxed">
-            <span className="font-semibold text-fff-white/90">
-              Micro-location guidance for deliveries or visitors
-            </span>
-          </p>
         </div>
       </section>
 
-      <div className="relative z-10 mx-auto max-w-6xl px-4 py-5 sm:px-6 sm:py-8">
+      <div className="relative z-10 mx-auto max-w-6xl px-4 py-4 sm:px-6 sm:py-6">
         <p className="mb-4 text-center font-mono text-xs font-bold uppercase tracking-[0.2em] text-fff-green">Pick a perspective</p>
         <div className="mb-10 flex flex-wrap justify-center gap-2 sm:gap-3" role="tablist" aria-label="How it works by role">
           {tabBtn('manager', '🏢 Property manager')}
@@ -141,7 +136,7 @@ export default function HowItWorks() {
             <div className="rounded-2xl border border-white/[0.08] bg-fff-card/80 p-6 shadow-2xl shadow-black/40 backdrop-blur-sm sm:p-10">
               <h2 className="mb-2 text-3xl font-extrabold tracking-tight text-fff-white sm:text-4xl">Property manager</h2>
               <p className="mb-10 max-w-2xl text-[17px] leading-relaxed text-fff-white/75">
-                Set up once per building (your profile + key photos). Add more photos if you want—everything stays tied to the same expiring guide link.
+                Improve your property flow in minutes—fewer circling cars, wrong parking, and jams. Residents, visitors, and delivery stay in sync; fewer front-desk calls.
               </p>
               <div className="space-y-8">
                 <div className="rounded-2xl border border-white/[0.08] bg-fff-bg/80 p-6 sm:p-8">
@@ -186,32 +181,9 @@ export default function HowItWorks() {
         <div id="panel-resident" role="tabpanel" aria-labelledby="tab-resident" hidden={activeTab !== 'resident'}>
           {activeTab === 'resident' && (
             <div className="rounded-2xl border border-white/[0.08] bg-fff-card/80 p-6 shadow-2xl shadow-black/40 backdrop-blur-sm sm:p-10">
-              <h2 className="mb-2 text-3xl font-extrabold tracking-tight text-fff-white sm:text-4xl">Resident</h2>
-              <p className="mb-10 max-w-2xl text-[17px] leading-relaxed text-fff-white/75">
-                Your property manager gives you a 5-character code. Log in once, pick building + unit, choose a timer, copy your link.
-              </p>
+              <h2 className="mb-6 text-3xl font-extrabold tracking-tight text-fff-white sm:mb-8 sm:text-4xl">Resident</h2>
 
-              <div className="grid gap-8 lg:grid-cols-3">
-                <div className="flex flex-col rounded-2xl border border-white/[0.08] bg-fff-bg/80 p-6 sm:p-8">
-                  <div className="mb-4 text-4xl">🔑</div>
-                  <h3 className="mb-5 text-xl font-bold text-fff-white">How you get your link</h3>
-                  <ol className="flex flex-1 flex-col gap-4 text-left text-[16px] leading-relaxed text-fff-white/75">
-                    <li>
-                      <span className="font-semibold text-fff-green">1.</span> Log in with the code from your property manager
-                    </li>
-                    <li>
-                      <span className="font-semibold text-fff-green">2.</span> Select your building
-                    </li>
-                    <li>
-                      <span className="font-semibold text-fff-green">3.</span> Type your unit number
-                    </li>
-                    <li>
-                      <span className="font-semibold text-fff-green">4.</span> Pick 30 min / 1 hr / 1 day → Copy
-                    </li>
-                  </ol>
-                </div>
-
-                <div className="grid gap-6 lg:col-span-2 lg:grid-cols-2">
+              <div className="grid gap-6 lg:grid-cols-2">
                   <div>
                     <p className="mb-3 font-mono text-xs font-bold uppercase tracking-wider text-fff-rose">Before</p>
                     <div className="flex h-full min-h-[280px] flex-col gap-3 rounded-2xl border border-white/[0.14] bg-[#161616] p-4 shadow-inner shadow-black/20">
@@ -253,10 +225,9 @@ export default function HowItWorks() {
                       </div>
                     </div>
                   </div>
-                </div>
               </div>
 
-              <div className="mt-12">
+              <div className="mt-8 sm:mt-10">
                 <h3 className="mb-6 text-center text-lg font-bold text-fff-white sm:text-xl">What your generated link looks like</h3>
                 <div className="mx-auto max-w-md rounded-2xl border border-fff-green/25 bg-fff-bg/90 p-8 text-center ring-1 ring-fff-green/10">
                   <div className="font-mono text-sm text-fff-green">findfoundfast.com/link/sunny-a</div>

@@ -55,23 +55,21 @@ export default function Home() {
         </div>
       </header>
 
-      <main className="relative z-10 flex flex-1 flex-col items-center justify-center px-4 py-12 text-center sm:px-6 sm:py-16">
-        <p className="mb-2 max-w-2xl px-2 font-mono text-[11px] font-bold uppercase tracking-[0.18em] text-fff-green sm:text-xs">
+      <main className="relative z-10 flex flex-1 flex-col items-center justify-center px-4 pt-6 pb-10 text-center sm:px-6 sm:pt-8 sm:pb-12">
+        <p className="mb-1.5 max-w-2xl px-2 font-mono text-[11px] font-bold uppercase tracking-[0.18em] text-fff-green sm:text-xs">
           For property &amp; ops teams
         </p>
-        <p className="mb-6 max-w-2xl px-2 font-sans text-[15px] font-medium leading-relaxed tracking-normal text-fff-white/88 sm:mb-8 sm:text-base lg:max-w-3xl">
+        <p className="mb-4 max-w-2xl px-2 font-sans text-[15px] font-medium leading-relaxed tracking-normal text-fff-white/88 sm:mb-5 sm:text-base lg:max-w-3xl">
           Apartments · Offices · Nursing homes · Hospitals · School · Homes
         </p>
 
-        <h1 className="mb-5 max-w-4xl text-[clamp(2.5rem,10vw,4.5rem)] font-extrabold leading-[0.95] tracking-tight sm:mb-6 sm:text-6xl md:text-7xl">
-          <span className="text-fff-green">Find.</span>
-          <br />
-          <span className="text-fff-white">Found.</span>
-          <br />
-          <span className="text-fff-green">Fast.</span>
+        <h1 className="mb-4 max-w-4xl text-[clamp(2.25rem,8vw,3.75rem)] font-extrabold leading-[1.05] tracking-tight sm:mb-5 sm:text-5xl md:text-6xl">
+          <span className="text-fff-green">Find</span>
+          <span className="text-fff-white">Found</span>
+          <span className="text-fff-green">Fast</span>
         </h1>
 
-        <p className="mb-8 max-w-lg font-mono text-[15px] leading-snug text-fff-yellow sm:mb-9 sm:text-base lg:max-w-2xl">
+        <p className="mb-6 max-w-lg font-mono text-[15px] leading-snug text-fff-yellow sm:mb-7 sm:text-base lg:max-w-2xl">
           Google Maps for your food & your homies
         </p>
 
