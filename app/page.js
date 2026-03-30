@@ -33,13 +33,21 @@ export default function Home() {
         >
           Find<span className="text-fff-green">Found</span>Fast
         </Link>
-        <a
-          href={APP_URL}
-          rel="noopener noreferrer"
-          className={`font-mono text-sm font-bold uppercase tracking-wide text-fff-green transition-colors hover:text-fff-yellow ${focusRing} rounded-sm`}
-        >
-          Try it free →
-        </a>
+        <div className="flex items-center gap-4 sm:gap-6">
+          <Link
+            href="/pricing"
+            className={`font-mono text-sm font-bold uppercase tracking-wide text-fff-white/90 transition-colors hover:text-fff-green ${focusRing} rounded-sm`}
+          >
+            Pricing
+          </Link>
+          <a
+            href={APP_URL}
+            rel="noopener noreferrer"
+            className={`font-mono text-sm font-bold uppercase tracking-wide text-fff-green transition-colors hover:text-fff-yellow ${focusRing} rounded-sm`}
+          >
+            Try it free →
+          </a>
+        </div>
       </header>
 
       <main className="relative z-10 flex flex-1 flex-col items-center justify-center px-4 py-12 text-center sm:px-6 sm:py-16">
@@ -91,9 +99,38 @@ export default function Home() {
           </div>
         </section>
 
-        <p className="mb-8 max-w-lg text-[15px] leading-relaxed text-fff-white/75 sm:mb-10 sm:max-w-2xl sm:text-base sm:leading-relaxed">
+        <p className="mb-8 max-w-lg text-[15px] leading-relaxed text-fff-white/75 sm:mb-8 sm:max-w-2xl sm:text-base sm:leading-relaxed">
           Help drivers and guests find your resident—not just the building. A perk for property teams and the people who live there.
         </p>
+
+        <section
+          id="pricing"
+          className="mb-10 w-full max-w-lg rounded-2xl border border-fff-green/20 bg-fff-green/[0.06] px-5 py-6 text-center shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05)] sm:mb-10 sm:px-7 sm:py-7"
+          aria-labelledby="pricing-heading"
+        >
+          <h2
+            id="pricing-heading"
+            className="mb-4 font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-fff-green"
+          >
+            Pricing
+          </h2>
+          <p className="mb-1 font-sans text-4xl font-extrabold tracking-tight text-fff-green sm:text-5xl">
+            $49<span className="text-xl font-bold text-fff-white/85 sm:text-2xl">/mo</span>
+          </p>
+          <p className="mb-4 text-base font-semibold text-fff-white sm:text-lg">per property</p>
+          <p className="mx-auto max-w-md text-[15px] leading-relaxed text-fff-white/82 sm:text-[17px] sm:leading-relaxed">
+            Start with $49/month per property. Covers unlimited buildings and units inside that property.
+          </p>
+          <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-fff-white/65">
+            <span className="text-fff-yellow/90">Annual:</span> $490/yr per property (2 months free)—details on full pricing.
+          </p>
+          <Link
+            href="/pricing"
+            className={`mt-5 inline-block font-mono text-xs font-bold uppercase tracking-wide text-fff-green underline-offset-4 transition-colors hover:text-fff-yellow ${focusRing} rounded-sm`}
+          >
+            Full pricing →
+          </Link>
+        </section>
 
         <div className="flex w-full max-w-md flex-col items-center gap-4 sm:max-w-none sm:flex-row sm:justify-center sm:gap-5">
           <a
