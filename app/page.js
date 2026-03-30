@@ -105,7 +105,7 @@ export default function Home() {
 
         <section
           id="pricing"
-          className="mb-10 w-full max-w-lg rounded-2xl border border-fff-green/20 bg-fff-green/[0.06] px-5 py-6 text-center shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05)] sm:mb-10 sm:px-7 sm:py-7"
+          className="mb-10 w-full max-w-sm rounded-2xl border border-fff-green/20 bg-fff-green/[0.06] px-5 py-6 text-center shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05)] sm:mb-10 sm:px-6 sm:py-6"
           aria-labelledby="pricing-heading"
         >
           <h2
@@ -117,18 +117,15 @@ export default function Home() {
           <p className="mb-1 font-sans text-4xl font-extrabold tracking-tight text-fff-green sm:text-5xl">
             $49<span className="text-xl font-bold text-fff-white/85 sm:text-2xl">/mo</span>
           </p>
-          <p className="mb-4 text-base font-semibold text-fff-white sm:text-lg">per property</p>
-          <p className="mx-auto max-w-md text-[15px] leading-relaxed text-fff-white/82 sm:text-[17px] sm:leading-relaxed">
-            Start with $49/month per property. Covers unlimited buildings and units inside that property.
-          </p>
-          <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-fff-white/65">
-            <span className="text-fff-yellow/90">Annual:</span> $490/yr per property (2 months free)—details on full pricing.
+          <p className="text-base font-semibold text-fff-white sm:text-lg">per property</p>
+          <p className="mx-auto mt-3 max-w-xs text-[15px] leading-snug text-fff-white/80">
+            Unlimited buildings &amp; units.
           </p>
           <Link
             href="/pricing"
             className={`mt-5 inline-block font-mono text-xs font-bold uppercase tracking-wide text-fff-green underline-offset-4 transition-colors hover:text-fff-yellow ${focusRing} rounded-sm`}
           >
-            Full pricing →
+            See full plan →
           </Link>
         </section>
 
