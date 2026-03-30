@@ -77,7 +77,7 @@ export default function PricingPage() {
           </p>
           <ol className="list-decimal space-y-2 pl-5 text-[15px] leading-relaxed text-fff-white/78">
             <li>We email you to confirm details and billing.</li>
-            <li>You add your building profile + four base photos.</li>
+            <li>You add your building profile + key photos (and you can add more).</li>
             <li>Residents get codes; drivers tap timed links—no app.</li>
           </ol>
         </div>

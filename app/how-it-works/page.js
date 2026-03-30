@@ -133,7 +133,7 @@ export default function HowItWorks() {
             <div className="rounded-2xl border border-white/[0.08] bg-fff-card/80 p-6 shadow-2xl shadow-black/40 backdrop-blur-sm sm:p-10">
               <h2 className="mb-2 text-3xl font-extrabold tracking-tight text-fff-white sm:text-4xl">Property manager</h2>
               <p className="mb-10 max-w-2xl text-[17px] leading-relaxed text-fff-white/75">
-                Set up once per building (profile + four base photos). Every resident inherits the same guide—your link updates for everyone.
+                Set up once per building (your profile + key photos). Add more photos if you want—everything stays tied to the same expiring guide link.
               </p>
               <div className="space-y-8">
                 <div className="rounded-2xl border border-white/[0.08] bg-fff-bg/80 p-6 sm:p-8">
@@ -144,8 +144,10 @@ export default function HowItWorks() {
                 </div>
                 <div className="rounded-2xl border border-white/[0.08] bg-fff-bg/80 p-6 sm:p-8">
                   <span className="font-mono text-xs font-bold uppercase tracking-wider text-fff-green">Step 2</span>
-                  <h3 className="mt-2 text-xl font-bold text-fff-white sm:text-2xl">Take four base photos</h3>
-                  <p className="mt-3 text-lg text-fff-green">Parking → Entrance → Lobby → Elevator</p>
+                  <h3 className="mt-2 text-xl font-bold text-fff-white sm:text-2xl">Add key photos</h3>
+                  <p className="mt-3 text-lg text-fff-green">
+                    Parking → Entrance → Lobby → Elevator <span className="text-fff-white/55">(plus any extras)</span>
+                  </p>
                   <p className="mt-2 text-[15px] text-fff-muted">Optional: draw arrows (← → ↑ ↓) on any photo.</p>
                   <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2">
                     {driverSteps.map((photo) => (
