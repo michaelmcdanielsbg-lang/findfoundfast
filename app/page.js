@@ -159,6 +159,75 @@ export default function Home() {
         <p className="mt-8 inline-flex items-center gap-2 rounded-full border border-fff-green/25 bg-fff-green/10 px-4 py-2 font-mono text-[11px] font-bold uppercase tracking-[0.14em] text-fff-green sm:mt-10 sm:text-xs sm:tracking-[0.2em]">
           FFFLipping Cool · No app required
         </p>
+
+        <section
+          className="mt-10 w-full max-w-5xl rounded-2xl border border-white/[0.08] bg-fff-card/40 px-4 py-5 sm:px-6"
+          aria-label="What people are saying"
+        >
+          <div className="flex items-baseline justify-between gap-4">
+            <p className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-fff-green/90 sm:text-[11px] sm:tracking-[0.22em]">
+              Real notes
+            </p>
+            <p className="font-mono text-[11px] text-fff-white/45">
+              Auto-scrolling
+            </p>
+          </div>
+
+          <div className="relative mt-3 overflow-hidden rounded-xl border border-white/[0.06] bg-[#0f0f0f]/40">
+            <style>{`
+              @keyframes ff-slow-marquee {
+                0% {
+                  transform: translateX(0);
+                }
+                100% {
+                  transform: translateX(-50%);
+                }
+              }
+              @media (prefers-reduced-motion: reduce) {
+                .ff-marquee-track {
+                  animation: none !important;
+                  transform: none !important;
+                }
+              }
+            `}</style>
+
+            <div
+              className="ff-marquee-track flex w-max gap-4 px-4 py-4"
+              style={{ animation: 'ff-slow-marquee 46s linear infinite' }}
+            >
+              {[
+                'My friends and family can never find my apartment.',
+                'My food delivery was left at the wrong building again.',
+                'I’m tired of sending instructions to navigate this large building.',
+                'I want one link that does the directions for me.',
+                'Stop reposting screenshots—make it simple and timed.',
+                'Gate codes get lost in chat. This makes it easy.',
+              ]
+                .concat([
+                  'My friends and family can never find my apartment.',
+                  'My food delivery was left at the wrong building again.',
+                  'I’m tired of sending instructions to navigate this large building.',
+                  'I want one link that does the directions for me.',
+                  'Stop reposting screenshots—make it simple and timed.',
+                  'Gate codes get lost in chat. This makes it easy.',
+                ])
+                .map((t, idx) => (
+                  <div
+                    // Using idx for stable keys across duplicates
+                    key={idx}
+                    className="w-[320px] flex-shrink-0 rounded-xl border border-white/[0.08] bg-[#111] px-4 py-3"
+                  >
+                    <p className="text-[14px] leading-relaxed text-fff-white/85">
+                      {t}
+                    </p>
+                    <p className="mt-2 font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-fff-green/70">
+                      Resident
+                    </p>
+                  </div>
+                ))}
+            </div>
+          </div>
+        </section>
       </main>
 
       <footer className="relative z-10 border-t border-white/[0.06] py-6 pb-[max(1.5rem,env(safe-area-inset-bottom))] text-center font-mono text-[13px] text-fff-muted sm:py-8 sm:text-sm">

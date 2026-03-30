@@ -32,6 +32,15 @@ export default function HowItWorks() {
     { step: 4, title: 'Your Door', desc: 'Unit 412 – last door on the right. Leave at door. Thank you!', url: 'https://i.ibb.co/0VWt3QZk/Modern-elevator-in-sleek-lobby-setting.png' },
   ];
 
+  const testimonials = [
+    'My friends and family can never find my apartment.',
+    'My food delivery was left at the wrong building again.',
+    'I’m tired of sending instructions to navigate this large building.',
+    'Gate codes get lost in the chat—then everyone shows up confused.',
+    'I want one link that does the directions for me.',
+    'Stop reposting screenshots—make it simple and timed.',
+  ];
+
   const tabBtn = (id, label) => {
     const on = activeTab === id;
     return (
