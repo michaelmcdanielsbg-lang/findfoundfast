@@ -97,6 +97,12 @@ export default function HowItWorks() {
           <span className="font-mono text-sm font-bold uppercase tracking-wide text-fff-green">
             How it works
           </span>
+          <Link
+            href="/get-started"
+            className={`inline-flex min-h-[40px] items-center justify-center rounded-lg bg-fff-green px-4 py-2 font-mono text-[11px] font-bold uppercase tracking-wide text-fff-bg transition-colors hover:bg-fff-yellow ${focusRing}`}
+          >
+            Start now →
+          </Link>
         </div>
       </header>
 
