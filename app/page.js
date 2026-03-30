@@ -66,7 +66,7 @@ export default function Home() {
             Try it free →
           </a>
           <Link
-            href="/how-it-works"
+            href="/how-it-works?tab=manager"
             className="inline-flex min-h-[48px] min-w-0 items-center justify-center rounded-lg border border-white/[0.18] bg-transparent px-6 py-3.5 font-mono text-xs font-bold uppercase tracking-wide text-fff-white transition active:bg-white/5 sm:px-8 hover:border-fff-green/50 hover:text-fff-green"
           >
             How it works

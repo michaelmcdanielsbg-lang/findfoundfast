@@ -1,11 +1,28 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 
 const APP_URL = 'https://findfoundfast-final.vercel.app';
 
 export default function HowItWorks() {
+  /** Property manager first — default for “How it works” */
   const [activeTab, setActiveTab] = useState('manager');
+
+  const selectTab = useCallback((id) => {
+    setActiveTab(id);
+    if (typeof window !== 'undefined') {
+      const u = new URL(window.location.href);
+      u.searchParams.set('tab', id);
+      window.history.replaceState({}, '', u.pathname + u.search);
+    }
+  }, []);
+
+  useEffect(() => {
+    const raw = new URLSearchParams(window.location.search).get('tab');
+    if (raw === 'manager' || raw === 'resident' || raw === 'driver') {
+      setActiveTab(raw);
+    }
+  }, []);
 
   const driverSteps = [
     { step: 1, title: 'Parking / Drop-off', desc: 'Pull into Entrance B – any uncovered spot near the blue sign', url: 'https://i.ibb.co/1t4MWkgH/Modern-apartment-at-dusk.png' },
@@ -23,7 +40,7 @@ export default function HowItWorks() {
         aria-selected={on}
         id={`tab-${id}`}
         aria-controls={`panel-${id}`}
-        onClick={() => setActiveTab(id)}
+        onClick={() => selectTab(id)}
         className={`min-h-[44px] rounded-xl px-4 py-2.5 font-mono text-[11px] font-bold uppercase tracking-wide transition active:opacity-90 sm:min-h-0 sm:px-7 sm:py-3.5 sm:text-sm ${
           on
             ? 'bg-fff-green text-fff-bg shadow-lg shadow-fff-green/20'
