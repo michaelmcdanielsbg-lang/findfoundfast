@@ -56,16 +56,16 @@ export default function PricingPage() {
         </div>
       </header>
 
-      <main className="relative z-10 flex flex-1 flex-col items-center px-4 py-12 text-center sm:px-6 sm:py-16">
-        <p className="mb-4 font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-fff-green">Pricing</p>
-        <h1 className="mb-3 max-w-2xl text-3xl font-extrabold tracking-tight text-fff-white sm:mb-4 sm:text-4xl md:text-5xl">
+      <main className="relative z-10 flex flex-1 flex-col items-center px-4 py-8 text-center sm:px-6 sm:py-12 md:py-16">
+        <p className="mb-3 font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-fff-green">Pricing</p>
+        <h1 className="mb-2 max-w-2xl text-3xl font-extrabold tracking-tight text-fff-white sm:mb-3 sm:text-4xl md:text-5xl">
           Simple per-property pricing
         </h1>
-        <p className="mb-6 max-w-xl text-[15px] leading-relaxed text-fff-white/70 sm:text-base">
+        <p className="mb-5 max-w-xl text-[15px] leading-relaxed text-fff-white/75 sm:mb-6 sm:text-base">
           Same coverage either way: unlimited buildings and units inside that property.
         </p>
 
-        <div className="mb-8 flex flex-wrap justify-center gap-x-4 gap-y-2 font-mono text-[11px] font-bold uppercase tracking-[0.12em] text-fff-white/55 sm:text-xs sm:tracking-[0.15em]">
+        <div className="mb-6 flex flex-wrap justify-center gap-x-3 gap-y-1.5 font-mono text-[11px] font-bold uppercase tracking-[0.12em] text-fff-white/55 sm:mb-8 sm:gap-x-4 sm:text-xs sm:tracking-[0.15em]">
           <span>No driver app</span>
           <span className="text-fff-white/25">·</span>
           <span>Codes expire</span>
@@ -73,7 +73,7 @@ export default function PricingPage() {
           <span>Unlimited buildings &amp; units</span>
         </div>
 
-        <div className="mb-10 w-full max-w-md rounded-2xl border border-white/[0.1] bg-white/[0.03] px-5 py-5 text-left sm:max-w-lg">
+        <div className="mb-8 w-full max-w-md rounded-2xl border border-white/[0.1] bg-white/[0.03] px-5 py-4 text-left sm:mb-10 sm:max-w-lg sm:py-5">
           <p className="mb-3 font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-fff-green">
             After you sign up
           </p>
@@ -84,8 +84,8 @@ export default function PricingPage() {
           </ol>
         </div>
 
-        <div className="mb-10 grid w-full max-w-3xl gap-5 sm:grid-cols-2 sm:gap-6">
-          <div className="relative rounded-2xl border border-fff-green/35 bg-fff-green/[0.08] px-5 py-7 text-left shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)] ring-1 ring-fff-green/20 sm:px-6 sm:py-8">
+        <div className="mb-8 grid w-full max-w-3xl gap-4 sm:mb-10 sm:grid-cols-2 sm:gap-5">
+          <div className="relative rounded-2xl border border-fff-green/35 bg-fff-green/[0.08] px-5 py-6 text-left shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)] ring-1 ring-fff-green/20 sm:px-6 sm:py-8">
             <span className="mb-3 inline-block rounded-full bg-fff-yellow px-2.5 py-1 font-mono text-[10px] font-bold uppercase tracking-[0.15em] text-fff-bg">
               Best value — save $98/yr
             </span>
@@ -116,7 +116,7 @@ export default function PricingPage() {
             </div>
           </div>
 
-          <div className="rounded-2xl border border-white/[0.1] bg-white/[0.03] px-5 py-7 text-left shadow-[inset_0_1px_0_0_rgba(255,255,255,0.04)] sm:px-6 sm:py-8">
+          <div className="rounded-2xl border border-white/[0.1] bg-white/[0.03] px-5 py-6 text-left shadow-[inset_0_1px_0_0_rgba(255,255,255,0.04)] sm:px-6 sm:py-8">
             <p className="mb-3 font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-fff-white/55">Billed monthly</p>
             <p className="font-sans text-4xl font-extrabold tracking-tight text-fff-green sm:text-[2.75rem]">
               $49<span className="text-xl font-bold text-fff-white/85 sm:text-2xl">/mo</span>

@@ -126,19 +126,19 @@ export default function GetStartedPage() {
         </div>
       </header>
 
-      <main className="relative z-10 flex flex-1 flex-col items-center px-4 py-12 sm:px-6 sm:py-16">
+      <main className="relative z-10 flex flex-1 flex-col items-center px-4 py-8 sm:px-6 sm:py-12 md:py-16">
         <div className="w-full max-w-2xl">
-          <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-fff-green/25 bg-fff-green/10 px-4 py-2 font-mono text-[11px] font-bold uppercase tracking-[0.14em] text-fff-green sm:mb-7 sm:text-xs sm:tracking-[0.2em]">
+          <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-fff-green/25 bg-fff-green/10 px-4 py-2 font-mono text-[11px] font-bold uppercase tracking-[0.14em] text-fff-green sm:mb-5 sm:text-xs sm:tracking-[0.2em]">
             Get started
           </p>
 
           <h1 className="mb-2 text-3xl font-extrabold tracking-tight text-fff-white sm:text-4xl">
             Tell us about your property
           </h1>
-          <p className="mb-3 max-w-2xl text-[15px] leading-relaxed text-fff-white/70 sm:text-base">
+          <p className="mb-2 max-w-2xl text-[15px] leading-relaxed text-fff-white/75 sm:mb-3 sm:text-base">
             We’ll reach out by email. Fill in the basics below and we’ll take it from there.
           </p>
-          <p className="mb-8 max-w-2xl text-sm text-fff-white/55 sm:text-[15px]">
+          <p className="mb-6 max-w-2xl text-sm text-fff-white/55 sm:mb-8 sm:text-[15px]">
             Typical reply: <span className="text-fff-white/75">within one business day</span> with next steps
             and billing (monthly or annual—your call).
           </p>
@@ -164,7 +164,7 @@ export default function GetStartedPage() {
           ) : (
             <form
               onSubmit={onSubmit}
-              className="rounded-2xl border border-white/[0.1] bg-white/[0.03] px-6 py-8 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.04)]"
+              className="rounded-2xl border border-white/[0.1] bg-white/[0.03] px-5 py-7 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.04)] sm:px-6 sm:py-8"
             >
               {error ? (
                 <div className="mb-5 rounded-xl border border-fff-rose/35 bg-fff-rose/[0.08] px-4 py-3 text-[14px] text-fff-white">

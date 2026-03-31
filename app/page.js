@@ -56,34 +56,34 @@ export default function Home() {
         </div>
       </header>
 
-      <main className="relative z-10 flex flex-1 flex-col items-center justify-center px-4 pt-5 pb-8 text-center sm:px-5 sm:pt-6 sm:pb-10">
+      <main className="relative z-10 flex flex-1 flex-col items-center justify-center px-4 pt-4 pb-6 text-center sm:px-5 sm:pt-5 sm:pb-8 md:pb-10">
         <p className="mb-1 max-w-xl px-2 font-mono text-[11px] font-bold uppercase tracking-[0.18em] text-fff-green sm:text-xs">
           For property &amp; ops teams
         </p>
-        <p className="mb-3 max-w-xl px-2 font-sans text-[16px] font-medium leading-snug tracking-normal text-fff-white/92 sm:mb-4 sm:text-base">
+        <p className="mb-2 max-w-xl px-2 font-sans text-[16px] font-medium leading-snug tracking-normal text-fff-white/92 sm:mb-3 sm:text-base">
           Apartments · Offices · Nursing homes · Hospitals · School · Homes
         </p>
 
-        <h1 className="mb-3 max-w-xl text-[clamp(2.1rem,7vw,3.35rem)] font-extrabold leading-[1.05] tracking-tight sm:mb-4 sm:text-5xl md:text-6xl">
+        <h1 className="mb-2 max-w-xl text-[clamp(2.1rem,7vw,3.35rem)] font-extrabold leading-[1.05] tracking-tight sm:mb-3 sm:text-5xl md:text-6xl">
           <span className="text-fff-green">Find</span>
           <span className="text-fff-white">Found</span>
           <span className="text-fff-green">Fast</span>
         </h1>
 
-        <p className="mb-5 max-w-md font-mono text-[15px] leading-relaxed text-fff-yellow sm:mb-6 sm:text-base sm:leading-snug">
+        <p className="mb-4 max-w-md font-mono text-[15px] leading-relaxed text-fff-yellow sm:mb-5 sm:text-base sm:leading-snug">
           Google Maps for your food & your homies
         </p>
 
         <section
-          className="mb-6 w-full max-w-xl rounded-2xl border border-white/[0.09] bg-white/[0.03] px-4 py-5 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.04)] sm:mb-8 sm:px-5 sm:py-6 lg:max-w-6xl"
+          className="mb-5 w-full max-w-xl rounded-2xl border border-white/[0.09] bg-white/[0.03] px-4 py-4 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.04)] sm:mb-6 sm:px-5 sm:py-5 lg:max-w-6xl lg:py-5"
           aria-label="Problem and solution"
         >
-          <div className="flex min-w-0 flex-col gap-4 lg:grid lg:grid-cols-2 lg:items-stretch lg:gap-8">
-            <div className="flex min-h-0 min-w-0 flex-col gap-4 border-b border-white/[0.08] pb-6 sm:gap-5 lg:h-full lg:justify-between lg:border-b-0 lg:pb-0 lg:pr-4 lg:border-r lg:border-white/[0.08]">
+          <div className="flex min-w-0 flex-col gap-0 lg:grid lg:grid-cols-2 lg:items-stretch lg:gap-6">
+            <div className="flex min-h-0 min-w-0 flex-col gap-3 border-b border-white/[0.08] pb-3 sm:gap-4 sm:pb-4 lg:h-full lg:justify-between lg:border-b-0 lg:pb-0 lg:pr-5 lg:border-r lg:border-white/[0.08]">
               <div className="text-left">
                 <h2
                   id="problem-heading"
-                  className="mb-2 font-mono text-sm font-bold uppercase tracking-[0.18em] text-fff-rose/95 sm:text-base lg:text-lg"
+                  className="mb-1.5 font-mono text-sm font-bold uppercase tracking-[0.18em] text-fff-rose/95 sm:text-base lg:text-lg"
                 >
                   Problem
                 </h2>
@@ -92,46 +92,47 @@ export default function Home() {
                   <span className="font-semibold text-fff-yellow">Now what?</span>
                 </p>
               </div>
-              <div className="flex w-full shrink-0 justify-center pt-1">
+              <div className="flex w-full shrink-0 justify-center">
                 <ProblemVisual />
               </div>
             </div>
 
-            <div className="flex justify-center py-4 lg:hidden" aria-hidden>
-              <span className="rounded-full border border-white/[0.12] bg-fff-bg px-4 py-1 font-mono text-[11px] font-bold uppercase tracking-wider text-fff-white/55 sm:px-5 sm:text-xs">
+            <div className="relative flex items-center justify-center py-2 lg:hidden" aria-hidden>
+              <div className="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-white/[0.1]" />
+              <span className="relative rounded-full border border-white/[0.12] bg-fff-bg px-3 py-0.5 font-mono text-[10px] font-bold uppercase tracking-wider text-fff-white/55 sm:px-4 sm:text-[11px]">
                 vs
               </span>
             </div>
 
-            <div className="flex min-h-0 min-w-0 flex-col gap-4 sm:gap-5 lg:h-full lg:justify-between lg:pl-2">
+            <div className="flex min-h-0 min-w-0 flex-col gap-3 sm:gap-4 lg:h-full lg:justify-between lg:pl-1">
               <div className="text-left">
                 <h2
                   id="solution-heading"
-                  className="mb-2 font-mono text-sm font-bold uppercase tracking-[0.18em] text-fff-green sm:text-base lg:text-lg"
+                  className="mb-1.5 font-mono text-sm font-bold uppercase tracking-[0.18em] text-fff-green sm:text-base lg:text-lg"
                 >
                   Solution
                 </h2>
-                <p className="mb-2 text-[16px] font-semibold leading-relaxed text-fff-green sm:text-base">
+                <p className="mb-1.5 text-[16px] font-semibold leading-relaxed text-fff-green sm:mb-2 sm:text-base">
                   A guide to you
                 </p>
                 <p className="text-[16px] leading-relaxed text-fff-white/85 sm:text-base sm:leading-relaxed">
                   Step-by-step from where to park to where you’re going—door, gate, or lobby. No app needed.
                 </p>
               </div>
-              <div className="flex w-full shrink-0 justify-center pt-1">
+              <div className="flex w-full shrink-0 justify-center">
                 <SolutionVisual />
               </div>
             </div>
           </div>
         </section>
 
-        <p className="mb-6 max-w-xl text-[16px] leading-relaxed text-fff-white/82 sm:mb-8 sm:text-base sm:leading-relaxed">
+        <p className="mb-5 max-w-xl text-[16px] leading-relaxed text-fff-white/82 sm:mb-6 sm:text-base sm:leading-relaxed">
           Help drivers and guests find your resident—not just the building. A perk for property teams and the people who live there.
         </p>
 
         <section
           id="pricing"
-          className="mb-10 w-full max-w-sm rounded-2xl border border-fff-green/20 bg-fff-green/[0.06] px-5 py-6 text-center shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05)] sm:mb-10 sm:px-6 sm:py-6 lg:max-w-md"
+          className="mb-8 w-full max-w-sm rounded-2xl border border-fff-green/20 bg-fff-green/[0.06] px-5 py-5 text-center shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05)] sm:mb-9 sm:px-6 sm:py-6 lg:max-w-md"
           aria-labelledby="pricing-heading"
         >
           <h2
@@ -161,27 +162,27 @@ export default function Home() {
           </p>
         </section>
 
-        <div className="flex w-full max-w-md flex-col items-center gap-4 sm:max-w-none sm:flex-row sm:justify-center sm:gap-5 lg:max-w-xl">
-          <Link
-            href="/get-started"
-            className={`inline-flex min-h-[48px] w-full min-w-0 items-center justify-center rounded-lg bg-fff-green px-6 py-3.5 font-mono text-xs font-bold uppercase tracking-wide text-fff-bg transition-colors active:opacity-90 sm:w-auto sm:px-8 hover:bg-fff-yellow ${focusRing}`}
-          >
-            Get started →
-          </Link>
+        <div className="flex w-full max-w-md flex-col items-center gap-3 sm:max-w-none sm:flex-row sm:justify-center sm:gap-4 lg:max-w-xl">
           <Link
             href="/how-it-works?tab=manager"
             className={`inline-flex min-h-[48px] w-full min-w-0 items-center justify-center rounded-lg border border-white/[0.18] bg-transparent px-6 py-3.5 font-mono text-xs font-bold uppercase tracking-wide text-fff-white transition-colors active:bg-white/5 sm:w-auto sm:min-w-[200px] sm:px-8 hover:border-fff-green/50 hover:text-fff-green ${focusRing}`}
           >
             How it works
           </Link>
+          <Link
+            href="/get-started"
+            className={`inline-flex min-h-[48px] w-full min-w-0 items-center justify-center rounded-lg bg-fff-green px-6 py-3.5 font-mono text-xs font-bold uppercase tracking-wide text-fff-bg transition-colors active:opacity-90 sm:w-auto sm:px-8 hover:bg-fff-yellow ${focusRing}`}
+          >
+            Get started →
+          </Link>
         </div>
 
-        <p className="mt-8 inline-flex items-center gap-2 rounded-full border border-fff-green/25 bg-fff-green/10 px-4 py-2 font-mono text-[11px] font-bold uppercase tracking-[0.14em] text-fff-green sm:mt-10 sm:text-xs sm:tracking-[0.2em]">
+        <p className="mt-6 inline-flex items-center gap-2 rounded-full border border-fff-green/25 bg-fff-green/10 px-4 py-2 font-mono text-[11px] font-bold uppercase tracking-[0.14em] text-fff-green sm:mt-8 sm:text-xs sm:tracking-[0.2em]">
           FFFLipping Cool · No app required
         </p>
 
         <section
-          className="mt-8 w-full max-w-3xl rounded-2xl border border-white/[0.08] bg-fff-card/40 px-4 py-4 sm:mt-10 sm:px-5 sm:py-5"
+          className="mt-6 w-full max-w-3xl rounded-2xl border border-white/[0.08] bg-fff-card/40 px-4 py-3.5 sm:mt-8 sm:px-5 sm:py-4"
           aria-label="What people are saying"
         >
           <div className="flex items-baseline justify-between gap-4">

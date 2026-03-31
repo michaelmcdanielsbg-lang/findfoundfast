@@ -115,17 +115,17 @@ export default function HowItWorks() {
         </div>
       </header>
 
-      <section className="relative z-10 border-b border-white/[0.08] px-4 pb-4 pt-5 text-center sm:px-6 sm:pb-5 sm:pt-8">
+      <section className="relative z-10 border-b border-white/[0.08] px-4 pb-3 pt-4 text-center sm:px-6 sm:pb-4 sm:pt-7 md:pt-8">
         <div className="mx-auto max-w-3xl">
-          <h1 className="text-[clamp(1.5rem,5vw,2.75rem)] font-extrabold leading-[1.15] tracking-tight text-fff-white sm:text-4xl md:text-5xl">
+          <h1 className="text-[clamp(1.45rem,4.8vw,2.75rem)] font-extrabold leading-[1.12] tracking-tight text-fff-white sm:text-4xl md:text-5xl">
             <span className="text-fff-white/95">Micro-location guidance for deliveries or visitors</span>
           </h1>
         </div>
       </section>
 
-      <div className="relative z-10 mx-auto max-w-6xl px-4 py-4 sm:px-6 sm:py-6">
-        <p className="mb-4 text-center font-mono text-xs font-bold uppercase tracking-[0.2em] text-fff-green">Pick a perspective</p>
-        <div className="mb-10 flex flex-wrap justify-center gap-2 sm:gap-3" role="tablist" aria-label="How it works by role">
+      <div className="relative z-10 mx-auto max-w-6xl px-4 py-3 sm:px-6 sm:py-5">
+        <p className="mb-3 text-center font-mono text-xs font-bold uppercase tracking-[0.2em] text-fff-green sm:mb-4">Pick a perspective</p>
+        <div className="mb-6 flex flex-wrap justify-center gap-2 sm:mb-8 sm:gap-3" role="tablist" aria-label="How it works by role">
           {tabBtn('manager', '🏢 Property manager')}
           {tabBtn('resident', '🏠 Resident')}
           {tabBtn('driver', '🚗 Driver')}
@@ -133,26 +133,26 @@ export default function HowItWorks() {
 
         <div id="panel-manager" role="tabpanel" aria-labelledby="tab-manager" hidden={activeTab !== 'manager'}>
           {activeTab === 'manager' && (
-            <div className="rounded-2xl border border-white/[0.08] bg-fff-card/80 p-6 shadow-2xl shadow-black/40 backdrop-blur-sm sm:p-10">
-              <h2 className="mb-2 text-3xl font-extrabold tracking-tight text-fff-white sm:text-4xl">Property manager</h2>
-              <p className="mb-10 max-w-2xl text-[16px] leading-relaxed text-fff-white/85 sm:text-[17px] sm:text-fff-white/78">
+            <div className="rounded-2xl border border-white/[0.08] bg-fff-card/80 p-5 shadow-2xl shadow-black/40 backdrop-blur-sm sm:p-8 md:p-10">
+              <h2 className="mb-1.5 text-2xl font-extrabold tracking-tight text-fff-white sm:mb-2 sm:text-3xl md:text-4xl">Property manager</h2>
+              <p className="mb-6 max-w-2xl text-[16px] leading-relaxed text-fff-white/85 sm:mb-8 sm:text-[17px] sm:text-fff-white/78">
                 Improve your property flow in minutes—fewer circling cars, wrong parking, and jams. Residents, visitors, and delivery stay in sync; fewer front-desk calls.
               </p>
-              <div className="space-y-8">
-                <div className="rounded-2xl border border-white/[0.08] bg-fff-bg/80 p-6 sm:p-8">
+              <div className="space-y-5 sm:space-y-7">
+                <div className="rounded-2xl border border-white/[0.08] bg-fff-bg/80 p-5 sm:p-7">
                   <span className="font-mono text-xs font-bold uppercase tracking-wider text-fff-green">Step 1</span>
                   <h3 className="mt-2 text-xl font-bold text-fff-white sm:text-2xl">Add your building</h3>
                   <p className="mt-3 text-lg text-fff-green">Building A, Building B, North Tower, Tower 3, etc.</p>
                   <p className="mt-2 text-[15px] text-fff-muted">Label it however you want.</p>
                 </div>
-                <div className="rounded-2xl border border-white/[0.08] bg-fff-bg/80 p-6 sm:p-8">
+                <div className="rounded-2xl border border-white/[0.08] bg-fff-bg/80 p-5 sm:p-7">
                   <span className="font-mono text-xs font-bold uppercase tracking-wider text-fff-green">Step 2</span>
                   <h3 className="mt-2 text-xl font-bold text-fff-white sm:text-2xl">Add key photos</h3>
                   <p className="mt-3 text-lg text-fff-green">
                     Parking → Entrance → Lobby → Elevator <span className="text-fff-white/55">(plus any extras)</span>
                   </p>
                   <p className="mt-2 text-[15px] text-fff-muted">Optional: draw arrows (← → ↑ ↓) on any photo.</p>
-                  <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2">
+                  <div className="mt-5 grid grid-cols-1 gap-4 sm:mt-6 sm:grid-cols-2 sm:gap-5">
                     {driverSteps.map((photo) => (
                       <div key={photo.step} className="group">
                         {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -165,8 +165,8 @@ export default function HowItWorks() {
                       </div>
                     ))}
                   </div>
-                  <div className="mt-10 rounded-xl border border-fff-green/20 bg-fff-green/5 p-6 text-center">
-                    <p className="text-base leading-relaxed text-fff-white/80 sm:text-lg">
+                  <div className="mt-6 rounded-xl border border-fff-green/20 bg-fff-green/5 p-5 text-center sm:mt-8 sm:p-6">
+                    <p className="text-[15px] leading-relaxed text-fff-white/82 sm:text-base md:text-lg">
                       One link per building = every unit in that building.
                       <br />
                       <span className="text-fff-white/65">Updates instantly for every resident&apos;s link.</span>
@@ -180,10 +180,10 @@ export default function HowItWorks() {
 
         <div id="panel-resident" role="tabpanel" aria-labelledby="tab-resident" hidden={activeTab !== 'resident'}>
           {activeTab === 'resident' && (
-            <div className="rounded-2xl border border-white/[0.08] bg-fff-card/80 p-6 shadow-2xl shadow-black/40 backdrop-blur-sm sm:p-10">
-              <h2 className="mb-6 text-3xl font-extrabold tracking-tight text-fff-white sm:mb-8 sm:text-4xl">Resident</h2>
+            <div className="rounded-2xl border border-white/[0.08] bg-fff-card/80 p-5 shadow-2xl shadow-black/40 backdrop-blur-sm sm:p-8 md:p-10">
+              <h2 className="mb-5 text-2xl font-extrabold tracking-tight text-fff-white sm:mb-6 sm:text-3xl md:text-4xl">Resident</h2>
 
-              <div className="grid gap-6 lg:grid-cols-2">
+              <div className="grid gap-4 sm:gap-6 lg:grid-cols-2">
                   <div>
                     <p className="mb-3 font-mono text-xs font-bold uppercase tracking-wider text-fff-rose">Before</p>
                     <div className="flex h-full min-h-[280px] flex-col gap-3 rounded-2xl border border-white/[0.14] bg-[#161616] p-4 shadow-inner shadow-black/20">
@@ -227,9 +227,9 @@ export default function HowItWorks() {
                   </div>
               </div>
 
-              <div className="mt-8 sm:mt-10">
-                <h3 className="mb-6 text-center text-lg font-bold text-fff-white sm:text-xl">What your generated link looks like</h3>
-                <div className="mx-auto max-w-md rounded-2xl border border-fff-green/25 bg-fff-bg/90 p-8 text-center ring-1 ring-fff-green/10">
+              <div className="mt-6 sm:mt-8">
+                <h3 className="mb-4 text-center text-lg font-bold text-fff-white sm:mb-5 sm:text-xl">What your generated link looks like</h3>
+                <div className="mx-auto max-w-md rounded-2xl border border-fff-green/25 bg-fff-bg/90 p-6 text-center ring-1 ring-fff-green/10 sm:p-8">
                   <div className="font-mono text-sm text-fff-green">findfoundfast.com/link/sunny-a</div>
                   <div className="mt-3 text-2xl font-extrabold text-fff-white sm:text-3xl">
                     Expires in <span className="text-fff-green">42 minutes</span>
@@ -246,19 +246,19 @@ export default function HowItWorks() {
 
         <div id="panel-driver" role="tabpanel" aria-labelledby="tab-driver" hidden={activeTab !== 'driver'}>
           {activeTab === 'driver' && (
-            <div className="rounded-2xl border border-white/[0.08] bg-fff-card/80 p-6 shadow-2xl shadow-black/40 backdrop-blur-sm sm:p-10">
-              <h2 className="mb-2 text-center text-3xl font-extrabold tracking-tight text-fff-white sm:text-4xl">Driver view</h2>
-              <p className="mx-auto mb-10 max-w-lg text-center text-[16px] leading-relaxed text-fff-white/85 sm:text-[17px] sm:text-fff-white/78">
+            <div className="rounded-2xl border border-white/[0.08] bg-fff-card/80 p-5 shadow-2xl shadow-black/40 backdrop-blur-sm sm:p-8 md:p-10">
+              <h2 className="mb-1.5 text-center text-2xl font-extrabold tracking-tight text-fff-white sm:mb-2 sm:text-3xl md:text-4xl">Driver view</h2>
+              <p className="mx-auto mb-6 max-w-lg text-center text-[16px] leading-relaxed text-fff-white/85 sm:mb-8 sm:text-[17px] sm:text-fff-white/78">
                 What they see in the browser—no install, no login.
               </p>
               <div className="mx-auto max-w-lg overflow-hidden rounded-2xl border border-white/[0.1] bg-fff-bg shadow-2xl">
-                <div className="flex items-center justify-between border-b border-white/[0.08] bg-fff-bg px-5 py-4">
-                  <span className="text-base font-extrabold text-fff-green">FindFoundFast</span>
-                  <span className="font-mono text-sm font-bold text-fff-green">Expires in 42 min</span>
+                <div className="flex flex-wrap items-center justify-between gap-2 border-b border-white/[0.08] bg-fff-bg px-4 py-3 sm:px-5 sm:py-4">
+                  <span className="text-sm font-extrabold text-fff-green sm:text-base">FindFoundFast</span>
+                  <span className="font-mono text-xs font-bold text-fff-green sm:text-sm">Expires in 42 min</span>
                 </div>
-                <div className="space-y-8 p-6 sm:p-8">
+                <div className="space-y-5 p-4 sm:space-y-6 sm:p-6 md:p-8">
                   {driverSteps.map((photo) => (
-                    <div key={photo.step} className="rounded-xl border border-white/[0.08] bg-fff-card/60 p-3">
+                    <div key={photo.step} className="rounded-xl border border-white/[0.08] bg-fff-card/60 p-2.5 sm:p-3">
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
                         src={photo.url}
@@ -275,7 +275,7 @@ export default function HowItWorks() {
                     </div>
                   ))}
                 </div>
-                <div className="border-t border-fff-green/15 bg-fff-green/5 px-4 py-5 text-center text-sm text-fff-green">
+                <div className="border-t border-fff-green/15 bg-fff-green/5 px-4 py-4 text-center text-[13px] leading-snug text-fff-green sm:text-sm">
                   When the timer ends, codes hide and the link stops working — no stale screenshots.
                 </div>
               </div>
@@ -284,8 +284,8 @@ export default function HowItWorks() {
         </div>
       </div>
 
-      <section className="relative z-10 border-t border-white/[0.08] bg-fff-bg px-4 py-12 text-center sm:px-6 sm:py-20">
-        <h2 className="mx-auto mb-6 max-w-xl text-2xl font-extrabold tracking-tight text-fff-white sm:text-3xl md:text-4xl">
+      <section className="relative z-10 border-t border-white/[0.08] bg-fff-bg px-4 py-10 text-center sm:px-6 sm:py-14 md:py-16">
+        <h2 className="mx-auto mb-5 max-w-xl text-xl font-extrabold tracking-tight text-fff-white sm:mb-6 sm:text-3xl md:text-4xl">
           Ready to make arrivals FFFLipping Cool for your property?
         </h2>
         <Link
