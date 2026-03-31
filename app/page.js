@@ -79,7 +79,7 @@ export default function Home() {
           aria-label="Problem and solution"
         >
           <div className="flex min-w-0 flex-col gap-0 lg:grid lg:grid-cols-2 lg:items-stretch lg:gap-6">
-            <div className="flex min-h-0 min-w-0 flex-col gap-3 border-b border-white/[0.08] pb-3 sm:gap-4 sm:pb-4 lg:h-full lg:justify-between lg:border-b-0 lg:pb-0 lg:pr-5 lg:border-r lg:border-white/[0.08]">
+            <div className="flex min-h-0 min-w-0 flex-col gap-2 border-b border-white/[0.08] pb-3 sm:pb-4 lg:h-full lg:justify-between lg:border-b-0 lg:pb-0 lg:pr-5 lg:border-r lg:border-white/[0.08]">
               <div className="text-left">
                 <h2
                   id="problem-heading"
@@ -104,22 +104,19 @@ export default function Home() {
               </span>
             </div>
 
-            <div className="flex min-h-0 min-w-0 flex-col gap-3 sm:gap-4 lg:h-full lg:justify-between lg:pl-1">
+            <div className="flex min-h-0 min-w-0 flex-col gap-2 sm:gap-2 lg:h-full lg:justify-between lg:pl-1">
               <div className="text-left">
                 <h2
                   id="solution-heading"
-                  className="mb-1.5 font-mono text-sm font-bold uppercase tracking-[0.18em] text-fff-green sm:text-base lg:text-lg"
+                  className="mb-1 font-mono text-sm font-bold uppercase tracking-[0.18em] text-fff-green sm:mb-1.5 sm:text-base lg:text-lg"
                 >
                   Solution
                 </h2>
-                <p className="mb-1.5 text-[16px] font-semibold leading-relaxed text-fff-green sm:mb-2 sm:text-base">
-                  A guide to you
-                </p>
-                <p className="text-[16px] leading-relaxed text-fff-white/85 sm:text-base sm:leading-relaxed">
-                  Step-by-step from where to park to where you’re going—door, gate, or lobby. No app needed.
+                <p className="text-[16px] font-semibold leading-snug text-fff-white sm:text-base sm:leading-snug">
+                  A Guide: Park, Door, Gate, Lobby
                 </p>
               </div>
-              <div className="flex w-full shrink-0 justify-center">
+              <div className="flex w-full shrink-0 justify-center pt-0">
                 <SolutionVisual />
               </div>
             </div>
