@@ -78,8 +78,8 @@ export default function Home() {
           className="mb-6 w-full max-w-xl rounded-2xl border border-white/[0.09] bg-white/[0.03] px-4 py-5 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.04)] sm:mb-8 sm:px-5 sm:py-6 lg:max-w-6xl"
           aria-label="Problem and solution"
         >
-          <div className="flex flex-col gap-4 lg:grid lg:grid-cols-2 lg:items-start lg:gap-8">
-            <div className="flex flex-col gap-4 border-b border-white/[0.08] pb-6 sm:gap-5 lg:border-b-0 lg:pb-0 lg:pr-4 lg:border-r lg:border-white/[0.08]">
+          <div className="flex flex-col gap-4 lg:grid lg:grid-cols-2 lg:items-stretch lg:gap-8">
+            <div className="flex min-h-0 flex-col gap-4 border-b border-white/[0.08] pb-6 sm:gap-5 lg:h-full lg:justify-between lg:border-b-0 lg:pb-0 lg:pr-4 lg:border-r lg:border-white/[0.08]">
               <div className="text-left">
                 <h2
                   id="problem-heading"
@@ -92,7 +92,7 @@ export default function Home() {
                   <span className="font-semibold text-fff-yellow">Now what?</span>
                 </p>
               </div>
-              <div className="flex w-full justify-center">
+              <div className="flex w-full shrink-0 justify-center pt-1">
                 <ProblemVisual />
               </div>
             </div>
@@ -103,7 +103,7 @@ export default function Home() {
               </span>
             </div>
 
-            <div className="flex flex-col gap-4 sm:gap-5 lg:pl-2">
+            <div className="flex min-h-0 flex-col gap-4 sm:gap-5 lg:h-full lg:justify-between lg:pl-2">
               <div className="text-left">
                 <h2
                   id="solution-heading"
@@ -111,14 +111,14 @@ export default function Home() {
                 >
                   Solution
                 </h2>
-                <p className="mb-2 font-sans text-[1.5rem] font-extrabold leading-tight tracking-tight text-fff-green sm:mb-3 sm:text-3xl">
+                <p className="mb-2 text-[15px] font-semibold leading-relaxed text-fff-green sm:text-[16px] sm:leading-relaxed">
                   A guide to you
                 </p>
                 <p className="text-[15px] leading-relaxed text-fff-white/78 sm:text-[16px] sm:leading-relaxed">
                   Step-by-step from where to park to where you’re going—door, gate, or lobby. No app needed.
                 </p>
               </div>
-              <div className="flex w-full justify-center">
+              <div className="flex w-full shrink-0 justify-center pt-1">
                 <SolutionVisual />
               </div>
             </div>
