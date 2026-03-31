@@ -2,9 +2,10 @@
  * Problem / Solution art — shared building + vehicle geometry; color/story only differs.
  */
 
-/* Slightly lifted from pure black so building + vehicles read more clearly */
-const ILLUSTRATION_CLASS =
-  'h-auto w-full max-w-[420px] shrink-0 rounded-xl border bg-[#1a1a1a] shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05)]';
+/* Frame fills a fixed 420:220 box so Problem & Solution match pixel-perfect */
+const ILLUSTRATION_SVG =
+  'block h-full w-full rounded-xl border bg-[#1a1a1a] shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05)]';
+const ILLUSTRATION_WRAP = 'w-full max-w-[420px] shrink-0 aspect-[420/220]';
 
 /** Same footprint as Problem: 160×112 @ (130,58), 3×5 windows @ 14×12, door @ (188,152) */
 function BuildingFacade({ variant }) {
@@ -78,8 +79,14 @@ function RouteToDoor({ d, color = '#00FF87' }) {
 
 export function ProblemVisual({ className = '' }) {
   return (
-    <div className={`w-full max-w-[420px] ${className}`} role="img" aria-label="Drivers arrive confused—many paths, no clear entrance">
-      <svg viewBox="0 0 420 220" fill="none" xmlns="http://www.w3.org/2000/svg" className={`${ILLUSTRATION_CLASS} border-white/[0.1]`}>
+    <div className={`${ILLUSTRATION_WRAP} ${className}`} role="img" aria-label="Drivers arrive confused—many paths, no clear entrance">
+      <svg
+        viewBox="0 0 420 220"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        preserveAspectRatio="xMidYMid meet"
+        className={`${ILLUSTRATION_SVG} border-white/[0.1]`}
+      >
         <title>Problem — where to go</title>
         <path
           d="M 52 172 Q 95 125 145 145"
@@ -167,7 +174,13 @@ function SolutionMapSvg() {
   const routeD = `M 72 198 L 210 198 L 210 152 L ${checkCx} ${checkCy}`;
 
   return (
-    <svg viewBox="0 0 420 220" fill="none" xmlns="http://www.w3.org/2000/svg" className={`${ILLUSTRATION_CLASS} border-fff-green/30`}>
+    <svg
+      viewBox="0 0 420 220"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      preserveAspectRatio="xMidYMid meet"
+      className={`${ILLUSTRATION_SVG} border-fff-green/30`}
+    >
       <title>Clear path — same building & vehicle style as problem</title>
 
       <rect x="138" y="12" width="144" height="36" rx="6" fill="rgba(0,255,135,0.12)" stroke="rgba(0,255,135,0.45)" />
@@ -210,7 +223,7 @@ function SolutionMapSvg() {
 
 export function SolutionVisual({ className = '' }) {
   return (
-    <div className={`w-full max-w-[420px] ${className}`} role="img" aria-label="Delivery route into the building; checkmark on the destination window">
+    <div className={`${ILLUSTRATION_WRAP} ${className}`} role="img" aria-label="Delivery route into the building; checkmark on the destination window">
       <SolutionMapSvg />
     </div>
   );
