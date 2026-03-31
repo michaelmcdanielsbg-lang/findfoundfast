@@ -32,6 +32,12 @@ export default function HowItWorks() {
     { step: 4, title: 'Your Door', desc: 'Unit 412 – last door on the right. Leave at door. Thank you!', url: 'https://i.ibb.co/0VWt3QZk/Modern-elevator-in-sleek-lobby-setting.png' },
   ];
 
+  /** Steps 3–4 are lobby/elevator shots — cover-crop so they fill the frame like other photos */
+  const photoFillClass = (step) =>
+    step === 3 || step === 4
+      ? 'object-cover object-center'
+      : 'object-contain object-center';
+
   const testimonials = [
     'My friends and family can never find my apartment.',
     'My food delivery was left at the wrong building again.',
@@ -159,7 +165,7 @@ export default function HowItWorks() {
                         <img
                           src={photo.url}
                           alt={photo.title}
-                          className="aspect-[4/3] w-full rounded-xl border border-white/[0.08] bg-[#0d0d0d] object-contain object-center shadow-lg transition group-hover:border-fff-green/30"
+                          className={`aspect-[4/3] w-full rounded-xl border border-white/[0.08] bg-[#0d0d0d] shadow-lg transition group-hover:border-fff-green/30 ${photoFillClass(photo.step)}`}
                         />
                         <p className="mt-3 text-center text-sm font-semibold text-fff-green">{photo.title}</p>
                       </div>
@@ -263,7 +269,7 @@ export default function HowItWorks() {
                       <img
                         src={photo.url}
                         alt={photo.title}
-                        className="mb-4 aspect-[4/3] w-full rounded-lg bg-[#0d0d0d] object-contain object-center sm:aspect-[16/10]"
+                        className={`mb-4 aspect-[4/3] w-full rounded-lg bg-[#0d0d0d] sm:aspect-[16/10] ${photoFillClass(photo.step)}`}
                       />
                       <div className="flex gap-3">
                         <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-xl bg-fff-green font-mono text-sm font-bold text-fff-bg">{photo.step}</div>
