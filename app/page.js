@@ -60,7 +60,7 @@ export default function Home() {
         <p className="mb-1 max-w-xl px-2 font-mono text-[11px] font-bold uppercase tracking-[0.18em] text-fff-green sm:text-xs">
           For property &amp; ops teams
         </p>
-        <p className="mb-3 max-w-xl px-2 font-sans text-[15px] font-medium leading-snug tracking-normal text-fff-white/88 sm:mb-4 sm:text-base">
+        <p className="mb-3 max-w-xl px-2 font-sans text-[16px] font-medium leading-snug tracking-normal text-fff-white/92 sm:mb-4 sm:text-base">
           Apartments · Offices · Nursing homes · Hospitals · School · Homes
         </p>
 
@@ -70,7 +70,7 @@ export default function Home() {
           <span className="text-fff-green">Fast</span>
         </h1>
 
-        <p className="mb-5 max-w-md font-mono text-[15px] leading-snug text-fff-yellow sm:mb-6 sm:text-base">
+        <p className="mb-5 max-w-md font-mono text-[15px] leading-relaxed text-fff-yellow sm:mb-6 sm:text-base sm:leading-snug">
           Google Maps for your food & your homies
         </p>
 
@@ -78,8 +78,8 @@ export default function Home() {
           className="mb-6 w-full max-w-xl rounded-2xl border border-white/[0.09] bg-white/[0.03] px-4 py-5 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.04)] sm:mb-8 sm:px-5 sm:py-6 lg:max-w-6xl"
           aria-label="Problem and solution"
         >
-          <div className="flex flex-col gap-4 lg:grid lg:grid-cols-2 lg:items-stretch lg:gap-8">
-            <div className="flex min-h-0 flex-col gap-4 border-b border-white/[0.08] pb-6 sm:gap-5 lg:h-full lg:justify-between lg:border-b-0 lg:pb-0 lg:pr-4 lg:border-r lg:border-white/[0.08]">
+          <div className="flex min-w-0 flex-col gap-4 lg:grid lg:grid-cols-2 lg:items-stretch lg:gap-8">
+            <div className="flex min-h-0 min-w-0 flex-col gap-4 border-b border-white/[0.08] pb-6 sm:gap-5 lg:h-full lg:justify-between lg:border-b-0 lg:pb-0 lg:pr-4 lg:border-r lg:border-white/[0.08]">
               <div className="text-left">
                 <h2
                   id="problem-heading"
@@ -87,7 +87,7 @@ export default function Home() {
                 >
                   Problem
                 </h2>
-                <p className="text-[15px] leading-relaxed text-fff-white/90 sm:text-base sm:leading-snug">
+                <p className="text-[16px] leading-relaxed text-fff-white/92 sm:text-base sm:leading-snug">
                   Google Maps gets them to the address.{' '}
                   <span className="font-semibold text-fff-yellow">Now what?</span>
                 </p>
@@ -103,7 +103,7 @@ export default function Home() {
               </span>
             </div>
 
-            <div className="flex min-h-0 flex-col gap-4 sm:gap-5 lg:h-full lg:justify-between lg:pl-2">
+            <div className="flex min-h-0 min-w-0 flex-col gap-4 sm:gap-5 lg:h-full lg:justify-between lg:pl-2">
               <div className="text-left">
                 <h2
                   id="solution-heading"
@@ -111,10 +111,10 @@ export default function Home() {
                 >
                   Solution
                 </h2>
-                <p className="mb-2 text-[15px] font-semibold leading-relaxed text-fff-green sm:text-[16px] sm:leading-relaxed">
+                <p className="mb-2 text-[16px] font-semibold leading-relaxed text-fff-green sm:text-base">
                   A guide to you
                 </p>
-                <p className="text-[15px] leading-relaxed text-fff-white/78 sm:text-[16px] sm:leading-relaxed">
+                <p className="text-[16px] leading-relaxed text-fff-white/85 sm:text-base sm:leading-relaxed">
                   Step-by-step from where to park to where you’re going—door, gate, or lobby. No app needed.
                 </p>
               </div>
@@ -125,7 +125,7 @@ export default function Home() {
           </div>
         </section>
 
-        <p className="mb-6 max-w-xl text-[15px] leading-relaxed text-fff-white/75 sm:mb-8 sm:text-base sm:leading-relaxed">
+        <p className="mb-6 max-w-xl text-[16px] leading-relaxed text-fff-white/82 sm:mb-8 sm:text-base sm:leading-relaxed">
           Help drivers and guests find your resident—not just the building. A perk for property teams and the people who live there.
         </p>
 

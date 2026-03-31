@@ -135,7 +135,7 @@ export default function HowItWorks() {
           {activeTab === 'manager' && (
             <div className="rounded-2xl border border-white/[0.08] bg-fff-card/80 p-6 shadow-2xl shadow-black/40 backdrop-blur-sm sm:p-10">
               <h2 className="mb-2 text-3xl font-extrabold tracking-tight text-fff-white sm:text-4xl">Property manager</h2>
-              <p className="mb-10 max-w-2xl text-[17px] leading-relaxed text-fff-white/75">
+              <p className="mb-10 max-w-2xl text-[16px] leading-relaxed text-fff-white/85 sm:text-[17px] sm:text-fff-white/78">
                 Improve your property flow in minutes—fewer circling cars, wrong parking, and jams. Residents, visitors, and delivery stay in sync; fewer front-desk calls.
               </p>
               <div className="space-y-8">
@@ -159,7 +159,7 @@ export default function HowItWorks() {
                         <img
                           src={photo.url}
                           alt={photo.title}
-                          className="h-56 w-full rounded-xl border border-white/[0.08] object-cover shadow-lg transition group-hover:border-fff-green/30 sm:h-64"
+                          className="aspect-[4/3] w-full rounded-xl border border-white/[0.08] bg-[#0d0d0d] object-contain object-center shadow-lg transition group-hover:border-fff-green/30"
                         />
                         <p className="mt-3 text-center text-sm font-semibold text-fff-green">{photo.title}</p>
                       </div>
@@ -248,7 +248,7 @@ export default function HowItWorks() {
           {activeTab === 'driver' && (
             <div className="rounded-2xl border border-white/[0.08] bg-fff-card/80 p-6 shadow-2xl shadow-black/40 backdrop-blur-sm sm:p-10">
               <h2 className="mb-2 text-center text-3xl font-extrabold tracking-tight text-fff-white sm:text-4xl">Driver view</h2>
-              <p className="mx-auto mb-10 max-w-lg text-center text-[17px] leading-relaxed text-fff-white/75">
+              <p className="mx-auto mb-10 max-w-lg text-center text-[16px] leading-relaxed text-fff-white/85 sm:text-[17px] sm:text-fff-white/78">
                 What they see in the browser—no install, no login.
               </p>
               <div className="mx-auto max-w-lg overflow-hidden rounded-2xl border border-white/[0.1] bg-fff-bg shadow-2xl">
@@ -260,12 +260,16 @@ export default function HowItWorks() {
                   {driverSteps.map((photo) => (
                     <div key={photo.step} className="rounded-xl border border-white/[0.08] bg-fff-card/60 p-3">
                       {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src={photo.url} alt={photo.title} className="mb-4 h-64 w-full rounded-lg object-cover sm:h-80" />
+                      <img
+                        src={photo.url}
+                        alt={photo.title}
+                        className="mb-4 aspect-[4/3] w-full rounded-lg bg-[#0d0d0d] object-contain object-center sm:aspect-[16/10]"
+                      />
                       <div className="flex gap-3">
                         <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-xl bg-fff-green font-mono text-sm font-bold text-fff-bg">{photo.step}</div>
                         <div>
                           <div className="font-semibold text-fff-white">{photo.title}</div>
-                          <div className="mt-1 text-[15px] leading-relaxed text-fff-white/70">{photo.desc}</div>
+                          <div className="mt-1 text-[15px] leading-relaxed text-fff-white/82 sm:text-fff-white/72">{photo.desc}</div>
                         </div>
                       </div>
                     </div>

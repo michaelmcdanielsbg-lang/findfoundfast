@@ -5,7 +5,8 @@
 /* Frame fills a fixed 420:220 box so Problem & Solution match pixel-perfect */
 const ILLUSTRATION_SVG =
   'block h-full w-full rounded-xl border bg-[#1a1a1a] shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05)]';
-const ILLUSTRATION_WRAP = 'w-full max-w-[420px] shrink-0 aspect-[420/220]';
+/** min-w-0 avoids flex/grid children clipping the SVG on narrow viewports */
+const ILLUSTRATION_WRAP = 'w-full min-w-0 max-w-[420px] shrink-0 aspect-[420/220]';
 
 /** Same footprint as Problem: 160×112 @ (130,58), 3×5 windows @ 14×12, door @ (188,152) */
 function BuildingFacade({ variant }) {
