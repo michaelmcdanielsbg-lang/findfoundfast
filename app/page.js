@@ -61,7 +61,7 @@ export default function Home() {
           For property &amp; ops teams
         </p>
         <p className="mb-2 max-w-xl px-2 font-sans text-[16px] font-medium leading-snug tracking-normal text-fff-white/92 sm:mb-3 sm:text-base">
-          Apartments · Offices · Nursing homes · Hospitals · School · Homes
+          Apartments · Hospitals · Offices · Events
         </p>
 
         <h1 className="mb-2 max-w-xl text-[clamp(2.1rem,7vw,3.35rem)] font-extrabold leading-[1.05] tracking-tight sm:mb-3 sm:text-5xl md:text-6xl">
