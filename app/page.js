@@ -71,7 +71,7 @@ export default function Home() {
         </h1>
 
         <p className="mb-4 max-w-md font-mono text-[15px] leading-relaxed text-fff-yellow sm:mb-5 sm:text-base sm:leading-snug">
-          Google Maps for your food & your homies
+          Get every driver and guest to the right door
         </p>
 
         <section

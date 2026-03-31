@@ -19,6 +19,7 @@ async function sendLeadNotificationEmail(body) {
     '',
     `Contact name: ${body.name ?? ''}`,
     `Email: ${body.email ?? ''}`,
+    `Phone: ${body.phone ?? '(not provided)'}`,
     `Property: ${body.property ?? ''}`,
     `Property type: ${body.type ?? '(not provided)'}`,
     `Approx. units: ${body.units ?? ''}`,
@@ -55,13 +56,19 @@ async function insertDemoRequest(supabase, body) {
     property_name: body.property,
     unit_count: body.units,
   }
+  const withPhoneAttempts = [
+    { ...base, phone: body.phone || null },
+    { ...base, contact_number: body.phone || null },
+    { ...base, phone_number: body.phone || null },
+    base,
+  ]
 
   if (body.type) {
-    const attempts = [
-      { ...base, property_type: body.type },
-      { ...base, type: body.type },
-      base,
-    ]
+    const attempts = withPhoneAttempts.flatMap((row) => [
+      { ...row, property_type: body.type },
+      { ...row, type: body.type },
+      row,
+    ])
     for (const row of attempts) {
       const { error } = await supabase.from('demo_requests').insert(row)
       if (!error) return
@@ -69,8 +76,11 @@ async function insertDemoRequest(supabase, body) {
     throw new Error('Failed to save demo request')
   }
 
-  const { error } = await supabase.from('demo_requests').insert(base)
-  if (error) throw new Error(error.message)
+  for (const row of withPhoneAttempts) {
+    const { error } = await supabase.from('demo_requests').insert(row)
+    if (!error) return
+  }
+  throw new Error('Failed to save demo request')
 }
 
 export async function POST(request) {

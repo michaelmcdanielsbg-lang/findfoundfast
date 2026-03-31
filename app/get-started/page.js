@@ -12,6 +12,7 @@ export default function GetStartedPage() {
   const [units, setUnits] = useState('');
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState('');
@@ -24,6 +25,7 @@ export default function GetStartedPage() {
       'Hospitals',
       'Schools',
       'Homes',
+      'Other',
     ],
     []
   );
@@ -54,6 +56,7 @@ export default function GetStartedPage() {
           units: Number(units),
           name,
           email,
+          phone,
         }),
       });
 
@@ -228,6 +231,18 @@ export default function GetStartedPage() {
                     onChange={(e) => setEmail(e.target.value)}
                     className={`rounded-xl border border-white/[0.12] bg-[#111] px-4 py-3 font-sans text-[15px] text-fff-white outline-none transition-colors ${focusRing}`}
                     placeholder="you@company.com"
+                  />
+                </label>
+
+                <label className="flex flex-col gap-2">
+                  <span className="font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-fff-green">
+                    Phone / contact number
+                  </span>
+                  <input
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                    className={`rounded-xl border border-white/[0.12] bg-[#111] px-4 py-3 font-sans text-[15px] text-fff-white outline-none transition-colors ${focusRing}`}
+                    placeholder="e.g. (555) 123-4567"
                   />
                 </label>
 
