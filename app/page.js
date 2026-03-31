@@ -71,7 +71,7 @@ export default function Home() {
         </h1>
 
         <p className="mb-4 max-w-md font-mono text-[15px] leading-relaxed text-fff-yellow sm:mb-5 sm:text-base sm:leading-snug">
-          Get every driver and guest to the right door
+          Get every driver and guest to the right place
         </p>
 
         <section
