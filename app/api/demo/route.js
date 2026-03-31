@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 import { createBrowserClient } from '@supabase/ssr'
 
-const DEFAULT_INBOX = 'Michaelmcdnaiel.sbg@gmail.com'
+const DEFAULT_INBOX = 'michaelmcdaniel.sbg@gmail.com'
 
 async function sendLeadNotificationEmail(body) {
   const apiKey = process.env.RESEND_API_KEY
