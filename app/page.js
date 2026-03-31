@@ -75,50 +75,52 @@ export default function Home() {
         </p>
 
         <section
-          className="mb-6 w-full max-w-xl rounded-2xl border border-white/[0.09] bg-white/[0.03] px-4 py-5 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.04)] sm:mb-8 sm:px-5 sm:py-6"
+          className="mb-6 w-full max-w-xl rounded-2xl border border-white/[0.09] bg-white/[0.03] px-4 py-5 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.04)] sm:mb-8 sm:px-5 sm:py-6 lg:max-w-6xl"
           aria-label="Problem and solution"
         >
-          <div className="flex flex-col gap-4 border-b border-white/[0.08] pb-6 sm:gap-5 sm:pb-7">
-            <div className="text-left">
-              <h2
-                id="problem-heading"
-                className="mb-2 font-mono text-sm font-bold uppercase tracking-[0.18em] text-fff-rose/95 sm:text-base"
-              >
-                Problem
-              </h2>
-              <p className="text-[15px] leading-relaxed text-fff-white/90 sm:text-base sm:leading-snug">
-                Google Maps gets them to the address.{' '}
-                <span className="font-semibold text-fff-yellow">Now what?</span>
-              </p>
+          <div className="flex flex-col gap-4 lg:grid lg:grid-cols-2 lg:items-start lg:gap-8">
+            <div className="flex flex-col gap-4 border-b border-white/[0.08] pb-6 sm:gap-5 lg:border-b-0 lg:pb-0 lg:pr-4 lg:border-r lg:border-white/[0.08]">
+              <div className="text-left">
+                <h2
+                  id="problem-heading"
+                  className="mb-2 font-mono text-sm font-bold uppercase tracking-[0.18em] text-fff-rose/95 sm:text-base lg:text-lg"
+                >
+                  Problem
+                </h2>
+                <p className="text-[15px] leading-relaxed text-fff-white/90 sm:text-base sm:leading-snug">
+                  Google Maps gets them to the address.{' '}
+                  <span className="font-semibold text-fff-yellow">Now what?</span>
+                </p>
+              </div>
+              <div className="flex w-full justify-center">
+                <ProblemVisual />
+              </div>
             </div>
-            <div className="flex w-full justify-center">
-              <ProblemVisual />
-            </div>
-          </div>
 
-          <div className="flex justify-center py-4" aria-hidden>
-            <span className="rounded-full border border-white/[0.12] bg-fff-bg px-4 py-1 font-mono text-[11px] font-bold uppercase tracking-wider text-fff-white/55 sm:px-5 sm:text-xs">
-              vs
-            </span>
-          </div>
-
-          <div className="flex flex-col gap-4 sm:gap-5">
-            <div className="text-left">
-              <h2
-                id="solution-heading"
-                className="mb-2 font-mono text-sm font-bold uppercase tracking-[0.18em] text-fff-green sm:text-base"
-              >
-                Solution
-              </h2>
-              <p className="mb-2 font-sans text-[1.5rem] font-extrabold leading-tight tracking-tight text-fff-green sm:mb-3 sm:text-3xl">
-                A guide to you
-              </p>
-              <p className="text-[15px] leading-relaxed text-fff-white/78 sm:text-[16px] sm:leading-relaxed">
-                Step-by-step from where to park to where you’re going—door, gate, or lobby. No app needed.
-              </p>
+            <div className="flex justify-center py-4 lg:hidden" aria-hidden>
+              <span className="rounded-full border border-white/[0.12] bg-fff-bg px-4 py-1 font-mono text-[11px] font-bold uppercase tracking-wider text-fff-white/55 sm:px-5 sm:text-xs">
+                vs
+              </span>
             </div>
-            <div className="flex w-full justify-center">
-              <SolutionVisual />
+
+            <div className="flex flex-col gap-4 sm:gap-5 lg:pl-2">
+              <div className="text-left">
+                <h2
+                  id="solution-heading"
+                  className="mb-2 font-mono text-sm font-bold uppercase tracking-[0.18em] text-fff-green sm:text-base lg:text-lg"
+                >
+                  Solution
+                </h2>
+                <p className="mb-2 font-sans text-[1.5rem] font-extrabold leading-tight tracking-tight text-fff-green sm:mb-3 sm:text-3xl">
+                  A guide to you
+                </p>
+                <p className="text-[15px] leading-relaxed text-fff-white/78 sm:text-[16px] sm:leading-relaxed">
+                  Step-by-step from where to park to where you’re going—door, gate, or lobby. No app needed.
+                </p>
+              </div>
+              <div className="flex w-full justify-center">
+                <SolutionVisual />
+              </div>
             </div>
           </div>
         </section>
