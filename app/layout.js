@@ -24,14 +24,14 @@ export const viewport = {
   width: 'device-width',
   initialScale: 1,
   viewportFit: 'cover',
-  themeColor: '#0A0A0A',
+  themeColor: '#fafaf9',
 }
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${dmSans.variable} ${spaceMono.variable}`}>
       <body
-        className={`${dmSans.className} min-h-[100dvh] bg-fff-bg text-fff-body text-fff-white antialiased`}
+        className={`${dmSans.className} min-h-[100dvh] bg-stone-50 text-stone-900 antialiased`}
       >
         {children}
       </body>

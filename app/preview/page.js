@@ -1,7 +1,8 @@
 import Link from 'next/link';
 
-const ring =
-  'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fff-accent/45 focus-visible:ring-offset-2 focus-visible:ring-offset-fff-surface';
+/** Aligned with main marketing: stone-50 canvas, white chrome, brand green CTAs */
+const focusRing =
+  'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/50 focus-visible:ring-offset-2 focus-visible:ring-offset-stone-50';
 
 export const metadata = {
   title: 'FindFoundFast — Preview (professional layout)',
@@ -44,63 +45,64 @@ function IconShield(props) {
 
 export default function PreviewProfessionalPage() {
   return (
-    <div className="min-h-[100dvh] bg-fff-surface text-fff-text-primary">
-      {/* Accent wash — low saturation so UI stays calm (green = action, not wallpaper) */}
+    <div className="relative min-h-[100dvh] overflow-x-hidden bg-stone-50 text-stone-900 antialiased">
       <div
-        className="pointer-events-none fixed inset-x-0 top-0 h-[min(60vh,520px)] opacity-100"
+        className="pointer-events-none fixed inset-x-0 top-0 h-[min(55vh,480px)] opacity-100"
         aria-hidden
         style={{
-          background: 'radial-gradient(ellipse 80% 60% at 50% -10%, rgba(0,255,135,0.055), transparent 58%)',
+          background: 'radial-gradient(ellipse 75% 55% at 50% -5%, rgba(0,255,135,0.07), transparent 55%)',
         }}
       />
 
-      <header className="relative z-20 border-b border-fff-border/55 bg-fff-surface/85 backdrop-blur-xl">
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4 sm:px-6">
-          <Link href="/preview" className={`text-[17px] font-semibold tracking-tight text-fff-text-primary ${ring} rounded`}>
-            Find<span className="text-fff-accent">Found</span>Fast
+      <header className="relative z-10 border-b border-stone-200 bg-white/90 backdrop-blur-xl">
+        <div className="flex flex-col gap-2 px-4 py-3 pt-[max(0.75rem,env(safe-area-inset-top))] sm:flex-row sm:items-center sm:justify-between sm:px-6 sm:py-4">
+          <Link
+            href="/"
+            className={`text-lg font-extrabold tracking-tight text-stone-900 transition-colors hover:text-stone-800 ${focusRing} rounded-sm`}
+          >
+            Find<span className="text-[#00c46f]">Found</span>Fast
           </Link>
-          <nav className="hidden items-center gap-8 text-sm font-medium text-fff-text-secondary sm:flex">
-            <Link href="/pricing" className={`transition hover:text-fff-text-primary ${ring} rounded`}>
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2 sm:gap-6">
+            <Link
+              href="/pricing"
+              className={`font-mono text-xs font-bold uppercase tracking-wide text-stone-600 transition-colors hover:text-stone-900 sm:text-sm ${focusRing} rounded-sm`}
+            >
               Pricing
             </Link>
-            <Link href="/how-it-works?tab=manager" className={`transition hover:text-fff-text-primary ${ring} rounded`}>
-              Product tour
-            </Link>
-          </nav>
-          <div className="flex items-center gap-3">
             <Link
-              href="/"
-              className={`hidden text-xs font-medium text-fff-text-muted underline-offset-4 hover:text-fff-text-primary sm:inline ${ring} rounded`}
+              href="/how-it-works?tab=manager"
+              className={`font-mono text-xs font-bold uppercase tracking-wide text-stone-600 transition-colors hover:text-stone-900 sm:text-sm ${focusRing} rounded-sm`}
             >
-              Current site
+              How it works
             </Link>
             <Link
               href="/get-started"
-              className={`inline-flex min-h-[40px] items-center justify-center rounded-lg bg-fff-accent px-4 py-2 text-sm font-semibold text-fff-surface shadow-sm shadow-fff-accent/15 transition hover:bg-fff-accent/92 ${ring}`}
+              className={`inline-flex min-h-[40px] items-center justify-center rounded-lg bg-fff-green px-4 py-2 font-mono text-[11px] font-bold uppercase tracking-wide text-fff-bg shadow-sm shadow-emerald-900/10 transition-colors hover:bg-[#00e67a] ${focusRing}`}
             >
-              Request access
+              Get started →
             </Link>
           </div>
         </div>
       </header>
 
       <main className="relative z-10">
-        {/* Hero */}
         <section className="mx-auto max-w-6xl px-4 pb-16 pt-14 sm:px-6 sm:pb-24 sm:pt-20 md:pt-24">
-          <p className="text-center text-xs font-semibold uppercase tracking-[0.2em] text-fff-accent/85">Operations &amp; property management</p>
-          <h1 className="mx-auto mt-4 max-w-3xl text-center text-[clamp(2rem,5vw,3.25rem)] font-semibold leading-[1.12] tracking-tight text-fff-text-primary">
+          <p className="text-center font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-stone-500 sm:text-xs">
+            Operations &amp; property management
+          </p>
+          <h1 className="mx-auto mt-4 max-w-3xl text-center text-[clamp(2rem,5vw,3.25rem)] font-extrabold leading-[1.12] tracking-tight text-stone-900">
             Give every arrival a clear path from curb to door
           </h1>
           <div className="mx-auto mt-8 max-w-xl space-y-6 text-center">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-fff-text-muted">Problem</p>
-              <p className="mt-2 text-[17px] leading-relaxed text-fff-text-secondary md:text-lg">
+              <p className="font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-stone-500 sm:text-xs">Problem</p>
+              <p className="mt-2 text-[17px] leading-relaxed text-stone-600 md:text-lg">
                 Map apps stop at the street address—guests still guess parking, gates, and which path to take inside the property.
               </p>
             </div>
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-fff-accent">Solution</p>
-              <p className="mt-2 text-[17px] leading-relaxed text-fff-text-secondary md:text-lg">
+              <p className="font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-emerald-700 sm:text-xs">Solution</p>
+              <p className="mt-2 text-[17px] leading-relaxed text-stone-600 md:text-lg">
                 One timed link shows your approved route: photos, short directions, and access codes that expire when the visit should. No driver app.
               </p>
             </div>
@@ -108,35 +110,33 @@ export default function PreviewProfessionalPage() {
           <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
             <Link
               href="/get-started"
-              className={`inline-flex min-h-[48px] w-full min-w-[200px] items-center justify-center rounded-lg bg-fff-accent px-8 py-3 text-sm font-semibold text-fff-surface shadow-lg shadow-fff-accent/12 transition hover:bg-fff-accent/92 sm:w-auto ${ring}`}
+              className={`inline-flex min-h-[48px] w-full min-w-[200px] items-center justify-center rounded-lg bg-fff-green px-8 py-3.5 font-mono text-xs font-bold uppercase tracking-wide text-fff-bg shadow-sm shadow-emerald-900/10 transition-colors hover:bg-[#00e67a] sm:w-auto ${focusRing}`}
             >
-              Schedule onboarding
+              Get started →
             </Link>
             <Link
               href="/how-it-works?tab=manager"
-              className={`inline-flex min-h-[48px] w-full min-w-[200px] items-center justify-center rounded-lg border border-fff-border/70 bg-fff-surface-elevated/40 px-8 py-3 text-sm font-semibold text-fff-text-primary transition hover:border-fff-border hover:bg-fff-surface-elevated/70 sm:w-auto ${ring}`}
+              className={`inline-flex min-h-[48px] w-full min-w-[200px] items-center justify-center rounded-lg border border-stone-300 bg-white px-8 py-3.5 font-mono text-xs font-bold uppercase tracking-wide text-stone-800 shadow-sm transition-colors hover:border-emerald-400 hover:text-emerald-800 sm:w-auto ${focusRing}`}
             >
-              View product tour
+              How it works
             </Link>
           </div>
-          <p className="mt-8 text-center text-sm text-fff-text-muted">No guest app · Works in any browser · Codes expire automatically</p>
+          <p className="mt-8 text-center text-sm text-stone-500">No guest app · Works in any browser · Codes expire automatically</p>
         </section>
 
-        {/* Trust strip */}
-        <section className="border-y border-fff-border/45 bg-fff-surface-elevated/35 py-10">
+        <section className="border-y border-stone-200 bg-white py-10">
           <div className="mx-auto max-w-6xl px-4 sm:px-6">
-            <p className="text-center text-xs font-semibold uppercase tracking-[0.18em] text-fff-text-muted">Designed for</p>
-            <p className="mt-3 text-center text-sm font-medium text-fff-text-secondary md:text-base">
+            <p className="text-center font-mono text-[11px] font-bold uppercase tracking-[0.18em] text-stone-400 sm:text-xs">Designed for</p>
+            <p className="mt-3 text-center text-sm font-medium text-stone-600 md:text-base">
               Multifamily · Senior living · Student housing · Medical campuses · Corporate campuses · Hospitality
             </p>
           </div>
         </section>
 
-        {/* Value props */}
         <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6 md:py-28">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-2xl font-semibold tracking-tight text-fff-text-primary md:text-3xl">Why teams standardize on FindFoundFast</h2>
-            <p className="mt-3 text-fff-text-secondary">Reduce failed deliveries, lobby congestion, and repeated “where are you?” calls—without handing out permanent codes.</p>
+            <h2 className="text-2xl font-extrabold tracking-tight text-stone-900 md:text-3xl">Why teams standardize on FindFoundFast</h2>
+            <p className="mt-3 text-stone-600">Reduce failed deliveries, lobby congestion, and repeated “where are you?” calls—without handing out permanent codes.</p>
           </div>
           <div className="mt-14 grid gap-6 sm:grid-cols-3">
             {[
@@ -158,114 +158,101 @@ export default function PreviewProfessionalPage() {
             ].map((item) => {
               const FeatureIcon = item.icon;
               return (
-              <div
-                key={item.title}
-                className="rounded-2xl border border-fff-border/50 bg-fff-surface-elevated/55 p-6 shadow-sm shadow-black/25"
-              >
-                <FeatureIcon className="h-8 w-8 text-fff-accent" />
-                <h3 className="mt-4 text-lg font-semibold text-fff-text-primary">{item.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-fff-text-secondary">{item.body}</p>
-              </div>
-            );
+                <div
+                  key={item.title}
+                  className="rounded-2xl border border-stone-200 bg-white p-6 shadow-sm"
+                >
+                  <FeatureIcon className="h-8 w-8 text-emerald-700" />
+                  <h3 className="mt-4 text-lg font-semibold text-stone-900">{item.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-stone-600">{item.body}</p>
+                </div>
+              );
             })}
           </div>
         </section>
 
-        {/* Problem / solution — text-forward */}
-        <section className="border-t border-fff-border/40 bg-fff-surface-subtle/30 py-20 md:py-24">
+        <section className="border-t border-stone-200 bg-stone-100/50 py-20 md:py-24">
           <div className="mx-auto grid max-w-6xl gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:items-start">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-fff-danger/85">The gap</p>
-              <h2 className="mt-3 text-2xl font-semibold tracking-tight text-fff-text-primary md:text-3xl">Maps stop at the address</h2>
-              <p className="mt-4 leading-relaxed text-fff-text-secondary">
+              <p className="font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-rose-600 sm:text-xs">The gap</p>
+              <h2 className="mt-3 text-2xl font-extrabold tracking-tight text-stone-900 md:text-3xl">Maps stop at the address</h2>
+              <p className="mt-4 leading-relaxed text-stone-600">
                 Navigation apps deliver people to the building—not the right entrance, parking level, or gate. That gap becomes your front desk’s problem, the resident’s texts, and the carrier’s failed delivery.
               </p>
             </div>
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-fff-accent">The standard</p>
-              <h2 className="mt-3 text-2xl font-semibold tracking-tight text-fff-text-primary md:text-3xl">A guided path, every time</h2>
-              <p className="mt-4 leading-relaxed text-fff-text-secondary">
+              <p className="font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-emerald-700 sm:text-xs">The standard</p>
+              <h2 className="mt-3 text-2xl font-extrabold tracking-tight text-stone-900 md:text-3xl">A guided path, every time</h2>
+              <p className="mt-4 leading-relaxed text-stone-600">
                 FindFoundFast turns your approved route into a shareable, time-bound experience: photos, short directions, and codes that match your access policy—presented consistently for every arrival.
               </p>
             </div>
           </div>
         </section>
 
-        {/* Security / ops note */}
         <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 md:py-20">
-          <div className="flex flex-col gap-6 rounded-2xl border border-fff-accent/22 bg-fff-accent/[0.045] p-8 md:flex-row md:items-center md:gap-10 md:p-10">
-            <IconShield className="h-12 w-12 shrink-0 text-fff-accent md:h-14 md:w-14" />
+          <div className="flex flex-col gap-6 rounded-2xl border border-emerald-200/80 bg-emerald-50/80 p-8 md:flex-row md:items-center md:gap-10 md:p-10">
+            <IconShield className="h-12 w-12 shrink-0 text-emerald-700 md:h-14 md:w-14" />
             <div>
-              <h2 className="text-xl font-semibold text-fff-text-primary md:text-2xl">Built for operational reality</h2>
-              <p className="mt-2 text-fff-text-secondary">
+              <h2 className="text-xl font-extrabold text-stone-900 md:text-2xl">Built for operational reality</h2>
+              <p className="mt-2 text-stone-600">
                 Timed links reduce stale instructions in the wild. Pair with your existing access and vendor policies—your team defines what’s shown; residents distribute within the window you support.
               </p>
             </div>
           </div>
         </section>
 
-        {/* Pricing */}
-        <section className="border-t border-fff-border/40 py-20 md:py-24" id="pricing">
+        <section className="border-t border-stone-200 bg-white py-20 md:py-24" id="pricing">
           <div className="mx-auto max-w-lg px-4 text-center sm:px-6">
-            <h2 className="text-2xl font-semibold tracking-tight text-fff-text-primary md:text-3xl">Simple per-property pricing</h2>
-            <p className="mt-2 text-fff-text-muted">Unlimited buildings and units within that property.</p>
-            <div className="mt-10 rounded-2xl border border-fff-border/55 bg-fff-surface-elevated/50 p-8">
-              <p className="font-mono text-sm text-fff-accent">Starting at</p>
-              <p className="mt-2 text-5xl font-semibold tabular-nums tracking-tight text-fff-text-primary md:text-6xl">
-                $49<span className="text-2xl font-medium text-fff-text-muted">/mo</span>
+            <h2 className="text-2xl font-extrabold tracking-tight text-stone-900 md:text-3xl">Simple per-property pricing</h2>
+            <p className="mt-2 text-stone-500">Unlimited buildings and units within that property.</p>
+            <div className="mt-10 rounded-2xl border border-stone-200 bg-stone-50 p-8 shadow-sm">
+              <p className="font-mono text-sm font-bold uppercase tracking-wide text-emerald-700">Starting at</p>
+              <p className="mt-2 text-5xl font-extrabold tabular-nums tracking-tight text-stone-900 md:text-6xl">
+                $49<span className="text-2xl font-bold text-stone-500">/mo</span>
               </p>
-              <p className="mt-2 text-sm text-fff-text-muted">per property · annual plans available</p>
+              <p className="mt-2 text-sm text-stone-500">per property · annual plans available</p>
               <Link
                 href="/pricing"
-                className={`mt-8 inline-flex w-full items-center justify-center rounded-lg border border-fff-border/70 py-3 text-sm font-semibold text-fff-text-primary transition hover:bg-fff-surface-elevated/60 ${ring}`}
+                className={`mt-8 inline-flex w-full items-center justify-center rounded-lg border border-stone-300 bg-white py-3.5 font-mono text-xs font-bold uppercase tracking-wide text-stone-800 shadow-sm transition-colors hover:border-emerald-400 hover:text-emerald-800 ${focusRing}`}
               >
-                Compare plans
+                View full pricing
               </Link>
               <Link
                 href="/get-started"
-                className={`mt-3 inline-flex w-full items-center justify-center rounded-lg bg-fff-accent py-3 text-sm font-semibold text-fff-surface transition hover:bg-fff-accent/92 ${ring}`}
+                className={`mt-3 inline-flex w-full items-center justify-center rounded-lg bg-fff-green py-3.5 font-mono text-xs font-bold uppercase tracking-wide text-fff-bg shadow-sm shadow-emerald-900/10 transition-colors hover:bg-[#00e67a] ${focusRing}`}
               >
-                Contact sales
+                Get started →
               </Link>
             </div>
           </div>
         </section>
 
-        {/* Final CTA */}
-        <section className="border-t border-fff-border/40 bg-fff-surface-elevated/25 py-16 md:py-20">
+        <section className="border-t border-stone-200 bg-stone-50 py-16 md:py-20">
           <div className="mx-auto max-w-2xl px-4 text-center sm:px-6">
-            <h2 className="text-xl font-semibold text-fff-text-primary md:text-2xl">See if FindFoundFast fits your portfolio</h2>
-            <p className="mt-2 text-sm text-fff-text-muted">We’ll walk through setup, resident flow, and how timed links align with your policies.</p>
+            <h2 className="text-xl font-extrabold text-stone-900 md:text-2xl">See if FindFoundFast fits your portfolio</h2>
+            <p className="mt-2 text-sm text-stone-500">We’ll walk through setup, resident flow, and how timed links align with your policies.</p>
             <Link
               href="/get-started"
-              className={`mt-8 inline-flex min-h-[48px] items-center justify-center rounded-lg bg-fff-accent px-8 py-3 text-sm font-semibold text-fff-surface transition hover:bg-fff-accent/92 ${ring}`}
+              className={`mt-8 inline-flex min-h-[48px] items-center justify-center rounded-lg bg-fff-green px-8 py-3.5 font-mono text-xs font-bold uppercase tracking-wide text-fff-bg shadow-sm shadow-emerald-900/10 transition-colors hover:bg-[#00e67a] ${focusRing}`}
             >
-              Get started
+              Get started →
             </Link>
             <p className="mt-6">
-              <Link href="/" className={`text-sm text-fff-text-muted underline-offset-4 hover:text-fff-text-primary ${ring} rounded`}>
-                ← Back to current marketing site
+              <Link href="/" className={`text-sm text-stone-600 underline-offset-4 transition-colors hover:text-emerald-700 ${focusRing} rounded-sm`}>
+                ← Home
               </Link>
             </p>
           </div>
         </section>
       </main>
 
-      <footer className="relative z-10 border-t border-fff-border/45 py-10">
-        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-4 text-sm text-fff-text-muted sm:flex-row sm:px-6">
-          <span>© {new Date().getFullYear()} FindFoundFast</span>
-          <div className="flex gap-6">
-            <Link href="/pricing" className={`hover:text-fff-text-primary ${ring} rounded`}>
-              Pricing
-            </Link>
-            <Link href="/how-it-works?tab=manager" className={`hover:text-fff-text-primary ${ring} rounded`}>
-              Product tour
-            </Link>
-            <a href="https://findfoundfast.com" className={`hover:text-fff-text-primary ${ring} rounded`} rel="noopener noreferrer">
-              findfoundfast.com
-            </a>
-          </div>
-        </div>
+      <footer className="relative z-10 border-t border-stone-200 py-6 pb-[max(1.5rem,env(safe-area-inset-bottom))] text-center font-mono text-fff-micro text-stone-500 sm:py-8 sm:text-sm">
+        <span className="text-stone-700">FindFoundFast</span>
+        <span className="mx-1.5 text-stone-400">·</span>
+        <a href="https://findfoundfast.com" rel="noopener noreferrer" className={`transition-colors hover:text-emerald-700 ${focusRing} rounded-sm`}>
+          findfoundfast.com
+        </a>
       </footer>
     </div>
   );
