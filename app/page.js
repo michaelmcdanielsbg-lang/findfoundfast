@@ -2,11 +2,11 @@ import Link from "next/link";
 import { ProblemVisual, SolutionVisual } from "@/components/ProblemSolutionGraphics";
 
 const focusRing =
-  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fff-green/55 focus-visible:ring-offset-2 focus-visible:ring-offset-fff-bg";
+  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fff-accent/55 focus-visible:ring-offset-2 focus-visible:ring-offset-fff-surface";
 
 export default function Home() {
   return (
-    <div className="relative flex min-h-screen flex-col overflow-x-hidden bg-fff-bg">
+    <div className="relative flex min-h-screen flex-col overflow-x-hidden bg-fff-surface">
       <div
         className="pointer-events-none fixed inset-0 opacity-100"
         aria-hidden
@@ -25,30 +25,30 @@ export default function Home() {
         aria-hidden
       />
 
-      <header className="relative z-10 border-b border-white/[0.08] bg-fff-bg/90 px-4 py-3 pt-[max(0.75rem,env(safe-area-inset-top))] backdrop-blur-md sm:px-6 sm:py-4">
+      <header className="relative z-10 border-b border-fff-border/50 bg-fff-surface/90 px-4 py-3 pt-[max(0.75rem,env(safe-area-inset-top))] backdrop-blur-md sm:px-6 sm:py-4">
         <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
         <Link
           href="/"
-          className={`text-lg font-extrabold tracking-tight text-fff-white transition-colors hover:text-fff-white/90 ${focusRing} rounded-sm`}
+          className={`text-lg font-extrabold tracking-tight text-fff-text-primary transition-colors hover:text-fff-text-primary/90 ${focusRing} rounded-sm`}
         >
-          Find<span className="text-fff-green">Found</span>Fast
+          Find<span className="text-fff-accent">Found</span>Fast
         </Link>
         <div className="flex flex-wrap items-center gap-x-4 gap-y-2 sm:gap-6">
           <Link
             href="/pricing"
-            className={`font-mono text-xs font-bold uppercase tracking-wide text-fff-white/90 transition-colors hover:text-fff-green sm:text-sm ${focusRing} rounded-sm`}
+            className={`font-mono text-xs font-bold uppercase tracking-wide text-fff-text-primary/90 transition-colors hover:text-fff-accent sm:text-sm ${focusRing} rounded-sm`}
           >
             Pricing
           </Link>
           <Link
             href="/how-it-works?tab=manager"
-            className={`font-mono text-xs font-bold uppercase tracking-wide text-fff-white/90 transition-colors hover:text-fff-green sm:text-sm ${focusRing} rounded-sm`}
+            className={`font-mono text-xs font-bold uppercase tracking-wide text-fff-text-primary/90 transition-colors hover:text-fff-accent sm:text-sm ${focusRing} rounded-sm`}
           >
             How it works
           </Link>
           <Link
             href="/get-started"
-            className={`inline-flex min-h-[40px] items-center justify-center rounded-lg bg-fff-green px-4 py-2 font-mono text-[11px] font-bold uppercase tracking-wide text-fff-bg transition-colors hover:bg-fff-yellow ${focusRing}`}
+            className={`inline-flex min-h-[40px] items-center justify-center rounded-lg bg-fff-accent px-4 py-2 font-mono text-[11px] font-bold uppercase tracking-wide text-fff-surface transition-colors hover:bg-fff-accent-warm ${focusRing}`}
           >
             Get started →
           </Link>
@@ -57,10 +57,10 @@ export default function Home() {
       </header>
 
       <main className="relative z-10 flex flex-1 flex-col items-center justify-center px-4 pt-4 pb-6 text-center sm:px-5 sm:pt-5 sm:pb-8 md:pb-10">
-        <p className="mb-1 max-w-xl px-2 font-mono text-[11px] font-bold uppercase tracking-[0.18em] text-fff-green sm:text-xs">
+        <p className="mb-1 max-w-xl px-2 font-mono text-fff-eyebrow font-bold uppercase text-fff-green sm:text-xs">
           For property &amp; ops teams
         </p>
-        <p className="mb-2 max-w-xl px-2 font-sans text-[16px] font-medium leading-snug tracking-normal text-fff-white/92 sm:mb-3 sm:text-base">
+        <p className="mb-2 max-w-xl px-2 font-sans text-fff-body-sm font-medium leading-snug tracking-normal text-fff-white/92 sm:mb-3">
           Apartments · Hospitals · Offices · Events
         </p>
 
@@ -70,7 +70,7 @@ export default function Home() {
           <span className="text-fff-green">Fast</span>
         </h1>
 
-        <p className="mb-4 max-w-md font-mono text-[15px] leading-relaxed text-fff-yellow sm:mb-5 sm:text-base sm:leading-snug">
+        <p className="mb-4 max-w-md font-mono text-fff-secondary font-semibold leading-relaxed text-fff-yellow sm:mb-5 sm:leading-snug">
           Get every driver and guest to the right place
         </p>
 
@@ -83,11 +83,11 @@ export default function Home() {
               <div className="text-left">
                 <h2
                   id="problem-heading"
-                  className="mb-1.5 font-mono text-sm font-bold uppercase tracking-[0.18em] text-fff-rose/95 sm:text-base lg:text-lg"
+                  className="mb-1.5 font-sans text-fff-eyebrow font-bold uppercase text-fff-rose/90 sm:text-xs"
                 >
                   Problem
                 </h2>
-                <p className="text-[16px] leading-relaxed text-fff-white/92 sm:text-base sm:leading-snug">
+                <p className="text-fff-body-sm font-normal leading-relaxed text-fff-white/92 sm:leading-snug">
                   Google Maps gets them to the address.{' '}
                   <span className="font-semibold text-fff-yellow">Now what?</span>
                 </p>
@@ -108,11 +108,11 @@ export default function Home() {
               <div className="text-left">
                 <h2
                   id="solution-heading"
-                  className="mb-1 font-mono text-sm font-bold uppercase tracking-[0.18em] text-fff-green sm:mb-1.5 sm:text-base lg:text-lg"
+                  className="mb-1.5 font-sans text-fff-eyebrow font-bold uppercase text-fff-green sm:text-xs"
                 >
                   Solution
                 </h2>
-                <p className="text-[16px] font-semibold leading-snug text-fff-white sm:text-base sm:leading-snug">
+                <p className="text-fff-body-sm font-medium leading-snug text-fff-white sm:leading-snug">
                   A Guide: Park, Door, Gate, Lobby
                 </p>
               </div>
@@ -123,7 +123,7 @@ export default function Home() {
           </div>
         </section>
 
-        <p className="mb-5 max-w-xl text-[16px] leading-relaxed text-fff-white/82 sm:mb-6 sm:text-base sm:leading-relaxed">
+        <p className="mb-5 max-w-prose text-fff-body-sm font-normal leading-relaxed text-fff-white/82 sm:mb-6">
           Help drivers and guests find your resident—not just the building. A perk for property teams and the people who live there.
         </p>
 
@@ -134,15 +134,15 @@ export default function Home() {
         >
           <h2
             id="pricing-heading"
-            className="mb-4 font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-fff-green"
+            className="mb-4 font-mono text-fff-eyebrow font-bold uppercase text-fff-green"
           >
             Pricing
           </h2>
-          <p className="mb-1 font-sans text-4xl font-extrabold tracking-tight text-fff-green sm:text-5xl">
+          <p className="mb-1 font-sans text-4xl font-extrabold tabular-nums tracking-tight text-fff-green sm:text-5xl">
             $49<span className="text-xl font-bold text-fff-white/85 sm:text-2xl">/mo</span>
           </p>
           <p className="text-base font-semibold text-fff-white sm:text-lg">per property</p>
-          <p className="mx-auto mt-3 max-w-xs text-[15px] leading-snug text-fff-white/80">
+          <p className="mx-auto mt-3 max-w-xs text-fff-secondary leading-snug text-fff-white/80">
             Unlimited buildings &amp; units.
           </p>
           <Link
@@ -235,7 +235,7 @@ export default function Home() {
                     key={idx}
                     className="w-[320px] flex-shrink-0 rounded-xl border border-white/[0.08] bg-[#111] px-4 py-3"
                   >
-                    <p className="text-[14px] leading-relaxed text-fff-white/85">
+                    <p className="text-fff-caption leading-relaxed text-fff-white/85">
                       {t}
                     </p>
                     <p className="mt-2 font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-fff-green/70">
@@ -248,7 +248,7 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="relative z-10 border-t border-white/[0.06] py-6 pb-[max(1.5rem,env(safe-area-inset-bottom))] text-center font-mono text-[13px] text-fff-muted sm:py-8 sm:text-sm">
+      <footer className="relative z-10 border-t border-white/[0.06] py-6 pb-[max(1.5rem,env(safe-area-inset-bottom))] text-center font-mono text-fff-micro text-fff-muted sm:py-8 sm:text-sm">
         <span className="text-fff-white/70">FindFoundFast</span>
         <span className="mx-1.5 text-fff-muted/80">·</span>
         <a

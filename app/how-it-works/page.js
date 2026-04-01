@@ -32,11 +32,8 @@ export default function HowItWorks() {
     { step: 4, title: 'Your Door', desc: 'Unit 412 – last door on the right. Leave at door. Thank you!', url: 'https://i.ibb.co/0VWt3QZk/Modern-elevator-in-sleek-lobby-setting.png' },
   ];
 
-  /** Steps 3–4 are lobby/elevator shots — cover-crop so they fill the frame like other photos */
   const photoFillClass = (step) =>
-    step === 3 || step === 4
-      ? 'object-cover object-center'
-      : 'object-contain object-center';
+    step === 3 || step === 4 ? 'object-cover object-center' : 'object-contain object-center';
 
   const testimonials = [
     'My friends and family can never find my apartment.',
@@ -141,7 +138,7 @@ export default function HowItWorks() {
           {activeTab === 'manager' && (
             <div className="rounded-2xl border border-white/[0.08] bg-fff-card/80 p-5 shadow-2xl shadow-black/40 backdrop-blur-sm sm:p-8 md:p-10">
               <h2 className="mb-1.5 text-2xl font-extrabold tracking-tight text-fff-white sm:mb-2 sm:text-3xl md:text-4xl">Property manager</h2>
-              <p className="mb-6 max-w-2xl text-[16px] leading-relaxed text-fff-white/85 sm:mb-8 sm:text-[17px] sm:text-fff-white/78">
+              <p className="mb-6 max-w-2xl text-[16px] leading-relaxed text-fff-white/80 sm:mb-8 sm:text-[17px]">
                 Improve your property flow in minutes—fewer circling cars, wrong parking, and jams. Residents, visitors, and delivery stay in sync; fewer front-desk calls.
               </p>
               <div className="space-y-5 sm:space-y-7">
@@ -234,13 +231,17 @@ export default function HowItWorks() {
               </div>
 
               <div className="mt-6 sm:mt-8">
-                <h3 className="mb-4 text-center text-lg font-bold text-fff-white sm:mb-5 sm:text-xl">What your generated link looks like</h3>
+                <h3 className="mb-4 text-center text-lg font-bold text-fff-white sm:mb-5 sm:text-xl">
+                  What your generated link looks like
+                </h3>
                 <div className="mx-auto max-w-md rounded-2xl border border-fff-green/25 bg-fff-bg/90 p-6 text-center ring-1 ring-fff-green/10 sm:p-8">
                   <div className="font-mono text-sm text-fff-green">findfoundfast.com/link/sunny-a</div>
                   <div className="mt-3 text-2xl font-extrabold text-fff-white sm:text-3xl">
                     Expires in <span className="text-fff-green">42 minutes</span>
                   </div>
-                  <div className="mt-6 rounded-xl bg-fff-green py-3.5 font-mono text-base font-bold uppercase tracking-wide text-fff-bg">Copy link</div>
+                  <div className="mt-6 rounded-xl bg-fff-green py-3.5 font-mono text-base font-bold uppercase tracking-wide text-fff-bg">
+                    Copy link
+                  </div>
                   <p className="mt-5 text-[15px] leading-relaxed text-fff-white/70">
                     Send this to your driver or guest. They&apos;ll see photos and gate codes in one place—no app.
                   </p>
@@ -254,7 +255,7 @@ export default function HowItWorks() {
           {activeTab === 'driver' && (
             <div className="rounded-2xl border border-white/[0.08] bg-fff-card/80 p-5 shadow-2xl shadow-black/40 backdrop-blur-sm sm:p-8 md:p-10">
               <h2 className="mb-1.5 text-center text-2xl font-extrabold tracking-tight text-fff-white sm:mb-2 sm:text-3xl md:text-4xl">Driver view</h2>
-              <p className="mx-auto mb-6 max-w-lg text-center text-[16px] leading-relaxed text-fff-white/85 sm:mb-8 sm:text-[17px] sm:text-fff-white/78">
+              <p className="mx-auto mb-6 max-w-lg text-center text-[16px] leading-relaxed text-fff-white/80 sm:mb-8 sm:text-[17px]">
                 What they see in the browser—no install, no login.
               </p>
               <div className="mx-auto max-w-lg overflow-hidden rounded-2xl border border-white/[0.1] bg-fff-bg shadow-2xl">
@@ -275,7 +276,7 @@ export default function HowItWorks() {
                         <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-xl bg-fff-green font-mono text-sm font-bold text-fff-bg">{photo.step}</div>
                         <div>
                           <div className="font-semibold text-fff-white">{photo.title}</div>
-                          <div className="mt-1 text-[15px] leading-relaxed text-fff-white/82 sm:text-fff-white/72">{photo.desc}</div>
+                          <div className="mt-1 text-[15px] leading-relaxed text-fff-white/75">{photo.desc}</div>
                         </div>
                       </div>
                     </div>

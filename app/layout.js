@@ -4,6 +4,7 @@ import './globals.css'
 const dmSans = DM_Sans({
   subsets: ['latin'],
   variable: '--font-dm-sans',
+  display: 'swap',
   weight: ['400', '500', '600', '700', '800'],
 })
 
@@ -29,7 +30,9 @@ export const viewport = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${dmSans.variable} ${spaceMono.variable}`}>
-      <body className="min-h-[100dvh] bg-fff-bg font-sans text-[17px] leading-relaxed text-fff-white antialiased">
+      <body
+        className={`${dmSans.className} min-h-[100dvh] bg-fff-bg text-fff-body text-fff-white antialiased`}
+      >
         {children}
       </body>
     </html>
