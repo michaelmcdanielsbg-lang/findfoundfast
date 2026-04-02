@@ -108,7 +108,6 @@ function StickFigure({ x, y, hue, animClass }) {
       <line x1="0" y1="-2" x2="7" y2="4" stroke={c} strokeWidth="1.4" strokeLinecap="round" />
       <line x1="0" y1="7" x2="-5" y2="18" stroke={c} strokeWidth="1.4" strokeLinecap="round" />
       <line x1="0" y1="7" x2="5" y2="18" stroke={c} strokeWidth="1.4" strokeLinecap="round" />
-      {/* confused scratch */}
       <line x1="4" y1="-4" x2="1" y2="-12" stroke={c} strokeWidth="1.2" strokeLinecap="round" className="ff-p-scratch" />
     </g>
   );
@@ -137,7 +136,6 @@ const problemStyle = (
     @keyframes ff-p-dash {
       to { stroke-dashoffset: -28; }
     }
-    /* 16s: staggered pull-ups → people out & walk → wrong window X */
     .ff-p-car-a { animation: ff-p-car-a 16s linear infinite; }
     .ff-p-car-b { animation: ff-p-car-b 16s linear infinite; }
     .ff-p-car-c { animation: ff-p-car-c 16s linear infinite; }
@@ -169,7 +167,6 @@ const problemStyle = (
     .ff-p-stick-1 { animation: ff-p-walk-1 16s linear infinite; }
     .ff-p-stick-2 { animation: ff-p-walk-2 16s linear infinite; }
     .ff-p-stick-3 { animation: ff-p-walk-3 16s linear infinite; }
-    /* One person: out of car → sidewalk → door → up into doorway → gone */
     @keyframes ff-p-walk-1 {
       0%, 22% { opacity: 0; transform: translate(62px, 198px); }
       24% { opacity: 1; transform: translate(62px, 198px); }
@@ -183,7 +180,6 @@ const problemStyle = (
       58% { opacity: 0; transform: translate(210px, 158px); }
       100% { opacity: 0; transform: translate(210px, 158px); }
     }
-    /* Wanderers: to building front, then mill about (never enter) */
     @keyframes ff-p-walk-2 {
       0%, 28% { opacity: 0; transform: translate(308px, 198px); }
       30% { opacity: 1; transform: translate(304px, 198px); }
@@ -361,7 +357,6 @@ export function ProblemVisual({ className = '' }) {
 
 const solutionStyle = (
   <style>{`
-    /* 16s story loop: park → walk to door → fade inside → ~1s pause → window + check highlight */
     .ff-s-route { animation: ff-s-dash 2.5s linear infinite; }
     @keyframes ff-s-dash {
       to { stroke-dashoffset: -24; }
@@ -374,7 +369,6 @@ const solutionStyle = (
       14% { transform: translate(88px, 200px) rotate(-3deg); }
       100% { transform: translate(88px, 200px) rotate(-3deg); }
     }
-    /* Walker snaps to dashed path: car → (88,198) → (210,198) → (210,152); linear feels like following the line */
     .ff-s-person {
       animation: ff-s-person 16s linear infinite;
     }
@@ -392,7 +386,6 @@ const solutionStyle = (
       48% { opacity: 0; transform: translate(210px, 152px); }
       100% { opacity: 0; transform: translate(210px, 152px); }
     }
-    /* ~1s after person fades (48%) → arrival ~54%: window + check fade in, soft beams ramp ~2s then hold (no bounce) */
     .ff-s-dest-frame {
       animation: ff-s-dest-frame 16s ease-out infinite;
     }
@@ -402,7 +395,6 @@ const solutionStyle = (
       55.5% { opacity: 1; }
       56%, 100% { opacity: 1; }
     }
-    /* ~1s soft bright wash (no line rays) — then off; window frame + check stay */
     .ff-s-beam-glow {
       animation: ff-s-beam-glow 16s ease-out infinite;
     }
@@ -456,7 +448,6 @@ const solutionStyle = (
 function SolutionMapSvg() {
   const checkCx = 142 + 4 * 26 + 7;
   const checkCy = 70 + 7;
-  /* Path: pull in to park → door (person walks ground) → up to destination window */
   const routeD = `M 36 202 L 88 200 L 88 198 L 210 198 L 210 152 L ${checkCx} ${checkCy}`;
 
   const destWinX = 142 + 4 * 26;

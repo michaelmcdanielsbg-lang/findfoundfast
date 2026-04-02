@@ -37,7 +37,7 @@ Instead of residents texting confusing directions and gate codes that get screen
 | Route | Purpose |
 |-------|--------|
 | `/` | Minimal landing: brand headline, value prop, **Try it free** (app), **How it works** → `/how-it-works` |
-| `/how-it-works` | Tabbed walkthrough: **Property manager** (default tab) → Resident → Driver; demos, chat before/after, link preview |
+| `/how-it-works` | **Who are you?** Property vs **College campus**. Property: tabs **Manager** → Resident → Driver; campus: permanent/timed use cases. URL: `?audience=property|campus` and `?tab=manager|resident|driver` |
 
 **Goal:** Make value obvious fast for **property managers** and show **residents** exactly what they send to drivers.
 

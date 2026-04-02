@@ -6,7 +6,7 @@ import Link from 'next/link';
 const focusRing =
   'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/50 focus-visible:ring-offset-2 focus-visible:ring-offset-stone-50';
 
-const inputClass = `rounded-xl border border-stone-200 bg-white px-4 py-3 font-sans text-[15px] text-stone-900 outline-none transition-colors placeholder:text-stone-400 ${focusRing}`;
+const inputClass = `rounded-xl border border-stone-200 bg-white px-4 py-3 font-sans text-fff-secondary text-stone-900 outline-none transition-colors placeholder:text-stone-400 ${focusRing}`;
 
 export default function GetStartedPage() {
   const [propertyName, setPropertyName] = useState('');
@@ -98,23 +98,23 @@ export default function GetStartedPage() {
           <div className="flex flex-wrap items-center gap-x-4 gap-y-2 sm:gap-6">
             <Link
               href="/"
-              className={`font-mono text-xs font-bold uppercase tracking-wide text-stone-600 transition-colors hover:text-stone-900 sm:text-sm ${focusRing} rounded-sm`}
+              className={`font-mono text-sm font-bold uppercase tracking-wide text-stone-600 transition-colors hover:text-stone-900 ${focusRing} rounded-sm`}
             >
               Home
             </Link>
             <Link
               href="/pricing"
-              className={`font-mono text-xs font-bold uppercase tracking-wide text-stone-600 transition-colors hover:text-stone-900 sm:text-sm ${focusRing} rounded-sm`}
+              className={`font-mono text-sm font-bold uppercase tracking-wide text-stone-600 transition-colors hover:text-stone-900 ${focusRing} rounded-sm`}
             >
               Pricing
             </Link>
             <Link
-              href="/how-it-works?tab=manager"
-              className={`font-mono text-xs font-bold uppercase tracking-wide text-stone-600 transition-colors hover:text-stone-900 sm:text-sm ${focusRing} rounded-sm`}
+              href="/how-it-works?audience=property"
+              className={`font-mono text-sm font-bold uppercase tracking-wide text-stone-600 transition-colors hover:text-stone-900 ${focusRing} rounded-sm`}
             >
               How it works
             </Link>
-            <span className="font-mono text-xs font-bold uppercase tracking-wide text-emerald-700 sm:text-sm">
+            <span className="font-mono text-sm font-bold uppercase tracking-wide text-emerald-700">
               Get started
             </span>
           </div>
@@ -123,17 +123,17 @@ export default function GetStartedPage() {
 
       <main className="relative z-10 flex flex-1 flex-col items-center px-4 py-8 sm:px-6 sm:py-12 md:py-16">
         <div className="w-full max-w-2xl">
-          <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-4 py-2 font-mono text-[11px] font-bold uppercase tracking-[0.14em] text-emerald-800 sm:mb-5 sm:text-xs sm:tracking-[0.2em]">
+          <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-4 py-2 font-mono text-fff-eyebrow font-bold uppercase text-emerald-800 sm:mb-5">
             Get started
           </p>
 
           <h1 className="mb-2 text-3xl font-extrabold tracking-tight text-stone-900 sm:text-4xl">
             Tell us about your property
           </h1>
-          <p className="mb-2 max-w-2xl text-[15px] leading-relaxed text-stone-600 sm:mb-3 sm:text-base">
+          <p className="mb-2 max-w-2xl text-fff-body-sm leading-relaxed text-stone-600 sm:mb-3 sm:text-fff-body">
             We’ll reach out by email. Fill in the basics below and we’ll take it from there.
           </p>
-          <p className="mb-6 max-w-2xl text-sm text-stone-500 sm:mb-8 sm:text-[15px]">
+          <p className="mb-6 max-w-2xl text-fff-caption text-stone-500 sm:mb-8 sm:text-fff-secondary">
             Typical reply: <span className="text-stone-700">within one business day</span> with next steps
             and billing (monthly or annual—your call).
           </p>
@@ -141,14 +141,14 @@ export default function GetStartedPage() {
           {submitted ? (
             <div className="rounded-2xl border border-stone-200 bg-white px-6 py-8 shadow-sm">
               <h2 className="mb-2 text-xl font-extrabold text-emerald-700">Thanks — we got it.</h2>
-              <p className="text-[15px] leading-relaxed text-stone-600">
+              <p className="text-fff-secondary leading-relaxed text-stone-600">
                 Next step: we’ll email you soon with a couple quick questions and
                 how to set up your building guide.
               </p>
               <div className="mt-6">
                 <Link
-                  href="/how-it-works?tab=manager"
-                  className={`inline-flex min-h-[48px] items-center justify-center rounded-lg bg-fff-green px-6 py-3.5 font-mono text-xs font-bold uppercase tracking-wide text-fff-bg shadow-sm shadow-emerald-900/10 transition-colors hover:bg-[#00e67a] ${focusRing}`}
+                  href="/how-it-works?audience=property"
+                  className={`inline-flex min-h-[48px] items-center justify-center rounded-lg bg-fff-green px-6 py-3.5 font-mono text-sm font-bold uppercase tracking-wide text-fff-bg shadow-sm shadow-emerald-900/10 transition-colors hover:bg-[#00e67a] ${focusRing}`}
                 >
                   See how it works →
                 </Link>
@@ -160,14 +160,14 @@ export default function GetStartedPage() {
               className="rounded-2xl border border-stone-200 bg-white px-5 py-7 shadow-sm sm:px-6 sm:py-8"
             >
               {error ? (
-                <div className="mb-5 rounded-xl border border-rose-200 bg-rose-50 px-4 py-3 text-[14px] text-rose-900">
+                <div className="mb-5 rounded-xl border border-rose-200 bg-rose-50 px-4 py-3 text-fff-caption text-rose-900">
                   {error}
                 </div>
               ) : null}
 
               <div className="grid gap-5 sm:grid-cols-2">
                 <label className="flex flex-col gap-2">
-                  <span className="font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-emerald-700">
+                  <span className="font-mono text-fff-eyebrow font-bold uppercase text-emerald-700">
                     Property name*
                   </span>
                   <input
@@ -180,7 +180,7 @@ export default function GetStartedPage() {
                 </label>
 
                 <label className="flex flex-col gap-2">
-                  <span className="font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-emerald-700">
+                  <span className="font-mono text-fff-eyebrow font-bold uppercase text-emerald-700">
                     Property type*
                   </span>
                   <select
@@ -198,7 +198,7 @@ export default function GetStartedPage() {
                 </label>
 
                 <label className="flex flex-col gap-2">
-                  <span className="font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-emerald-700">
+                  <span className="font-mono text-fff-eyebrow font-bold uppercase text-emerald-700">
                     Contact name*
                   </span>
                   <input
@@ -211,7 +211,7 @@ export default function GetStartedPage() {
                 </label>
 
                 <label className="flex flex-col gap-2">
-                  <span className="font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-emerald-700">
+                  <span className="font-mono text-fff-eyebrow font-bold uppercase text-emerald-700">
                     Email*
                   </span>
                   <input
@@ -225,7 +225,7 @@ export default function GetStartedPage() {
                 </label>
 
                 <label className="flex flex-col gap-2">
-                  <span className="font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-emerald-700">
+                  <span className="font-mono text-fff-eyebrow font-bold uppercase text-emerald-700">
                     Phone / contact number
                   </span>
                   <input
@@ -237,7 +237,7 @@ export default function GetStartedPage() {
                 </label>
 
                 <label className="flex flex-col gap-2 sm:col-span-2">
-                  <span className="font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-emerald-700">
+                  <span className="font-mono text-fff-eyebrow font-bold uppercase text-emerald-700">
                     Approx. # of units*
                   </span>
                   <input
@@ -255,12 +255,12 @@ export default function GetStartedPage() {
                 <button
                   type="submit"
                   disabled={submitting}
-                  className={`inline-flex min-h-[48px] items-center justify-center rounded-lg bg-fff-green px-6 py-3.5 font-mono text-xs font-bold uppercase tracking-wide text-fff-bg shadow-sm shadow-emerald-900/10 transition-colors hover:bg-[#00e67a] disabled:opacity-60 disabled:hover:bg-fff-green ${focusRing}`}
+                  className={`inline-flex min-h-[48px] items-center justify-center rounded-lg bg-fff-green px-6 py-3.5 font-mono text-sm font-bold uppercase tracking-wide text-fff-bg shadow-sm shadow-emerald-900/10 transition-colors hover:bg-[#00e67a] disabled:opacity-60 disabled:hover:bg-fff-green ${focusRing}`}
                 >
                   {submitting ? 'Sending…' : 'Submit →'}
                 </button>
 
-                <p className="text-[13px] leading-relaxed text-stone-500 sm:text-sm">
+                <p className="text-fff-micro leading-relaxed text-stone-500 sm:text-fff-caption">
                   By submitting, you’re asking us to contact you about FindFoundFast.
                 </p>
               </div>
@@ -269,7 +269,7 @@ export default function GetStartedPage() {
         </div>
       </main>
 
-      <footer className="relative z-10 border-t border-stone-200 py-6 pb-[max(1.5rem,env(safe-area-inset-bottom))] text-center font-mono text-[13px] text-stone-500 sm:py-8 sm:text-sm">
+      <footer className="relative z-10 border-t border-stone-200 py-6 pb-[max(1.5rem,env(safe-area-inset-bottom))] text-center font-mono text-fff-micro text-stone-500 sm:py-8">
         <span className="text-stone-700">FindFoundFast</span>
         <span className="mx-1.5 text-stone-400">·</span>
         <a

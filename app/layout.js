@@ -31,7 +31,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${dmSans.variable} ${spaceMono.variable}`}>
       <body
-        className={`${dmSans.className} min-h-[100dvh] bg-stone-50 text-stone-900 antialiased`}
+        className={`${dmSans.className} min-h-[100dvh] bg-stone-50 text-fff-body text-stone-900 antialiased`}
       >
         {children}
       </body>

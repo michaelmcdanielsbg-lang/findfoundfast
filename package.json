@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "bundle:review": "bash scripts/gen-claude-review-bundle.sh"
   },
   "dependencies": {
     "@supabase/ssr": "^0.3.0",

@@ -1,172 +1,390 @@
-import Link from "next/link";
+'use client';
+import { useState } from 'react';
+import Link from 'next/link';
 
 const focusRing =
-  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/50 focus-visible:ring-offset-2 focus-visible:ring-offset-stone-50";
-
-export const metadata = {
-  title: "Pricing — FindFoundFast",
-  description:
-    "$49/month or $490/year per property (2 months free on annual). Unlimited buildings and units inside that property.",
-};
+  'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/50 focus-visible:ring-offset-2 focus-visible:ring-offset-stone-50';
 
 export default function PricingPage() {
+  const [mode, setMode] = useState('personal'); // 'personal' | 'property'
+
   return (
     <div className="relative flex min-h-screen flex-col overflow-x-hidden bg-stone-50 text-stone-900 antialiased">
       <div
-        className="pointer-events-none fixed inset-x-0 top-0 h-[min(55vh,480px)] opacity-100"
+        className="pointer-events-none fixed inset-x-0 top-0 h-[min(55vh,480px)]"
         aria-hidden
         style={{
           background:
-            "radial-gradient(ellipse 75% 55% at 50% -5%, rgba(0,255,135,0.07), transparent 55%)",
+            'radial-gradient(ellipse 75% 55% at 50% -5%, rgba(0,255,135,0.07), transparent 55%)',
         }}
       />
 
+      {/* ── Header ── */}
       <header className="relative z-10 border-b border-stone-200 bg-white/90 backdrop-blur-xl">
         <div className="flex flex-col gap-2 px-4 py-3 pt-[max(0.75rem,env(safe-area-inset-top))] sm:flex-row sm:items-center sm:justify-between sm:px-6 sm:py-4">
-          <Link
-            href="/"
-            className={`text-lg font-extrabold tracking-tight text-stone-900 transition-colors hover:text-stone-800 ${focusRing} rounded-sm`}
-          >
+          <Link href="/" className={`text-lg font-extrabold tracking-tight text-stone-900 transition-colors hover:text-stone-800 ${focusRing} rounded-sm`}>
             Find<span className="text-[#00c46f]">Found</span>Fast
           </Link>
           <div className="flex flex-wrap items-center gap-x-4 gap-y-2 sm:gap-6">
-            <Link
-              href="/"
-              className={`font-mono text-xs font-bold uppercase tracking-wide text-stone-600 transition-colors hover:text-stone-900 sm:text-sm ${focusRing} rounded-sm`}
-            >
-              Home
-            </Link>
-            <span className="font-mono text-xs font-bold uppercase tracking-wide text-emerald-700 sm:text-sm">
-              Pricing
-            </span>
-            <Link
-              href="/how-it-works?tab=manager"
-              className={`font-mono text-xs font-bold uppercase tracking-wide text-stone-600 transition-colors hover:text-stone-900 sm:text-sm ${focusRing} rounded-sm`}
-            >
-              How it works
-            </Link>
-            <Link
-              href="/get-started"
-              className={`inline-flex min-h-[40px] items-center justify-center rounded-lg bg-fff-green px-4 py-2 font-mono text-[11px] font-bold uppercase tracking-wide text-fff-bg shadow-sm shadow-emerald-900/10 transition-colors hover:bg-[#00e67a] ${focusRing}`}
-            >
+            <Link href="/" className={`font-mono text-sm font-bold uppercase tracking-wide text-stone-600 transition-colors hover:text-stone-900 ${focusRing} rounded-sm`}>Home</Link>
+            <span className="font-mono text-sm font-bold uppercase tracking-wide text-emerald-700">Pricing</span>
+            <Link href="/how-it-works" className={`font-mono text-sm font-bold uppercase tracking-wide text-stone-600 transition-colors hover:text-stone-900 ${focusRing} rounded-sm`}>How it works</Link>
+            <Link href="/get-started" className={`inline-flex min-h-[40px] items-center justify-center rounded-lg bg-fff-green px-4 py-2 font-mono text-fff-eyebrow font-bold uppercase text-fff-bg shadow-sm transition-colors hover:bg-[#00e67a] ${focusRing}`}>
               Get started →
             </Link>
           </div>
         </div>
       </header>
 
-      <main className="relative z-10 flex flex-1 flex-col items-center px-4 py-8 text-center sm:px-6 sm:py-12 md:py-16">
+      <main className="relative z-10 flex flex-1 flex-col items-center px-4 py-10 sm:px-6 sm:py-14 md:py-16">
+
+        {/* ── Title ── */}
         <p className="mb-3 font-mono text-fff-eyebrow font-bold uppercase text-emerald-700">Pricing</p>
-        <h1 className="mb-2 max-w-2xl text-3xl font-extrabold tracking-tight text-stone-900 sm:mb-3 sm:text-4xl md:text-5xl">
-          Simple per-property pricing
+        <h1 className="mb-3 max-w-2xl text-center text-3xl font-extrabold tracking-tight text-stone-900 sm:text-4xl md:text-5xl">
+          Start free. Pay only when it fits.
         </h1>
-        <p className="mb-5 max-w-xl text-fff-secondary leading-relaxed text-stone-600 sm:mb-6">
-          Same coverage either way: unlimited buildings and units inside that property.
+        <p className="mb-8 max-w-lg text-center text-fff-secondary leading-relaxed text-stone-500">
+          Whether you are sending your first delivery link or guiding arrivals across a 500-unit property — there is a plan that fits.
         </p>
 
-        <div className="mb-6 flex flex-wrap justify-center gap-x-3 gap-y-1.5 font-mono text-fff-eyebrow font-bold uppercase text-stone-500 sm:mb-8 sm:gap-x-4">
-          <span>No driver app</span>
-          <span className="text-stone-300">·</span>
-          <span>Codes expire</span>
-          <span className="text-stone-300">·</span>
-          <span>Unlimited buildings &amp; units</span>
+        {/* ── Toggle ── */}
+        <div className="mb-10 flex items-center gap-1 rounded-2xl border border-stone-200 bg-white p-1 shadow-sm">
+          <button
+            type="button"
+            onClick={() => setMode('personal')}
+            className={`rounded-xl px-5 py-2.5 font-mono text-sm font-bold uppercase tracking-wide transition-all ${
+              mode === 'personal'
+                ? 'bg-stone-900 text-white shadow-sm'
+                : 'text-stone-500 hover:text-stone-800'
+            }`}
+          >
+            🙋 Just me
+          </button>
+          <button
+            type="button"
+            onClick={() => setMode('property')}
+            className={`rounded-xl px-5 py-2.5 font-mono text-sm font-bold uppercase tracking-wide transition-all ${
+              mode === 'property'
+                ? 'bg-stone-900 text-white shadow-sm'
+                : 'text-stone-500 hover:text-stone-800'
+            }`}
+          >
+            🏢 My property
+          </button>
         </div>
 
-        <div className="mb-8 w-full max-w-md rounded-2xl border border-stone-200 bg-white px-5 py-4 text-left shadow-sm sm:mb-10 sm:max-w-lg sm:py-5">
-          <p className="mb-3 font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-emerald-700">
-            After you sign up
-          </p>
-          <ol className="list-decimal space-y-2 pl-5 text-fff-secondary leading-relaxed text-stone-700">
-            <li>We email you to confirm details and billing.</li>
-            <li>You add your building profile + key photos (and you can add more).</li>
-            <li>Residents get codes; drivers tap timed links—no app.</li>
-          </ol>
-        </div>
-
-        <div className="mb-8 grid w-full max-w-3xl gap-4 sm:mb-10 sm:grid-cols-2 sm:gap-5">
-          <div className="relative rounded-2xl border border-emerald-300/80 bg-emerald-50 px-5 py-6 text-left shadow-sm ring-1 ring-emerald-200/60 sm:px-6 sm:py-8">
-            <span className="mb-3 inline-block rounded-full bg-fff-yellow px-2.5 py-1 font-mono text-[10px] font-bold uppercase tracking-[0.15em] text-fff-bg">
-              Best value — save $98/yr
-            </span>
-            <p className="mb-3 font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-emerald-700">
-              Pay once per year
+        {/* ══════════════════════════════════════════════════ */}
+        {/* PERSONAL / B2C PRICING                            */}
+        {/* ══════════════════════════════════════════════════ */}
+        {mode === 'personal' && (
+          <div className="w-full max-w-4xl">
+            <p className="mb-6 text-center text-fff-caption text-stone-500">
+              No property manager needed. Sign up, upload your photos, get your personal link.
             </p>
-            <p className="font-sans text-4xl font-extrabold tabular-nums tracking-tight text-fff-green sm:text-[2.75rem]">
-              $490<span className="text-xl font-bold text-stone-600 sm:text-2xl">/yr</span>
-            </p>
-            <p className="mt-1 text-sm text-stone-600">per property · about $41/mo when you average it out</p>
 
-            <div className="mt-6 space-y-3 rounded-xl border border-stone-200 bg-white/80 px-4 py-4">
-              <div className="flex items-baseline justify-between gap-3 text-fff-secondary">
-                <span className="text-stone-600">12 months at $49/mo</span>
-                <span className="font-mono tabular-nums text-stone-400 line-through decoration-stone-300">
-                  $588
-                </span>
-              </div>
-              <div className="flex items-baseline justify-between gap-3 text-fff-secondary">
-                <span className="font-medium text-stone-900">Annual price (same 12 months)</span>
-                <span className="font-mono text-xl font-bold tabular-nums text-fff-green">$490</span>
-              </div>
-              <div className="border-t border-emerald-200 pt-3">
-                <div className="flex items-center justify-between gap-3">
-                  <span className="text-sm font-semibold uppercase tracking-wide text-amber-800">You save</span>
-                  <span className="font-sans text-2xl font-extrabold text-amber-700">$98</span>
+            <div className="grid gap-4 sm:grid-cols-3 sm:gap-5">
+
+              {/* Free tier */}
+              <div className="flex flex-col rounded-2xl border border-stone-200 bg-white px-5 py-6 shadow-sm sm:px-6 sm:py-7">
+                <p className="font-mono text-fff-eyebrow font-bold uppercase text-stone-400">Free</p>
+                <div className="mt-2 flex items-baseline gap-1">
+                  <span className="text-4xl font-extrabold tabular-nums tracking-tight text-stone-900">$0</span>
                 </div>
-                <p className="mt-2 text-xs leading-snug text-stone-500">
-                  Same as &ldquo;2 months free&rdquo;—you only pay for 10 months, you get a full year.
+                <p className="mt-1 text-fff-caption text-stone-500">forever</p>
+                <p className="mt-4 text-fff-caption leading-relaxed text-stone-600">
+                  Try it out. Perfect for occasional deliveries or one-time guests.
                 </p>
+                <ul className="mt-5 flex flex-col gap-2.5 text-fff-caption text-stone-700">
+                  {[
+                    'Timed links — 15 or 30 min',
+                    'Up to 3 photos',
+                    'Share via text or DM',
+                    'No credit card needed',
+                  ].map((f) => (
+                    <li key={f} className="flex items-start gap-2">
+                      <span className="mt-0.5 text-emerald-500 flex-shrink-0">✓</span>
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-auto pt-6">
+                  <Link
+                    href="/get-started"
+                    className={`inline-flex w-full items-center justify-center rounded-lg border border-stone-300 bg-white min-h-[44px] py-3 font-mono text-sm font-bold uppercase tracking-wide text-stone-800 shadow-sm transition-colors hover:border-emerald-400 hover:text-emerald-800 ${focusRing}`}
+                  >
+                    Start free →
+                  </Link>
+                </div>
+              </div>
+
+              {/* Personal Guide — featured */}
+              <div className="relative flex flex-col rounded-2xl border-2 border-emerald-400 bg-emerald-50 px-5 py-6 shadow-md sm:px-6 sm:py-7">
+                <span className="mb-3 inline-block self-start rounded-full bg-fff-yellow px-2.5 py-1 font-mono text-fff-eyebrow font-bold uppercase text-fff-bg">
+                  Most popular
+                </span>
+                <p className="font-mono text-fff-eyebrow font-bold uppercase text-emerald-700">Personal guide</p>
+                <div className="mt-2 flex items-baseline gap-1">
+                  <span className="text-4xl font-extrabold tabular-nums tracking-tight text-stone-900">$4.99</span>
+                  <span className="text-lg font-bold text-stone-500">/mo</span>
+                </div>
+                <p className="mt-1 text-fff-caption text-stone-500">or $47.88/yr — 20% off</p>
+                <p className="mt-4 text-fff-caption leading-relaxed text-stone-600">
+                  For heavy delivery users, Airbnb hosts, and anyone tired of giving the same directions.
+                </p>
+                <ul className="mt-5 flex flex-col gap-2.5 text-fff-caption text-stone-700">
+                  {[
+                    'Permanent link — never expires',
+                    '5 links for 5 locations',
+                    'Unlimited photos per location',
+                    'Add gate and door codes',
+                    'Update photos or codes anytime',
+                    'Your own URL: findfoundfast.com/r/you',
+                  ].map((f) => (
+                    <li key={f} className="flex items-start gap-2">
+                      <span className="mt-0.5 text-emerald-600 flex-shrink-0">✓</span>
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-auto pt-6">
+                  <Link
+                    href="/get-started"
+                    className={`inline-flex w-full items-center justify-center rounded-lg bg-fff-green min-h-[44px] py-3 font-mono text-sm font-bold uppercase tracking-wide text-fff-bg shadow-sm transition-colors hover:bg-[#00e67a] ${focusRing}`}
+                  >
+                    Get personal guide →
+                  </Link>
+                </div>
+              </div>
+
+              {/* One-Time */}
+              <div className="flex flex-col rounded-2xl border border-stone-200 bg-white px-5 py-6 shadow-sm sm:px-6 sm:py-7">
+                <p className="font-mono text-fff-eyebrow font-bold uppercase text-stone-400">One-time</p>
+                <div className="mt-2 flex items-baseline gap-1">
+                  <span className="text-4xl font-extrabold tabular-nums tracking-tight text-stone-900">$9.99</span>
+                </div>
+                <p className="mt-1 text-fff-caption text-stone-500">pay once, yours forever</p>
+                <p className="mt-4 text-fff-caption leading-relaxed text-stone-600">
+                  One permanent link for one location. No subscription, no monthly fee — ever.
+                </p>
+                <ul className="mt-5 flex flex-col gap-2.5 text-fff-caption text-stone-700">
+                  {[
+                    '1 permanent link forever',
+                    '1 location',
+                    'Unlimited photos',
+                    'Add gate and door codes',
+                    'No monthly fee — ever',
+                    'Perfect for Airbnb hosts',
+                  ].map((f) => (
+                    <li key={f} className="flex items-start gap-2">
+                      <span className="mt-0.5 text-emerald-500 flex-shrink-0">✓</span>
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-auto pt-6">
+                  <Link
+                    href="/get-started"
+                    className={`inline-flex w-full items-center justify-center rounded-lg border border-stone-300 bg-white min-h-[44px] py-3 font-mono text-sm font-bold uppercase tracking-wide text-stone-800 shadow-sm transition-colors hover:border-emerald-400 hover:text-emerald-800 ${focusRing}`}
+                  >
+                    Buy once →
+                  </Link>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div className="rounded-2xl border border-stone-200 bg-white px-5 py-6 text-left shadow-sm sm:px-6 sm:py-8">
-            <p className="mb-3 font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-stone-500">
-              Billed monthly
+            {/* Perfect for callout */}
+            <div className="mt-10 rounded-2xl border border-stone-200 bg-white p-6 sm:p-8">
+              <p className="mb-5 text-center font-mono text-fff-eyebrow font-bold uppercase text-stone-400">Perfect for</p>
+              <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-4">
+                {[
+                  { emoji: '🛵', label: 'Heavy delivery users', desc: 'DoorDash, Uber Eats, Amazon. Paste your link once — done forever.' },
+                  { emoji: '🏡', label: 'Airbnb hosts', desc: 'Send guests a photo guide instead of a wall of check-in text.' },
+                  { emoji: '🏢', label: 'Hard-to-find apartments', desc: 'Stop explaining the same directions to every person every week.' },
+                  { emoji: '🎉', label: 'Party hosts', desc: 'One link in the invite. Everyone finds the place.' },
+                ].map((item) => (
+                  <div key={item.label} className="flex flex-col gap-2 rounded-xl border border-stone-100 bg-stone-50 p-4">
+                    <span className="text-xl">{item.emoji}</span>
+                    <p className="font-bold text-stone-900 text-fff-caption">{item.label}</p>
+                    <p className="text-fff-eyebrow leading-relaxed text-stone-500">{item.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <p className="mt-6 text-center text-fff-caption text-stone-500">
+              Not sure which plan?{' '}
+              <Link href="/how-it-works?audience=personal" className="text-emerald-700 underline-offset-2 hover:underline">
+                See how it works for individuals →
+              </Link>
             </p>
-            <p className="font-sans text-4xl font-extrabold tabular-nums tracking-tight text-fff-green sm:text-[2.75rem]">
-              $49<span className="text-xl font-bold text-stone-600 sm:text-2xl">/mo</span>
+          </div>
+        )}
+
+        {/* ══════════════════════════════════════════════════ */}
+        {/* PROPERTY / B2B PRICING                            */}
+        {/* ══════════════════════════════════════════════════ */}
+        {mode === 'property' && (
+          <div className="w-full max-w-3xl">
+            <p className="mb-6 text-center text-fff-caption text-stone-500">
+              One price per property. Unlimited buildings, units, and residents inside it.
             </p>
-            <p className="mt-2 text-sm font-semibold text-stone-900 sm:text-base">per property</p>
-            <p className="mt-5 text-fff-secondary leading-relaxed text-stone-600">
-              Start with $49/month per property. Cancel or adjust anytime.
+
+            <div className="mb-5 flex flex-wrap justify-center gap-x-4 gap-y-1.5 font-mono text-fff-eyebrow font-bold uppercase text-stone-400">
+              <span>No driver app</span>
+              <span className="text-stone-300">·</span>
+              <span>Codes expire automatically</span>
+              <span className="text-stone-300">·</span>
+              <span>Unlimited buildings and units</span>
+            </div>
+
+            <div className="grid gap-4 sm:grid-cols-2 sm:gap-5">
+
+              {/* Annual — featured */}
+              <div className="relative flex flex-col rounded-2xl border-2 border-emerald-400 bg-emerald-50 px-5 py-6 shadow-md sm:px-6 sm:py-8">
+                <span className="mb-3 inline-block self-start rounded-full bg-fff-yellow px-2.5 py-1 font-mono text-fff-eyebrow font-bold uppercase text-fff-bg">
+                  Best value — save $98/yr
+                </span>
+                <p className="font-mono text-fff-eyebrow font-bold uppercase text-emerald-700">Pay once per year</p>
+                <div className="mt-2 flex items-baseline gap-1">
+                  <span className="text-4xl font-extrabold tabular-nums tracking-tight text-fff-green sm:text-[2.75rem]">$490</span>
+                  <span className="text-xl font-bold text-stone-500">/yr</span>
+                </div>
+                <p className="mt-1 text-fff-caption text-stone-500">per property · about $41/mo</p>
+
+                <div className="mt-6 space-y-3 rounded-xl border border-stone-200 bg-white/80 px-4 py-4">
+                  <div className="flex items-baseline justify-between gap-3 text-fff-caption">
+                    <span className="text-stone-500">12 months at $49/mo</span>
+                    <span className="font-mono tabular-nums text-stone-400 line-through">$588</span>
+                  </div>
+                  <div className="flex items-baseline justify-between gap-3 text-fff-caption">
+                    <span className="font-medium text-stone-900">Annual price</span>
+                    <span className="font-mono text-xl font-bold tabular-nums text-fff-green">$490</span>
+                  </div>
+                  <div className="border-t border-emerald-200 pt-3 flex items-center justify-between">
+                    <span className="text-fff-caption font-semibold uppercase tracking-wide text-amber-800">You save</span>
+                    <span className="text-2xl font-extrabold text-amber-700">$98</span>
+                  </div>
+                </div>
+
+                <ul className="mt-5 flex flex-col gap-2.5 text-fff-caption text-stone-700">
+                  {[
+                    'Unlimited buildings and units',
+                    'One permanent link per building',
+                    'Resident portal included',
+                    'Timed links with expiring codes',
+                    'Photo guide with arrows',
+                  ].map((f) => (
+                    <li key={f} className="flex items-start gap-2">
+                      <span className="mt-0.5 text-emerald-600 flex-shrink-0">✓</span>
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="mt-auto pt-6">
+                  <Link
+                    href="/get-started"
+                    className={`inline-flex w-full min-h-[44px] items-center justify-center rounded-lg bg-fff-green py-3.5 font-mono text-sm font-bold uppercase tracking-wide text-fff-bg shadow-sm transition-colors hover:bg-[#00e67a] ${focusRing}`}
+                  >
+                    Get started →
+                  </Link>
+                </div>
+              </div>
+
+              {/* Monthly */}
+              <div className="flex flex-col rounded-2xl border border-stone-200 bg-white px-5 py-6 shadow-sm sm:px-6 sm:py-8">
+                <p className="font-mono text-fff-eyebrow font-bold uppercase text-stone-400">Billed monthly</p>
+                <div className="mt-2 flex items-baseline gap-1">
+                  <span className="text-4xl font-extrabold tabular-nums tracking-tight text-fff-green sm:text-[2.75rem]">$49</span>
+                  <span className="text-xl font-bold text-stone-500">/mo</span>
+                </div>
+                <p className="mt-1 text-fff-caption text-stone-500">per property · cancel anytime</p>
+                <p className="mt-5 text-fff-secondary leading-relaxed text-stone-600">
+                  Start with one property and scale from there. No contracts, no setup fees.
+                </p>
+
+                <ul className="mt-5 flex flex-col gap-2.5 text-fff-caption text-stone-700">
+                  {[
+                    'Unlimited buildings and units',
+                    'One permanent link per building',
+                    'Resident portal included',
+                    'Timed links with expiring codes',
+                    'Photo guide with arrows',
+                  ].map((f) => (
+                    <li key={f} className="flex items-start gap-2">
+                      <span className="mt-0.5 text-emerald-500 flex-shrink-0">✓</span>
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="mt-auto pt-6">
+                  <Link
+                    href="/get-started"
+                    className={`inline-flex w-full items-center justify-center rounded-lg border border-stone-300 bg-white py-3.5 font-mono text-sm font-bold uppercase tracking-wide text-stone-800 shadow-sm transition-colors hover:border-emerald-400 hover:text-emerald-800 ${focusRing}`}
+                  >
+                    Start monthly →
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* Campus callout */}
+            <div className="mt-6 rounded-2xl border border-blue-200 bg-blue-50 p-5 sm:p-6">
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                <div>
+                  <p className="font-mono text-fff-eyebrow font-bold uppercase text-blue-600">College campus plan</p>
+                  <p className="mt-1 font-bold text-stone-900">Multiple buildings, events, graduation, permanent public links</p>
+                  <p className="mt-1 text-fff-caption text-stone-500">Pricing based on campus size — let's talk.</p>
+                </div>
+                <Link
+                  href="/get-started"
+                  className={`inline-flex flex-shrink-0 items-center justify-center rounded-lg bg-blue-600 px-5 py-3 font-mono text-sm font-bold uppercase tracking-wide text-white shadow-sm transition-colors hover:bg-blue-700 ${focusRing}`}
+                >
+                  Talk to us →
+                </Link>
+              </div>
+            </div>
+
+            <p className="mt-6 text-center text-fff-caption text-stone-500">
+              Submit the form — we will confirm monthly vs annual and get you live.
             </p>
+          </div>
+        )}
+
+        {/* ── FAQ strip ── */}
+        <div className="mt-12 w-full max-w-2xl">
+          <p className="mb-5 text-center font-mono text-fff-eyebrow font-bold uppercase text-stone-400">Common questions</p>
+          <div className="flex flex-col divide-y divide-stone-200 rounded-2xl border border-stone-200 bg-white shadow-sm">
+            {[
+              { q: 'Can I switch between plans?', a: 'Yes — upgrade, downgrade, or cancel anytime. No penalties.' },
+              { q: 'Do drivers need an account?', a: 'Never. Drivers and guests just tap the link in their browser. No app, no login, no friction.' },
+              { q: 'What happens when a timed link expires?', a: 'The gate codes vanish and the link stops working. No stale screenshots floating around.' },
+              { q: 'Can I update my photos and codes?', a: 'Yes, anytime on Personal Guide or any property plan. Your link stays the same — only the content updates.' },
+              { q: 'What is the difference between timed and permanent links?', a: 'Timed links expire after 15, 30, or 60 minutes — great when you want the code to disappear after a delivery. Permanent links stay live forever — great for Airbnb, your apartment entrance, or a campus website.' },
+            ].map((item, i) => (
+              <div key={i} className="px-5 py-4 sm:px-6">
+                <p className="font-semibold text-stone-900 text-fff-caption">{item.q}</p>
+                <p className="mt-1 text-fff-caption text-stone-500 leading-relaxed">{item.a}</p>
+              </div>
+            ))}
           </div>
         </div>
-        <Link
-          href="/get-started"
-          className={`inline-flex min-h-[48px] items-center justify-center rounded-lg bg-fff-green px-8 py-3.5 font-mono text-xs font-bold uppercase tracking-wide text-fff-bg shadow-sm shadow-emerald-900/10 transition-colors hover:bg-[#00e67a] ${focusRing}`}
-        >
-          Get started →
-        </Link>
-        <p className="mx-auto mt-4 max-w-md text-center text-sm text-stone-500">
-          Submit the short form—we’ll confirm monthly vs annual and get you live.
-        </p>
-        <p className="mt-4">
-          <Link
-            href="/how-it-works?tab=manager"
-            className={`text-sm text-stone-600 underline-offset-4 transition-colors hover:text-emerald-700 ${focusRing} rounded-sm`}
-          >
-            See how it works →
+
+        <div className="mt-10 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+          <Link href="/get-started" className={`inline-flex min-h-[48px] items-center justify-center rounded-lg bg-fff-green px-8 py-3.5 font-mono text-sm font-bold uppercase tracking-wide text-fff-bg shadow-sm transition-colors hover:bg-[#00e67a] ${focusRing}`}>
+            Get started →
           </Link>
-        </p>
-        <p className="mt-8">
-          <Link
-            href="/"
-            className={`text-sm text-stone-600 underline-offset-4 transition-colors hover:text-emerald-700 ${focusRing} rounded-sm`}
-          >
+          <Link href="/" className={`text-fff-caption text-stone-500 underline-offset-4 transition-colors hover:text-emerald-700 ${focusRing} rounded-sm`}>
             ← Back to home
           </Link>
-        </p>
+        </div>
       </main>
 
-      <footer className="relative z-10 border-t border-stone-200 py-6 pb-[max(1.5rem,env(safe-area-inset-bottom))] text-center font-mono text-fff-micro text-stone-500 sm:py-8 sm:text-sm">
+      <footer className="relative z-10 border-t border-stone-200 py-6 pb-[max(1.5rem,env(safe-area-inset-bottom))] text-center font-mono text-fff-micro text-stone-500 sm:py-8">
         <span className="text-stone-700">FindFoundFast</span>
         <span className="mx-1.5 text-stone-400">·</span>
-        <a
-          href="https://findfoundfast.com"
-          rel="noopener noreferrer"
-          className={`text-stone-500 transition-colors hover:text-emerald-700 ${focusRing} rounded-sm`}
-        >
+        <a href="https://findfoundfast.com" rel="noopener noreferrer" className={`text-stone-500 transition-colors hover:text-emerald-700 ${focusRing} rounded-sm`}>
           findfoundfast.com
         </a>
       </footer>
