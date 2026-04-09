@@ -1,9 +1,9 @@
 'use client'
 
 import { Suspense, useState, useEffect } from 'react'
-import Link from 'next/link'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { createBrowserClient } from '@supabase/ssr'
+import { marketingUrl } from '@/lib/site'
 
 const inputClass =
   'w-full rounded-xl border border-fff-border bg-fff-surface-subtle px-4 py-3 font-sans text-sm text-fff-text-primary outline-none transition placeholder:text-fff-text-muted focus-visible:border-fff-green/50 focus-visible:ring-2 focus-visible:ring-fff-green/25'
@@ -123,12 +123,12 @@ function LoginForm() {
           <p className="mt-2 font-sans text-sm leading-relaxed text-fff-text-secondary">
             We sent a confirmation link to <strong className="text-fff-text-primary">{email}</strong>.
           </p>
-          <Link
-            href="/"
+          <a
+            href={marketingUrl('/')}
             className="mt-8 inline-block font-mono text-xs font-bold uppercase tracking-wider text-fff-green hover:underline"
           >
-            ← Back to home
-          </Link>
+            ← Back to marketing site
+          </a>
         </div>
       </div>
     )
@@ -146,12 +146,12 @@ function LoginForm() {
 
       <div className="relative w-full max-w-md">
         <div className="rounded-2xl border border-fff-border bg-fff-card p-8 shadow-[0_24px_48px_-12px_rgba(0,0,0,0.5)]">
-          <Link
-            href="/"
+          <a
+            href={marketingUrl('/')}
             className="mb-8 block text-center font-sans text-xl font-extrabold tracking-tight text-fff-text-primary no-underline"
           >
             Find<span className="text-fff-green">Found</span>Fast
-          </Link>
+          </a>
 
           {asManager && (
             <p className="mb-6 text-center font-sans text-sm leading-relaxed text-fff-text-secondary">
@@ -258,9 +258,9 @@ function LoginForm() {
           )}
 
           <p className="mt-8 text-center font-mono text-xs">
-            <Link href="/" className="font-bold uppercase tracking-wider text-fff-green hover:underline">
-              ← Back to home
-            </Link>
+            <a href={marketingUrl('/')} className="font-bold uppercase tracking-wider text-fff-green hover:underline">
+              ← Back to marketing site
+            </a>
           </p>
         </div>
       </div>

@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
+import { appUrl, marketingUrl } from '@/lib/site';
 
 const focusRing =
   'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/50 focus-visible:ring-offset-2 focus-visible:ring-offset-fff-bg';
@@ -22,14 +23,14 @@ export default function PricingPage() {
       {/* ── Header ── */}
       <header className="relative z-10 border-b border-fff-border bg-fff-bg/90 backdrop-blur-xl">
         <div className="flex flex-col gap-2 px-4 py-3 pt-[max(0.75rem,env(safe-area-inset-top))] sm:flex-row sm:items-center sm:justify-between sm:px-6 sm:py-4">
-          <Link href="/" className={`text-lg font-extrabold tracking-tight text-fff-text-primary transition-colors hover:text-fff-text-primary ${focusRing} rounded-sm`}>
+          <a href={marketingUrl('/')} className={`text-lg font-extrabold tracking-tight text-fff-text-primary transition-colors hover:text-fff-text-primary ${focusRing} rounded-sm`}>
             Find<span className="text-[#00c46f]">Found</span>Fast
-          </Link>
+          </a>
           <div className="flex flex-wrap items-center gap-x-4 gap-y-2 sm:gap-6">
-            <Link href="/" className={`font-mono text-sm font-bold uppercase tracking-wide text-fff-text-secondary transition-colors hover:text-fff-text-primary ${focusRing} rounded-sm`}>Home</Link>
+            <a href={marketingUrl('/')} className={`font-mono text-sm font-bold uppercase tracking-wide text-fff-text-secondary transition-colors hover:text-fff-text-primary ${focusRing} rounded-sm`}>Marketing home</a>
             <span className="font-mono text-sm font-bold uppercase tracking-wide text-emerald-400">Pricing</span>
             <Link href="/how-it-works" className={`font-mono text-sm font-bold uppercase tracking-wide text-fff-text-secondary transition-colors hover:text-fff-text-primary ${focusRing} rounded-sm`}>How it works</Link>
-            <Link href="/get-started" className={`inline-flex min-h-[40px] items-center justify-center rounded-lg bg-fff-green px-4 py-2 font-mono text-fff-eyebrow font-bold uppercase text-fff-bg shadow-sm transition-colors hover:bg-[#00e67a] ${focusRing}`}>
+            <Link href={appUrl('/auth/login')} className={`inline-flex min-h-[40px] items-center justify-center rounded-lg bg-fff-green px-4 py-2 font-mono text-fff-eyebrow font-bold uppercase text-fff-bg shadow-sm transition-colors hover:bg-[#00e67a] ${focusRing}`}>
               Get started →
             </Link>
           </div>
@@ -109,7 +110,7 @@ export default function PricingPage() {
                 </ul>
                 <div className="mt-auto pt-6">
                   <Link
-                    href="/get-started"
+                    href={appUrl('/auth/login')}
                     className={`inline-flex w-full items-center justify-center rounded-lg border border-fff-border bg-fff-card min-h-[44px] py-3 font-mono text-sm font-bold uppercase tracking-wide text-fff-text-primary shadow-sm transition-colors hover:border-emerald-500 hover:text-emerald-300 ${focusRing}`}
                   >
                     Start free →
@@ -148,7 +149,7 @@ export default function PricingPage() {
                 </ul>
                 <div className="mt-auto pt-6">
                   <Link
-                    href="/get-started"
+                    href={appUrl('/auth/login')}
                     className={`inline-flex w-full items-center justify-center rounded-lg bg-fff-green min-h-[44px] py-3 font-mono text-sm font-bold uppercase tracking-wide text-fff-bg shadow-sm transition-colors hover:bg-[#00e67a] ${focusRing}`}
                   >
                     Get personal guide →
@@ -183,7 +184,7 @@ export default function PricingPage() {
                 </ul>
                 <div className="mt-auto pt-6">
                   <Link
-                    href="/get-started"
+                    href={appUrl('/auth/login')}
                     className={`inline-flex w-full items-center justify-center rounded-lg border border-fff-border bg-fff-card min-h-[44px] py-3 font-mono text-sm font-bold uppercase tracking-wide text-fff-text-primary shadow-sm transition-colors hover:border-emerald-500 hover:text-emerald-300 ${focusRing}`}
                   >
                     Buy once →
@@ -283,7 +284,7 @@ export default function PricingPage() {
 
                 <div className="mt-auto pt-6">
                   <Link
-                    href="/get-started"
+                    href={appUrl('/auth/login')}
                     className={`inline-flex w-full min-h-[44px] items-center justify-center rounded-lg bg-fff-green py-3.5 font-mono text-sm font-bold uppercase tracking-wide text-fff-bg shadow-sm transition-colors hover:bg-[#00e67a] ${focusRing}`}
                   >
                     Get started →
@@ -320,7 +321,7 @@ export default function PricingPage() {
 
                 <div className="mt-auto pt-6">
                   <Link
-                    href="/get-started"
+                    href={appUrl('/auth/login')}
                     className={`inline-flex w-full items-center justify-center rounded-lg border border-fff-border bg-fff-card py-3.5 font-mono text-sm font-bold uppercase tracking-wide text-fff-text-primary shadow-sm transition-colors hover:border-emerald-500 hover:text-emerald-300 ${focusRing}`}
                   >
                     Start monthly →
@@ -338,7 +339,7 @@ export default function PricingPage() {
                   <p className="mt-1 text-fff-caption text-fff-text-secondary">Pricing based on campus size — let's talk.</p>
                 </div>
                 <Link
-                  href="/get-started"
+                  href={appUrl('/auth/login')}
                   className={`inline-flex flex-shrink-0 items-center justify-center rounded-lg bg-blue-600 px-5 py-3 font-mono text-sm font-bold uppercase tracking-wide text-white shadow-sm transition-colors hover:bg-blue-700 ${focusRing}`}
                 >
                   Talk to us →
@@ -372,12 +373,12 @@ export default function PricingPage() {
         </div>
 
         <div className="mt-10 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-          <Link href="/get-started" className={`inline-flex min-h-[48px] items-center justify-center rounded-lg bg-fff-green px-8 py-3.5 font-mono text-sm font-bold uppercase tracking-wide text-fff-bg shadow-sm transition-colors hover:bg-[#00e67a] ${focusRing}`}>
+          <Link href={appUrl('/auth/login')} className={`inline-flex min-h-[48px] items-center justify-center rounded-lg bg-fff-green px-8 py-3.5 font-mono text-sm font-bold uppercase tracking-wide text-fff-bg shadow-sm transition-colors hover:bg-[#00e67a] ${focusRing}`}>
             Get started →
           </Link>
-          <Link href="/" className={`text-fff-caption text-fff-text-secondary underline-offset-4 transition-colors hover:text-emerald-400 ${focusRing} rounded-sm`}>
-            ← Back to home
-          </Link>
+          <a href={marketingUrl('/')} className={`text-fff-caption text-fff-text-secondary underline-offset-4 transition-colors hover:text-emerald-400 ${focusRing} rounded-sm`}>
+            ← Back to marketing site
+          </a>
         </div>
       </main>
 

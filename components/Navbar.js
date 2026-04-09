@@ -1,6 +1,6 @@
 'use client'
 import { useState } from 'react'
-import { appUrl } from '@/lib/site'
+import { appUrl, marketingUrl } from '@/lib/site'
 
 const navLinks = [
   { label: 'How it works', href: '#how-it-works' },
@@ -14,7 +14,7 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/70 backdrop-blur-2xl border-b border-border/40">
       <div className="container flex items-center justify-between h-16">
-        <a href="/" className="text-xl font-bold tracking-tight">
+        <a href={marketingUrl('/')} className="text-xl font-bold tracking-tight">
           Find<span className="text-primary">Found</span>Fast
         </a>
 
@@ -25,7 +25,7 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href={appUrl('/get-started')}
+            href={appUrl('/auth/login')}
             className="px-6 py-2.5 rounded-full bg-primary text-primary-foreground font-mono text-xs font-bold tracking-wider uppercase hover:shadow-lg hover:shadow-primary/30 transition-all"
           >
             Get Started
@@ -50,7 +50,7 @@ export default function Navbar() {
               {l.label}
             </a>
           ))}
-          <a href={appUrl('/get-started')} onClick={() => setOpen(false)} className="px-5 py-3 rounded-full bg-primary text-primary-foreground font-mono text-xs font-bold text-center tracking-wider uppercase mt-2">
+          <a href={appUrl('/auth/login')} onClick={() => setOpen(false)} className="px-5 py-3 rounded-full bg-primary text-primary-foreground font-mono text-xs font-bold text-center tracking-wider uppercase mt-2">
             Get Started
           </a>
         </div>

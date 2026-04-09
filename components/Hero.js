@@ -29,7 +29,7 @@ export default function Hero() {
 
           <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
             <a
-              href={appUrl('/get-started')}
+              href={appUrl('/auth/login')}
               className="px-8 py-4 rounded-full bg-primary text-primary-foreground font-mono text-sm font-bold tracking-wider uppercase hover:shadow-2xl hover:shadow-primary/30 transition-all"
             >
               Start for free →

@@ -17,7 +17,7 @@ Replace “Lovable-connected GitHub repo” with your actual repo name in GitHub
 
 ## Rules
 
-1. **Lovable provides:** Marketing **design** (and its repo hosts that static/marketing build at `findfoundfast.com`). CTAs there should point to **`https://app.findfoundfast.com/get-started`**.
+1. **Lovable provides:** Marketing **design** (and its repo hosts that static/marketing build at `findfoundfast.com`). **All product CTAs** (Get started, Sign up, etc.) should point to the app — see **`docs/LOVABLE_LINKS.md`**. Default: **`https://app.findfoundfast.com/auth/login`** (optional `?as=manager` for property-manager sections).
 2. **This repo (Cursor) runs:** The **application** — everything beyond that designed marketing shell: auth, dashboards, APIs, Supabase, link pages, etc. Deployed at **`app.findfoundfast.com`**.
 3. **No duplication:** Prefer not rebuilding the same marketing homepage in Next.js if Lovable already ships it; don’t put auth/backend in the Lovable repo.
 4. **GitHub:** Lovable’s repo and this Next repo stay **separate** unless you intentionally merge or copy files.
@@ -25,7 +25,7 @@ Replace “Lovable-connected GitHub repo” with your actual repo name in GitHub
 
 ## CTA link convention
 
-All marketing CTAs: **`https://app.findfoundfast.com/get-started`**
+Loveable (and any marketing): follow **`docs/LOVABLE_LINKS.md`**. Primary sign-up / sign-in: **`https://app.findfoundfast.com/auth/login`**. Legacy **`/get-started`** redirects to login.
 
 In this repo, use **`appUrl()`** from **`lib/site.js`** so origins stay env-driven (`NEXT_PUBLIC_APP_ORIGIN`).
 

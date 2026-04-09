@@ -1,4 +1,5 @@
 import { createClient } from "@supabase/supabase-js";
+import { marketingUrl } from "@/lib/site";
 
 export default async function DriverLinkPage({ params, searchParams }) {
   const supabase = createClient(
@@ -41,7 +42,7 @@ export default async function DriverLinkPage({ params, searchParams }) {
           </p>
           <div style={{ marginTop: "24px" }}>
             <a
-              href="/"
+              href={marketingUrl("/")}
               style={{
                 display: "inline-block",
                 color: "#00c46f",
@@ -286,7 +287,7 @@ export default async function DriverLinkPage({ params, searchParams }) {
             textAlign: "center",
           }}
         >
-          <a href="/" style={{ textDecoration: "none" }}>
+          <a href={marketingUrl("/")} style={{ textDecoration: "none" }}>
             <p
               style={{
                 fontWeight: "800",

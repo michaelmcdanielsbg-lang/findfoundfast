@@ -57,6 +57,7 @@ Fun, bold, confident, **anti-frustration**. Speaks to residents like a friend an
 - Prefer **focused diffs**; don’t refactor unrelated code.  
 - Marketing styling should stay aligned with **`fff` tokens** and existing header/footer patterns.  
 - **App URL** for CTAs is often `https://findfoundfast-final.vercel.app` in code — consider `NEXT_PUBLIC_SITE_URL` for env-based URLs later.  
+- **Operational handoff (domains, Vercel, Supabase, Loveable links):** `docs/PROJECT_HANDOFF.md`.
 
 ---
 

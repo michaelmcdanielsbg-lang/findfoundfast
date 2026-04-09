@@ -4,6 +4,7 @@
  */
 
 import Link from "next/link";
+import { appUrl } from "@/lib/site";
 import HeroIllustration from "./HeroIllustration";
 
 const focusRing =
@@ -390,7 +391,7 @@ export default function HeroSection() {
       {/* CTAs */}
       <div className="mt-6 flex flex-col items-stretch justify-center gap-3 sm:mt-7 sm:flex-row sm:items-center">
         <Link
-          href="/get-started"
+          href={appUrl("/auth/login")}
           className={`inline-flex min-h-[48px] w-full min-w-[180px] items-center justify-center rounded-xl bg-stone-900 px-7 py-3.5 font-mono text-sm font-bold uppercase tracking-wide text-white shadow-sm transition-colors hover:bg-stone-700 sm:w-auto ${focusRing}`}
         >
           Start for free
