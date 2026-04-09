@@ -136,4 +136,27 @@ Open `http://localhost:3000`. Copy **`.env.example`** → **`.env.local`** and a
 
 ---
 
-*Last updated: handoff doc for continuity if chat history is unavailable.*
+## 10. Checkpoint — 2026-03-31 (start here next session)
+
+**Git:** `main` is pushed; latest commit on remote: **`ca4dd00`** — *App: marketing vs app URLs; request-demo; handoff docs*.
+
+**Deploy:** Production is live on Vercel; primary alias **`https://app.findfoundfast.com`**. CLI deploy also reported **`https://findfoundfast-e1471cxg2-michaelmcdanielsbg-4532s-projects.vercel.app`** for that build. Re-deploy from repo root: `vercel deploy --prod` (or push `main` if Git → Vercel is connected).
+
+**What we finished today**
+
+- Marketing vs app navigation: **`marketingUrl()`** / **`appUrl()`** from **`lib/site.js`** on app pages; **`/get-started`** → **`/auth/login`**; lead form at **`/request-demo`**.
+- Docs: **`docs/LOVABLE_LINKS.md`**, this handoff file, **`AGENTS.md`** / **`ARCHITECTURE.md`** / **`.cursor/rules`** aligned with the two-site split.
+
+**Likely next work (not blocking production)**
+
+- **Supabase:** Confirm migrations in **`supabase/migrations/`** are applied in the project dashboard (schema, manager org + storage, OAuth profile names).
+- **Product:** Expand **`/resident`**; ensure manager signup path uses **`?as=manager`** where needed; tighten manager dashboard vs brief in **`AGENTS.md`**.
+
+**Quick verify after a long break**
+
+- `git pull` and `npm run build`
+- Open **`https://app.findfoundfast.com`** — logo / “marketing” links should go to **`https://findfoundfast.com`**, auth CTAs stay on **`app.`**
+
+---
+
+*Last updated: 2026-03-31 — checkpoint for next session.*
