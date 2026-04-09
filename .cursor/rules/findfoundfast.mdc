@@ -1,14 +1,15 @@
 ---
-description: FindFoundFast product context — flows, domain, stack, brand (read AGENTS.md for full brief)
+description: FindFoundFast product context — flows, domain, stack, brand (read AGENTS.md + ARCHITECTURE.md)
 alwaysApply: true
 ---
 
 # FindFoundFast
 
-- **Site:** findfoundfast.com — timed **photo + gate-code links** for deliveries/guests (no driver app).
+- **Split deploy:** Lovable **designs** the marketing site → `findfoundfast.com`. **You run the product** in **this repo** (Next + Supabase) → `app.findfoundfast.com` — auth, data, APIs, dashboards, link flows, and all engineering. Lovable does not “run” the business; it supplies the marketing UI. CTAs: `https://app.findfoundfast.com/get-started`. See **`ARCHITECTURE.md`**.
+- **Site:** timed **photo + gate-code links** for deliveries/guests (no driver app).
 - **Flows:** (1) **Property manager** — one-time building setup, 4 photos, one permanent link per building. (2) **Resident** — 5-char code, pick timer, copy timed link. (3) **Driver/guest** — tap link, see steps + codes; timer ends → link dies.
-- **Marketing routes:** `/` minimal landing; `/how-it-works` tabs (**manager** default, then resident, driver).
-- **Stack:** Next.js App Router, Tailwind (`fff` brand colors in `tailwind.config.js`), Supabase, Vercel. Fonts: DM Sans + Space Mono (`app/layout.js`).
+- **Marketing:** Lovable = public **design** for apex domain. **This repo** still owns app routes: `/pricing`, `/how-it-works`, `/get-started`, `/auth/login`, `/manager`, `/resident`, `/link/[slug]`, etc.
+- **Stack:** Next.js App Router, Tailwind (`tailwind.config.js` + `lib/design-tokens.js`), Supabase, Vercel. Fonts: DM Sans + Space Mono (`app/layout.js`); align with Lovable fonts when needed.
 - **Voice:** bold, fun, anti-frustration; taglines include “Google Maps for your food and your homies” / “FFFliping Cool”.
 
-**Full product brief, tables, and editor notes:** repo root `AGENTS.md`.
+**Product brief:** `AGENTS.md`. **Repo split + routes:** `ARCHITECTURE.md`.

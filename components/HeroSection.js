@@ -1,13 +1,10 @@
 /**
- * FindFoundFast — HeroSection (final redesign)
- * DROP INTO: components/HeroSection.js
- *
- * LEFT panel:  chat thread (the painful before) + chaos building fills height
- * RIGHT panel: driver texts "on my way" → resident sends one link →
- *              link opens to photo step guide with gate code
+ * FindFoundFast — HeroSection (redesigned)
+ * Illustrated scene above the fold, before/after panels below.
  */
 
 import Link from "next/link";
+import HeroIllustration from "./HeroIllustration";
 
 const focusRing =
   "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/50 focus-visible:ring-offset-2 focus-visible:ring-offset-stone-50";
@@ -66,7 +63,7 @@ function EntrancePhoto() {
   );
 }
 
-/* ─── Chaos building SVG (fills left panel bottom) ────────────── */
+/* ─── Chaos building SVG ── */
 function ChaosBuilding() {
   return (
     <svg
@@ -77,60 +74,54 @@ function ChaosBuilding() {
       aria-hidden
       className="block h-auto w-full shrink-0"
     >
-      {/* Ground */}
       <rect x="0" y="126" width="320" height="42" fill="#f5f4f1" />
       <line x1="0" y1="126" x2="320" y2="126" stroke="#ede9e4" strokeWidth="1" />
       <line x1="0" y1="146" x2="320" y2="146" stroke="#e8e4de" strokeWidth="0.5" strokeDasharray="14 8" />
-
-      {/* Building body */}
       <rect x="108" y="24" width="104" height="102" rx="3" fill="#eeeeed" stroke="#d5d2cc" strokeWidth="1.5" />
       <line x1="108" y1="58" x2="212" y2="58" stroke="#e2dfda" strokeWidth="0.8" />
       <line x1="108" y1="92" x2="212" y2="92" stroke="#e2dfda" strokeWidth="0.8" />
-
-      {/* Floor 3 windows */}
-      <rect x="120" y="32" width="17" height="12" rx="1.5" fill="#fee2e2" stroke="#fca5a5" strokeWidth="0.8" />
-      <rect x="144" y="32" width="17" height="12" rx="1.5" fill="#fef3c7" stroke="#fcd34d" strokeWidth="0.8" />
-      <rect x="168" y="32" width="17" height="12" rx="1.5" fill="#fee2e2" stroke="#fca5a5" strokeWidth="0.8" />
-      <rect x="192" y="32" width="17" height="12" rx="1.5" fill="#fee2e2" stroke="#fca5a5" strokeWidth="0.8" />
-
-      {/* Floor 2 windows */}
-      <rect x="120" y="66" width="17" height="12" rx="1.5" fill="#fef3c7" stroke="#fcd34d" strokeWidth="0.8" />
-      <rect x="144" y="66" width="17" height="12" rx="1.5" fill="#fee2e2" stroke="#fca5a5" strokeWidth="0.8" />
-      <rect x="168" y="66" width="17" height="12" rx="1.5" fill="#fee2e2" stroke="#fca5a5" strokeWidth="0.8" />
-      <rect x="192" y="66" width="17" height="12" rx="1.5" fill="#fef3c7" stroke="#fcd34d" strokeWidth="0.8" />
-
-      {/* Floor 1 windows */}
-      <rect x="120" y="100" width="17" height="12" rx="1.5" fill="#fee2e2" stroke="#fca5a5" strokeWidth="0.8" />
-      <rect x="144" y="100" width="17" height="12" rx="1.5" fill="#fee2e2" stroke="#fca5a5" strokeWidth="0.8" />
-      <rect x="168" y="100" width="17" height="12" rx="1.5" fill="#fef3c7" stroke="#fcd34d" strokeWidth="0.8" />
-      <rect x="192" y="100" width="17" height="12" rx="1.5" fill="#fee2e2" stroke="#fca5a5" strokeWidth="0.8" />
-
-      {/* Door */}
+      {[0, 1, 2, 3].flatMap((col) =>
+        [0, 1, 2].map((row) => (
+          <rect
+            key={`w${col}-${row}`}
+            x={120 + col * 24}
+            y={32 + row * 34}
+            width={17}
+            height={12}
+            rx="1.5"
+            fill={
+              row === 0 && col === 1 ? "#fef3c7" : row === 2 && col === 2 ? "#fef3c7" : "#fee2e2"
+            }
+            stroke={
+              row === 0 && col === 1 ? "#fcd34d" : row === 2 && col === 2 ? "#fcd34d" : "#fca5a5"
+            }
+            strokeWidth="0.8"
+          />
+        ))
+      )}
       <rect x="150" y="102" width="20" height="24" rx="1.5" fill="#fecaca" stroke="#f87171" strokeWidth="1.2" />
-
-      {/* WHERE? badge */}
       <rect x="128" y="10" width="64" height="17" rx="4" fill="#fef2f2" stroke="#fca5a5" strokeWidth="0.8" />
-      <text x="160" y="22.5" textAnchor="middle" fontSize="9" fontWeight="700" fontFamily="ui-monospace,monospace" letterSpacing="0.1em" fill="#dc2626">WHERE?</text>
-
-      {/* Car left — red ? */}
+      <text x="160" y="22.5" textAnchor="middle" fontSize="9" fontWeight="700" fontFamily="ui-monospace,monospace" letterSpacing="0.1em" fill="#dc2626">
+        WHERE????
+      </text>
       <g transform="translate(22,134) rotate(-12)">
         <rect x="-20" y="-10" width="40" height="19" rx="6" fill="#1f2937" stroke="#ef4444" strokeWidth="1.3" />
-        <text x="0" y="5" textAnchor="middle" fontSize="11" fontWeight="900" fill="#ef4444" fontFamily="system-ui,sans-serif">?</text>
+        <text x="0" y="5" textAnchor="middle" fontSize="11" fontWeight="900" fill="#ef4444" fontFamily="system-ui,sans-serif">
+          ?
+        </text>
       </g>
-
-      {/* Car right — yellow ? */}
       <g transform="translate(296,131) rotate(9)">
         <rect x="-20" y="-10" width="40" height="19" rx="6" fill="#1f2937" stroke="#f59e0b" strokeWidth="1.3" />
-        <text x="0" y="5" textAnchor="middle" fontSize="11" fontWeight="900" fill="#f59e0b" fontFamily="system-ui,sans-serif">?</text>
+        <text x="0" y="5" textAnchor="middle" fontSize="11" fontWeight="900" fill="#f59e0b" fontFamily="system-ui,sans-serif">
+          ?
+        </text>
       </g>
-
-      {/* Car mid-left — red ? */}
       <g transform="translate(64,140) rotate(6)">
         <rect x="-17" y="-9" width="34" height="17" rx="5" fill="#1f2937" stroke="#ef4444" strokeWidth="1" />
-        <text x="0" y="4" textAnchor="middle" fontSize="10" fontWeight="900" fill="#ef4444" fontFamily="system-ui,sans-serif">?</text>
+        <text x="0" y="4" textAnchor="middle" fontSize="10" fontWeight="900" fill="#ef4444" fontFamily="system-ui,sans-serif">
+          ?
+        </text>
       </g>
-
-      {/* Chaotic dashed arrows */}
       <path d="M42 126 Q74 102 106 114" stroke="#ef4444" strokeWidth="1.5" strokeDasharray="4 3" fill="none" opacity="0.55" />
       <path d="M276 126 Q246 102 214 112" stroke="#f59e0b" strokeWidth="1.5" strokeDasharray="4 3" fill="none" opacity="0.55" />
       <path d="M80 134 Q102 108 108 118" stroke="#ef4444" strokeWidth="1.2" strokeDasharray="3 3" fill="none" opacity="0.4" />
@@ -142,7 +133,6 @@ function ChaosBuilding() {
 function BeforePanel() {
   return (
     <div className="flex h-full min-h-0 w-full min-w-0 flex-col overflow-hidden rounded-2xl border border-red-200 bg-rose-50/40 shadow-sm">
-      {/* Header — reference: red dot + WITHOUT FINDFOUNDFAST (all caps) */}
       <div className="flex min-w-0 flex-shrink-0 items-center gap-2 border-b border-red-100 bg-red-50 px-3 py-2">
         <span className="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-red-500" aria-hidden />
         <span className="min-w-0 break-words font-mono text-[10px] font-bold uppercase tracking-[0.12em] text-red-700 sm:text-[11px]">
@@ -362,10 +352,10 @@ function AfterPanel() {
 /* ─── Main export ─────────────────────────────────────────────── */
 export default function HeroSection() {
   return (
-    <section className="relative mx-auto w-full min-w-0 max-w-6xl px-4 pb-[max(2.5rem,env(safe-area-inset-bottom))] pt-8 sm:px-6 sm:pb-14 sm:pt-12 md:pb-16 md:pt-14">
+    <section className="relative mx-auto w-full min-w-0 max-w-6xl px-4 pb-[max(2.5rem,env(safe-area-inset-bottom))] pt-8 sm:px-6 sm:pb-14 sm:pt-10 md:pb-16 md:pt-12">
 
-      {/* Eyebrow — value props; sentence case + separators read faster than one mono line */}
-      <div className="mb-4 flex justify-center px-1 sm:mb-5">
+      {/* Eyebrow pills */}
+      <div className="mb-5 flex justify-center">
         <p
           className="mx-auto flex max-w-[min(100%,36rem)] flex-wrap items-center justify-center gap-x-2 gap-y-1.5 text-center font-sans text-sm font-semibold leading-snug text-stone-600 sm:text-fff-caption"
           role="note"
@@ -413,18 +403,19 @@ export default function HeroSection() {
         </Link>
       </div>
 
-      {/* Before / After panels — stack on mobile; two columns sm+ */}
-      <div className="mt-8 grid min-h-0 w-full grid-cols-1 items-stretch gap-4 sm:mt-10 sm:grid-cols-2 sm:gap-5 lg:mt-12 lg:grid-cols-[1fr_1.08fr]">
+      {/* Illustrated hero scene */}
+      <div className="mt-10 sm:mt-12">
+        <HeroIllustration />
+      </div>
+
+      {/* Before / After panels */}
+      <div className="mt-6 grid min-h-0 w-full grid-cols-1 items-stretch gap-4 sm:mt-8 sm:grid-cols-2 sm:gap-5 lg:grid-cols-[1fr_1.08fr]">
         <BeforePanel />
         <AfterPanel />
       </div>
 
-      {/* Pills */}
-      <div
-        className="mt-5 flex flex-wrap items-center justify-center gap-2.5"
-        role="list"
-        aria-label="What each guide covers"
-      >
+      {/* Feature pills */}
+      <div className="mt-5 flex flex-wrap items-center justify-center gap-2.5" role="list" aria-label="What each guide covers">
         {[
           { icon: "📍", label: "Where to park" },
           { icon: "🚪", label: "How to get in" },

@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "bundle:review": "bash scripts/gen-claude-review-bundle.sh"
+    "bundle:review": "bash scripts/gen-claude-review-bundle.sh",
+    "bundle:loveable": "bash scripts/gen-loveable-review-bundle.sh"
   },
   "dependencies": {
     "@supabase/ssr": "^0.3.0",

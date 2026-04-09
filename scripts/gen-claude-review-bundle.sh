@@ -51,9 +51,9 @@ Please:
 - Suggest prioritized improvements (P0 / P1 / P2).
 - Marketing uses Tailwind + `fff.*` typography tokens (`tailwind.config.js`); some app routes use inline styles and a blue accent—call out branding drift if it matters.
 
-**Routes (marketing):** `/` (HeroSection), `/pricing`, `/how-it-works` (audience: `property` | `campus`; tabs when property: `manager` | `resident` | `driver`), `/get-started`.
+**Routes (marketing):** `/` (Navbar, Hero, Stats, Comparison, section components, CtaFooter), `/pricing`, `/how-it-works` (`?audience=personal|property|campus`), `/get-started`.
 
-**Routes (app):** `/auth/login`, `/manager`, `/resident`, `/link/[slug]` (driver view).
+**Routes (app):** `/auth/login`, `/manager`, `/resident`, `/link/[slug]` (driver view; inline styles, brand green app bar).
 
 ---
 
@@ -75,8 +75,19 @@ FILES=(
   "app/globals.css"
   "lib/supabase.js"
   "app/page.js"
-  "components/HeroSection.js"
+  "components/Header.js"
+  "components/Footer.js"
+  "components/Navbar.js"
+  "components/Hero.js"
+  "components/Stats.js"
+  "components/Comparison.js"
+  "components/HowItWorks.js"
+  "components/UseCases.js"
+  "components/Testimonials.js"
+  "components/Pricing.js"
+  "components/CtaFooter.js"
   "app/pricing/page.js"
+  "app/pricing/layout.js"
   "app/how-it-works/page.js"
   "app/get-started/page.js"
   "app/preview/page.js"

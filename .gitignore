@@ -2,3 +2,7 @@ node_modules/
 .next/
 .DS_Store
 app/.DS_Store
+
+# Secrets — never commit (copy keys into Vercel → Environment Variables)
+.env*.local
+.env.local
